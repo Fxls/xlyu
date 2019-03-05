@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  * @program: day02.code
- * @description: 输入年份月份，输出当月天数
+ * @description:  输入年份月份，输出当月天数
  * @author: xlyu
  * @create: 2019-03-05 16:57
  **/

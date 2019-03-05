@@ -7,7 +7,7 @@ package day02;
 
 /**
  * @program: day02.code
- * @description: 计算一段程序运行的时间
+ * @description:  计算一段程序运行的时间
  * @author: xlyu
  * @create: 2019-03-05 16:34
  **/

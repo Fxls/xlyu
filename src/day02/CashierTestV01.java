@@ -24,7 +24,7 @@ public class CashierTestV01 {
         System.out.println(money*number);
         System.out.println("Payment amount($)");//实际付款
         double pay = sc.nextDouble();
-        System.out.println("Give change($)");//找零
+        System.out.println("Give change($)");// 找零
         System.out.println(pay-money*number);//找零
 
     }

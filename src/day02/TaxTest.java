@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  * @program: day02.code
- * @description: 计算个人所得税
+ * @description:  计算个人所得税
  * *扣除数=3500￥
  * * 应纳税额=（工资-扣除数）*税率-速算扣除数
  * * 全月应纳税额=工资-扣除数

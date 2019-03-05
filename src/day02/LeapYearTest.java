@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  * @program: day02.code
- * @description: if else 实现闰年的判断
+ * @description: if else  实现闰年的判断
  * @author: xlyu
  * @create: 2019-03-05 16:48
  **/

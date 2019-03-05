@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  * @program: day02.code
- * @description: 编写三个数值的排序程序
+ * @description:  编写三个数值的排序程序
  * @author: xlyu
  * @create: 2019-03-05 16:43
  **/

@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  * @program: day02.code
- * @description: 输出两个int数中的最大值
+ * @description:  输出两个int数中的最大值
  * @author: xlyu
  * @create: 2019-03-05 16:37
  **/

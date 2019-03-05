@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  * @program: day02.code
- * @description: 输入三个int数，输出最大的int数
+ * @description:  输入三个int数，输出最大的int数
  * @author: xlyu
  * @create: 2019-03-05 17:42
  **/
