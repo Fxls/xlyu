@@ -13,6 +13,6 @@ package day5;
  **/
 public class ArrInitialization {
     public static void main(String[] args) {
-        int[] arr = new int[4];
+        int[] arr = {1,2,3,4};
     }
 }
