@@ -1,0 +1,6 @@
+1、给定范围2~100，在此范围内寻找指质数。day05/PrimeNumber
+2、int[]是数据类型
+3、两种方法初始化数组arr的长度为4。day05/ArrInitialization、day05/ArrInitialization2
+4、查询数组最小值，并扩容一个新数组，将查询值放到新数组的最前面。day05/ArrMine
+5、冒泡排序原理就是比较相邻元素的大小，进行元素的重新排列，来达到排序的功能
+
