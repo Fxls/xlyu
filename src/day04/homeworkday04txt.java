@@ -19,7 +19,6 @@
 
 8.运行结果为  ：0
               1
-
               3
 
 9.代码在day04目录下；SumOfSequences
