@@ -17,21 +17,20 @@ public class SumOfSequences2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("please input numeber!");
-        int q = scanner.nextInt();
-        double a = 1;
-        double b = 1;
+        int input = scanner.nextInt();//输入数据
+        double sum = 1;//声明总和
         System.out.print(1);
-        for (int i = 2; i >= 2; i++) {
-
-            b = b / i;
-            a = a + b;
+        for (int i = 2; i >= 2; i++) {//设计一个死循环，当输入数据和循环条件相等时退出循环
+            double n;
+            n = 1.0 / i;//运算表达式
+            sum = sum + n;//求和表达式
             System.out.print("+" + 1 + "/" + i);
-            if (i == q) {
+            if (i == input) {
                 break;
             }
 
         }
 
-        System.out.println("=" + a);
+        System.out.println("=" + sum);
     }
 }
