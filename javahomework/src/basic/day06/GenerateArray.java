@@ -35,6 +35,7 @@ public class GenerateArray {
         int x = scanner.nextInt();
         System.out.println("请输入数组中元素的取值范围：0~");
         int y = scanner.nextInt();
+        //调用方法arr
         int[] arr = arr(x, y);
         System.out.println(Arrays.toString(arr));
     }
