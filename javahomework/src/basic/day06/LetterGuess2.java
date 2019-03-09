@@ -82,10 +82,10 @@ public class LetterGuess2 {
 
     /*
     步骤二：
-    
     声明方法一：
         随机一个数组，再对其进行赋值
      */
+
     public static char[] generateArr(int lev) {
         //给定字母表，确定赋值的元素都为A~Z
         char[] letters = new char[]{'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
