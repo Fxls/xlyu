@@ -15,10 +15,10 @@ public class Parallelogram {
 
     public static void main(String[] args) {
         for (int i = 0; i < 5; i++) { // 行数
-            for (int j = 10; j > i; j--) {
+            for (int j = 10; j > i; j--) {//空格
                 System.out.print(" ");
             }
-            for (int j = 0; j < 10; j++) {
+            for (int j = 0; j < 10; j++) {//.
                 System.out.print(".");
             }
             System.out.println();

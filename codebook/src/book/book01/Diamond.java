@@ -14,6 +14,7 @@ package book.book01;
 public class Diamond {
 
     public static void main(String[] args) {
+        //上半部分
         for (int i = 0; i < 5; i++) {//行数设置：5行
             for (int j = 4; j > i; j--) {//空格设置
                 System.out.print(" ");
@@ -23,6 +24,7 @@ public class Diamond {
             }
             System.out.println();
         }
+        //下半部分
         for (int i = 0; i < 4; i++) {
             for (int j = -1; j < i; j++) {
                 System.out.print(" ");

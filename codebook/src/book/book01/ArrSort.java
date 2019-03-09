@@ -22,6 +22,7 @@ public class ArrSort {
             arr[i] = (int) (Math.random() * 100 + 1);
         }
         System.out.println("该数组为：" + Arrays.toString(arr));
+        //正序排列
         for (int i = 1; i < arr.length; i++) {
             for (int i2 = 1; i2 <= length - i; i2++) {
                 if (arr[i2 - 1] > arr[i2]) {
@@ -32,6 +33,7 @@ public class ArrSort {
             }
         }
         System.out.println("正序排列：" + Arrays.toString(arr));
+        //逆序排列
         for (int i = 1; i < arr.length; i++) {
             for (int i2 = 1; i2 <= length - i; i2++) {
                 if (arr[i2 - 1] < arr[i2]) {

@@ -22,6 +22,7 @@ public class ArrJudge {
         Scanner scanner = new Scanner(System.in);
         int inpiut = scanner.nextInt();
         scanner.close();
+        //设计boolean类型变量，判断数字是否与数组中的匹配（原理为遍历赋值，开关语句）
         boolean boo = true;
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (int) (Math.random() * 3);
