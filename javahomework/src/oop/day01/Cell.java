@@ -7,7 +7,7 @@ package oop.day01;
 
 /**
  * @program: javahomework
- * @description:
+ * @description: 创建一个Cell类，其中包含行，列的声明，下降的方法，左移和右移的方法
  * @author: xlyu
  * @create: 2019-03-11 16:04
  **/
@@ -34,6 +34,7 @@ public class Cell {
         col++;
     }
 
+    //坐标位置展示
     public String getCellInfo() {
         return row + "," + col;
     }

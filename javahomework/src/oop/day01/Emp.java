@@ -7,7 +7,7 @@ package oop.day01;
 
 /**
  * @program: javahomework
- * @description:
+ * @description:创建Emp类采集员工信息；其中包含姓名、性别、薪水、年龄等变量，此类中包含打印信息的方法
  * @author: xlyu
  * @create: 2019-03-11 15:49
  **/
@@ -18,7 +18,8 @@ public class Emp {
     double salary;
 
     public static void main(String[] args) {
-        Emp emp = new Emp();
+        Emp emp = new Emp();//创建Empduixiang
+        //调用Emp中的变量
         emp.name = "123";
         emp.age = 12;
         emp.gender = '男';

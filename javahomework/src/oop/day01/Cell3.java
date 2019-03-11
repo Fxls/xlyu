@@ -18,7 +18,8 @@ public class Cell3 {
         Cell cell = new Cell();
         cell.row = 3;//*所在的行数
         cell.col = 3;//*所在的列数
-        System.out.println("原图为：---------");
+        String string = cell.getCellInfo();
+        System.out.println("原图为：---------" + "坐标为" + string);
         printCell(cell);
         do {
             System.out.println("1、下降一格，2、左移一格，3、右移一格，0、退出");
