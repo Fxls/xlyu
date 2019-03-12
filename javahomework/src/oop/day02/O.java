@@ -12,7 +12,7 @@ package oop.day02;
  * @create: 2019-03-12 16:20
  **/
 public class O {
-    Cell cell = new Cell(3, 3);
+    Cell cell = new Cell(3, 3);//第一个方块的坐标
     Cell[] cells;
 
     /**

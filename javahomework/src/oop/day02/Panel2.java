@@ -21,10 +21,12 @@ public class Panel2 {
         o.printO(o);
         System.out.println("位置为：");
         o.getOInfo();
+        /**do-while实现循环交互效果，输入0时退出*/
         do {
             Scanner scanner = new Scanner(System.in);
             System.out.println("请输入数字控制：0-退出、1-整体下降一格、2-整体左移一格、3-整体右移一格");
             int input = scanner.nextInt();
+            /**if分支语句实现不同数字的功能*/
             if (input == 1) {
                 o.drop(1);
                 o.printO(o);
@@ -40,7 +42,7 @@ public class Panel2 {
             } else {
                 System.out.println("您输入的数字有误！");
             }
-            o.getOInfo();
+            o.getOInfo();//打印坐标
         } while (true);
 
     }
