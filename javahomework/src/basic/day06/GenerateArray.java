@@ -17,26 +17,26 @@ import java.util.Scanner;
  **/
 public class GenerateArray {
     //声明一个方法，length为生成数组的长度，range为数组内元素的赋值范围
-    public static int[] arr(int length, int range) {
+    public static int[] generateArr(int length, int range) {
         //定义数组长度为x
-        int x = length;
-        int[] arr = new int[x];
+
+        int[] generateArr = new int[length];
         //遍历数组随机赋值
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = (int) (Math.random() * (range + 1));
+        for (int i = 0; i < generateArr.length; i++) {
+            generateArr[i] = (int) (Math.random() * (range + 1));
         }
         //return 语句，返回的类型是int[]
-        return arr;
+        return generateArr;
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("请输入数组的长度：");
-        int x = scanner.nextInt();
+        int length = scanner.nextInt();
         System.out.println("请输入数组中元素的取值范围：0~");
-        int y = scanner.nextInt();
+        int range = scanner.nextInt();
         //调用方法arr
-        int[] arr = arr(x, y);
+        int[] arr = generateArr(length, range);
         System.out.println(Arrays.toString(arr));
     }
 

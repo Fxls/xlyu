@@ -18,13 +18,13 @@ public class Cell3 {
         Cell cell = new Cell();
         cell.row = 3;//*所在的行数
         cell.col = 3;//*所在的列数
-        String string = cell.getCellInfo();
-        System.out.println("原图为：---------" + "坐标为" + string);
+        cell.getCellInfo();
         printCell(cell);
         do {
             System.out.println("1、下降一格，2、左移一格，3、右移一格，0、退出");
             Scanner scanner = new Scanner(System.in);
             int n = scanner.nextInt();//下移i
+            /**输入不同数字的效果*/
             if (n == 1) {
                 cell.drop(n);
                 printCell(cell);
@@ -40,10 +40,16 @@ public class Cell3 {
             } else {
                 System.out.println("输入错误！");
             }
+            cell.getCellInfo();//打印坐标
         } while (true);
-//        System.out.println("over");
+
+
     }
 
+    /**
+     * 这里的绘制方法也可以写到Cell类里，但是在上面的程序中需要更改调用格式，如果写在类里的话注意修饰词要有所更改（static）
+     * 详情请看day02.Cell
+     */
     public static void printCell(Cell cell) {
         int totalRow = 9;
         int totalCol = 9;

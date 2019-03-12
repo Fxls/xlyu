@@ -15,8 +15,8 @@ package oop.day01;
 public class Cell2 {
     public static void main(String[] args) {
         Cell cell = new Cell();
-        cell.row = 15;//cell引用*所在的行数
-        cell.col = 6;//cell*所在的列数
+        cell.row = 2;//cell引用*所在的行数
+        cell.col = 2;//cell*所在的列数
         cell.moveRight(1);
         cell.getCellInfo();
         printCell(cell);

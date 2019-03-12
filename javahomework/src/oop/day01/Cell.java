@@ -12,10 +12,15 @@ package oop.day01;
  * @create: 2019-03-11 16:04
  **/
 public class Cell {
+
     int row;//行
     int col;//列
 
     //下降
+    public void drop() {
+        row++;
+    }
+
     public void drop(int i) {
         i = 1;
         row++;
@@ -23,6 +28,10 @@ public class Cell {
     }
 
     //左移
+    public void moveLeft() {
+        col--;
+    }
+
     public void moveLeft(int num) {
         num = 2;
         col--;
@@ -35,7 +44,9 @@ public class Cell {
     }
 
     //坐标位置展示
-    public String getCellInfo() {
-        return row + "," + col;
+    public void getCellInfo() {
+        String string = " ";
+        string = "(" + row + "," + col + ")";
+        System.out.println(string);
     }
 }
