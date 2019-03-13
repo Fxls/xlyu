@@ -19,4 +19,4 @@
   D.构造方法不能重载（错误：可以重载）
 3、定义Tetris项目中的O类并测试：请见
     oop.day02.O（类）
-    oop.day02.Panel（操作面板）
+    oop.day02.OTest（操作面板）

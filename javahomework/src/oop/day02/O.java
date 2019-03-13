@@ -12,33 +12,26 @@ package oop.day02;
  * @create: 2019-03-12 16:20
  **/
 public class O {
-    Cell cell = new Cell(3, 3);//第一个方块的坐标
-    Cell[] cells;
+    //    Cell cell = new Cell(3, 3);//第一个方块的坐标
+    Cell[] cellsO;
 
     /**
-     * 初始化cells属性
-     */
-    public O() {
-        this(0, 0);
-    }
-
-    /**
-     * 构造方法重载
+     * 构造方法
      */
     public O(int row, int col) {
-        cells = new Cell[4];
-        cells[0] = new Cell(row, col);//左上角方块
-        cells[1] = new Cell(row, col + 1);//右上角方块
-        cells[2] = new Cell(row + 1, col);//左下角方块
-        cells[3] = new Cell(row + 1, col + 1);//右下角方块
+        cellsO = new Cell[4];
+        cellsO[0] = new Cell(row, col);//左上角方块
+        cellsO[1] = new Cell(row, col + 1);//右上角方块
+        cellsO[2] = new Cell(row + 1, col);//左下角方块
+        cellsO[3] = new Cell(row + 1, col + 1);//右下角方块
     }
 
     /**
      * 下落
      */
     public void drop(int input) {
-        for (int i = 0; i < cells.length; i++) {
-            cells[i].row++;
+        for (int i = 0; i < cellsO.length; i++) {
+            cellsO[i].row++;
         }
     }
 
@@ -46,8 +39,8 @@ public class O {
      * 左移
      */
     public void moveLeft(int input) {
-        for (int i = 0; i < cells.length; i++) {
-            cells[i].col--;
+        for (int i = 0; i < cellsO.length; i++) {
+            cellsO[i].col--;
         }
     }
 
@@ -55,8 +48,8 @@ public class O {
      * 右移一格
      */
     public void moveRight(int input) {
-        for (int i = 0; i < cells.length; i++) {
-            cells[i].col++;
+        for (int i = 0; i < cellsO.length; i++) {
+            cellsO[i].col++;
         }
     }
 
@@ -65,8 +58,8 @@ public class O {
      */
     public void getOInfo() {
         String str = " ";
-        for (int i = 0; i < cells.length; i++) {
-            str += "(" + cells[i].row + "," + cells[i].col + ")";
+        for (int i = 0; i < cellsO.length; i++) {
+            str += "(" + cellsO[i].row + "," + cellsO[i].col + ")";
         }
         System.out.println(str);
     }
@@ -80,11 +73,13 @@ public class O {
         int totalCol = 15;
         for (int row = 1; row <= totalRow; row++) {
             for (int col = 1; col <= totalCol; col++) {
-                /**满足这四个的任意一个条件都打印*，其余的同day01.cell3的写法*/
-                if ((cells[1].row == row && cells[1].col == col) ||
-                        (cells[0].row == row && cells[0].col == col) ||
-                        (cells[2].row == row && cells[2].col == col) ||
-                        (cells[3].row == row && cells[3].col == col)) {
+                boolean iscells = false;
+                for (int i = 0; i < cellsO.length; i++) {
+                    if (row == cellsO[i].row && col == cellsO[i].col) {
+                        iscells = true;
+                    }
+                }
+                if (iscells == true) {
                     System.out.print("*" + "\t");
                 } else {
                     System.out.print("-" + "\t");

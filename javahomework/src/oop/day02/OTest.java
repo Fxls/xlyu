@@ -13,11 +13,11 @@ import java.util.Scanner;
  * @author: xlyu
  * @create: 2019-03-12 17:31
  **/
-public class Panel2 {
+public class OTest {
     public static void main(String[] args) {
         /**输出初始图形*/
         System.out.println("原图为：");
-        O o = new O(3, 3);
+        O o = new O(3, 3);//参数含义为中心单元格坐标为（3，3）
         o.printO(o);
         System.out.println("位置为：");
         o.getOInfo();
