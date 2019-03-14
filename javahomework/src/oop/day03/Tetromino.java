@@ -34,7 +34,7 @@ public class Tetromino {
      */
     public void drop() {
         for (int i = 0; i < cells.length; i++) {
-            cells[i].row++;
+            cells[i].drop();
         }
     }
 
@@ -46,7 +46,7 @@ public class Tetromino {
      */
     public void moveLeft() {
         for (int i = 0; i < cells.length; i++) {
-            cells[i].col--;
+            cells[i].moveLeft();
         }
     }
 
@@ -58,7 +58,7 @@ public class Tetromino {
      */
     public void moveRight() {
         for (int i = 0; i < cells.length; i++) {
-            cells[i].col++;
+            cells[i].moveRight();
         }
     }
 
@@ -76,4 +76,34 @@ public class Tetromino {
         System.out.println(str);
         return str;
     }
+
+    /**
+     * @return
+     * @Param
+     * @description TODO 图形的打印
+     * @date 2019/3/14 0014 13:47
+     */
+    public void print(int totalRow, int totalCol) {
+        for (int row = 1; row <= totalRow; row++) {
+            for (int col = 1; col <= totalCol; col++) {
+                boolean iscell = false;
+                for (int index = 0; index < cells.length; index++) {
+                    if (row == cells[index].row && col == cells[index].col) {
+                        iscell = true;
+                    }
+                }
+                if (iscell == true) {
+                    System.out.print("*" + "\t");
+                } else {
+                    System.out.print("-" + "\t");
+                }
+            }
+            System.out.println(row);
+        }
+        for (int col = 1; col <= totalCol; col++) {
+            System.out.print(col + "\t");
+        }
+        System.out.println();
+    }
+
 }

@@ -19,4 +19,10 @@ public class TetrominoJ extends Tetromino {
         cells[2] = new Cell(row + 2, col);
         cells[3] = new Cell(row + 2, col - 1);
     }
+
+    public static void main(String[] args) {
+        TetrominoJ j = new TetrominoJ(3, 3);
+        j.getCellInfo();
+        j.print(10, 15);
+    }
 }
