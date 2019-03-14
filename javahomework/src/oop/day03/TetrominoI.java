@@ -5,6 +5,8 @@
  */
 package oop.day03;
 
+import java.util.Scanner;
+
 /**
  * @program: javahomework
  * @description: 重构I类继承Tetromino
@@ -21,8 +23,32 @@ public class TetrominoI extends Tetromino {
     }
 
     public static void main(String[] args) {
+
         TetrominoI i = new TetrominoI(3, 3);
-        i.getCellInfo();
         i.print(10, 15);
+        do {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("请输入数字：0-退出、1-下落、2-左移、3-右移");
+            int input = scanner.nextInt();
+            if (input == 1) {
+                i.drop();
+                i.print(10, 15);
+                i.getCellInfo();
+            } else if (input == 2) {
+                i.moveLeft();
+                i.print(10, 15);
+                i.getCellInfo();
+            } else if (input == 3) {
+                i.moveRight();
+                i.print(10, 15);
+                i.getCellInfo();
+            } else if (input == 0) {
+                System.out.println("over");
+                break;
+            } else {
+                System.out.println("再输一次！");
+            }
+        } while (true);
     }
+
 }

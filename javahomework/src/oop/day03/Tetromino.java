@@ -6,6 +6,8 @@
 package oop.day03;
 
 
+import java.util.Scanner;
+
 /**
  * @program: javahomework
  * @description: 重构T&J类
@@ -13,6 +15,7 @@ package oop.day03;
  * @create: 2019-03-13 18:57
  **/
 public class Tetromino {
+    Tetromino tetromino;
     Cell[] cells;
 
     /**
@@ -105,5 +108,4 @@ public class Tetromino {
         }
         System.out.println();
     }
-
 }
