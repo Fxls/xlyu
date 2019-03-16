@@ -25,7 +25,7 @@ public class Star {
         frame.setSize(1920, 1080);//设置窗体大小
         MyPanel mp = new MyPanel();
         frame.add(mp);
-        frame.show();
+        frame.setVisible(true);
     }
 
     static class MyPanel extends Panel {//继承Panel
