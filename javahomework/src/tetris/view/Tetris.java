@@ -16,7 +16,7 @@ import java.util.TimerTask;
 
 /**
  * @program: javahomework
- * @description: 俄罗斯方块界面元素
+ * @description: 俄罗斯方块界面元素(具体的操作方法等)
  * @author: xlyu
  * @create: 2019-03-19 12:59
  **/
@@ -30,13 +30,15 @@ public class Tetris extends JPanel {
     private static Image lbackImage;
     private static Image jbackImage;
     private static Image ibackImage;
-    //常量：单元格规格
+    //常量：单元格列起点
     private static final int COL_START = 1;
+    //常量：单元格规格
     private static final int ROW = 18;
     private static final int COL = 9;
     //引用类型创建移动方块和预测方块
     private Tetrimino movingTetrimino;
     private Tetrimino nextTetrimino;
+    //定时器引用类型（java.until.Timer）
     private Timer timer;
 
     /**
@@ -50,20 +52,30 @@ public class Tetris extends JPanel {
         nextTetrimino = generateRandomTerimino();
         addKeyBordListener();//Alt+Enter     create 一个键盘监听事件
         timer = new Timer();
+        //匿名内部类
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                repaint();
+                repaint();//重画方法
             }
-        }, 0, 20);
+        }, 0, 20);//休眠期
     }
 
+    /**
+     * @return
+     * @Param
+     * @description TODO 从构造器中创建而来的addKeyBordListener方法，其中添加了键盘监听
+     * @date 2019/3/19 0019 17:00
+     */
+
     private void addKeyBordListener() {
-        this.addKeyListener(new KeyAdapter() {
+        //键盘监听
+        this.addKeyListener(new KeyAdapter() {//匿名内部类
             @Override
+            //重写keyPressed方法
             public void keyPressed(KeyEvent e) {
                 super.keyPressed(e);
-                int code = e.getKeyCode();
+                int code = e.getKeyCode();//接收键入值
                 switch (code) {
                     case KeyEvent.VK_DOWN:
                         if (!isReachBottom(movingTetrimino)) {
@@ -193,7 +205,7 @@ public class Tetris extends JPanel {
             case 6:
                 return new TetriminoZ(1, 5, zbackImage);
 
-            default:
+            default://监测机制
                 System.out.println("未知错误");
                 return new TetriminoI(1, 5, tbackImage);
         }
