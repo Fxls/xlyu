@@ -40,6 +40,12 @@ public class Tetris extends JPanel {
     private Tetrimino nextTetrimino;
     //定时器引用类型（java.until.Timer）
     private Timer timer;
+    private Timer timerAuttoDrop;
+    //二维数组，存储墙体中的方块
+    private Cell[][] wall;
+    //消行数
+    private int rowDelete;
+
 
     /**
      * @return
@@ -50,6 +56,7 @@ public class Tetris extends JPanel {
     public Tetris() {
         movingTetrimino = generateRandomTerimino();
         nextTetrimino = generateRandomTerimino();
+        wall = new Cell[ROW][COL];//空墙体
         addKeyBordListener();//Alt+Enter     create 一个键盘监听事件
         timer = new Timer();
         //匿名内部类
@@ -59,6 +66,97 @@ public class Tetris extends JPanel {
                 repaint();//重画方法
             }
         }, 0, 20);//休眠期
+
+        /**
+         * @Param
+         * @description TODO 控制自动下落方块的定时器
+         * @date 2019/3/20 0020 19:16
+         * @return
+         */
+
+        timerAuttoDrop = new Timer();
+        timerAuttoDrop.schedule(new TimerTask() {
+            @Override
+            public void run() {
+
+                //此处方法与键盘监听中使用的方法一样
+                if (!isReachBottom(movingTetrimino)) {
+                    movingTetrimino.drop();
+                    if (hitWall(movingTetrimino)) {
+                        movingTetrimino.drop(-1);
+                        joinWall(movingTetrimino);
+                    }
+                } else {
+                    joinWall(movingTetrimino);
+                }
+
+
+            }
+        }, 0, 1000);
+    }
+
+    /**
+     * @return
+     * @Param
+     * @description TODO 添加定点方块组合
+     * @date 2019/3/20 0020 20:11
+     */
+
+    public void joinWall(Tetrimino t) {
+        Cell[] cells = t.cells;
+        for (int i = 0; i < cells.length; i++) {
+            int row = cells[i].row;
+            int col = cells[i].col;
+            wall[row - 1][col - 1] = cells[i];//对应Wall的索引下标
+        }
+
+        for (int row = 0; row < ROW; row++) {
+            boolean isNeedDelete = true;
+            for (int col = 0; col < COL; col++) {
+                if (wall[row][col] == null) {//一行没有填满（列元素未全部填充）
+                    isNeedDelete = false;
+                    break;
+                }
+            }
+
+            //消行
+            if (isNeedDelete) {
+                rowDelete++;//消行次数每进入一次if加一次
+                wall[row] = new Cell[COL];
+                //从下往上遍历
+                for (int i = row - 1; i >= 0; i--) {
+                    for (int j = 0; j < COL; j++) {
+                        if (wall[i][j] != null) {
+                            wall[i][j].drop();//满行删除一整行
+                        }
+                    }
+                    wall[i + 1] = wall[i];//将上行的方块付给下行
+                }
+                wall[0] = new Cell[COL];
+            }
+        }
+        movingTetrimino = nextTetrimino;
+        nextTetrimino = generateRandomTerimino();
+    }
+
+    /**
+     * @Param
+     * @description TODO 撞墙的判断方法
+     * @date 2019/3/20 0020 20:12
+     * @return
+     */
+
+    private boolean hitWall(Tetrimino t) {
+        Cell[] cells = t.cells;
+        for (int i = 0; i < cells.length; i++) {
+            int row = cells[i].row;
+            int col = cells[i].col;
+            if (wall[row - 1][col - 1] != null) {
+                return true;
+
+            }
+        }
+        return false;
     }
 
     /**
@@ -77,19 +175,37 @@ public class Tetris extends JPanel {
                 super.keyPressed(e);
                 int code = e.getKeyCode();//接收键入值
                 switch (code) {
+                    case KeyEvent.VK_SPACE:
+                        movingTetrimino.rotate(true);
+                        if (isOutBoundary(movingTetrimino)) {
+                            movingTetrimino.rotate(false);
+                        }
+                        break;
                     case KeyEvent.VK_DOWN:
                         if (!isReachBottom(movingTetrimino)) {
                             movingTetrimino.drop();
+                            if (hitWall(movingTetrimino)) {
+                                movingTetrimino.drop(-1);
+                                joinWall(movingTetrimino);
+                            }
+                        } else {
+                            joinWall(movingTetrimino);
                         }
                         break;
                     case KeyEvent.VK_LEFT:
                         if (!isReachLeftBoundary(movingTetrimino)) {
                             movingTetrimino.moveLeft();
+                            if (hitWall(movingTetrimino)) {
+                                movingTetrimino.moveRight();
+                            }
                         }
                         break;
                     case KeyEvent.VK_RIGHT:
                         if (!isReachRightBoundary(movingTetrimino)) {
                             movingTetrimino.moveRight();
+                            if (hitWall(movingTetrimino)) {
+                                movingTetrimino.moveLeft();
+                            }
                         }
                         break;
 
@@ -101,6 +217,29 @@ public class Tetris extends JPanel {
         this.setRequestFocusEnabled(true);
 
     }
+
+    /**
+     * @Param
+     * @description TODO 越界判断
+     * @date 2019/3/20 0020 20:12
+     * @return
+     */
+
+    private boolean isOutBoundary(Tetrimino t) {
+        for (int i = 0; i < movingTetrimino.cells.length; i++) {
+            if (movingTetrimino.cells[i].row < 1 ||//上边界
+                    movingTetrimino.cells[i].row > ROW ||//下边界
+                    movingTetrimino.cells[i].col < COL_START ||//左边界
+                    movingTetrimino.cells[i].col > COL) {//右边界
+                //越界
+                return true;
+            }
+        }
+        // 未越界
+        return false;
+
+    }
+
 
     /**
      * @return boolean
@@ -189,6 +328,7 @@ public class Tetris extends JPanel {
 
     public Tetrimino generateRandomTerimino() {
         int randomNum = (int) (Math.random() * 7);
+//        int randomNum = 0;
         switch (randomNum) {
             case 0:
                 return new TetriminoI(1, 5, ibackImage);
@@ -223,6 +363,23 @@ public class Tetris extends JPanel {
         g.drawImage(backImage, 0, 0, null);//添加背景
         movingTetrimino.paint(g);
         nextTetrimino.paint(g, 250, 0);
+        paintWall(g);
+        Font font = new Font("黑体", Font.BOLD, 25);
+        g.setFont(font);
+        g.setColor(Color.BLACK);
+        g.drawString("消除的行数：" + Integer.toString(rowDelete), 300, 285);
+        g.drawString("得分：" + Integer.toString(rowDelete * 10), 300, 230);
 
+    }
+
+    private void paintWall(Graphics g) {
+        for (int row = 0; row < ROW; row++) {
+            for (int col = 0; col < COL; col++) {
+                if (wall[row][col] != null) {
+                    wall[row][col].paint(g);
+                }
+            }
+
+        }
     }
 }

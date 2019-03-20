@@ -21,4 +21,9 @@ public class TetriminoO extends Tetrimino {
         cells[2] = new Cell(row + 1, col, backImage);
         cells[3] = new Cell(row + 1, col + 1, backImage);
     }
+
+    @Override
+    public void rotate(boolean dir) {
+        //nothing
+    }
 }

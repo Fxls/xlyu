@@ -13,7 +13,7 @@ import java.awt.*;
  * @author: xlyu
  * @create: 2019-03-19 13:15
  **/
-public class Tetrimino {
+public abstract class Tetrimino {
     Image backImage;
     Cell[] cells;
     int row;
@@ -83,6 +83,13 @@ public class Tetrimino {
         }
     }
 
+    public void drop(int step) {
+        for (int i = 0; i < cells.length; i++) {
+            cells[i].drop(step);
+        }
+        row += step;
+    }
+
     /**
      * @return
      * @Param
@@ -93,6 +100,13 @@ public class Tetrimino {
         for (int i = 0; i < cells.length; i++) {
             cells[i].moveLeft();
         }
+    }
+
+    public void moveLeft(int step) {
+        for (int i = 0; i < cells.length; i++) {
+            cells[i].moveLeft(step);
+        }
+        col -= step;
     }
 
     /**
@@ -106,4 +120,6 @@ public class Tetrimino {
             cells[i].moveRight();
         }
     }
+
+    public abstract void rotate(boolean dir);
 }

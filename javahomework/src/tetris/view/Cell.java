@@ -63,8 +63,30 @@ public class Cell {
         row++;
     }
 
+    /**
+     * @return
+     * @Param
+     * @description 重构下落法
+     * @date 2019/3/20 0020 13:00
+     */
+
+    public void drop(int step) {
+        row += step;
+    }
+
     public void moveLeft() {
         col--;
+    }
+
+    /**
+     * @Param
+     * @description 重构左移
+     * @date 2019/3/20 0020 13:01
+     * @return
+     */
+
+    public void moveLeft(int step) {
+        col -= step;
     }
 
     public void moveRight() {
