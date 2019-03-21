@@ -32,6 +32,12 @@ public class TetriminoL extends Tetrimino {
 
     }
 
+    /**
+     * @return void
+     * @Param dir={}
+     * @description TODO 形态枚举
+     * @date 2019/3/21 0021 15:42
+     */
     @Override
     public void rotate(boolean dir) {
         //默认旋转方向为是顺时针

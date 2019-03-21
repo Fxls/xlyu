@@ -31,62 +31,72 @@ public class TetriminoJ extends Tetrimino {
         state = UP;
     }
 
+    /**
+     * @return void
+     * @Param dir={}
+     * @description TODO 形态枚举
+     * @date 2019/3/21 0021 15:42
+     */
     @Override
     public void rotate(boolean dir) {
         switch (state) {
             case UP:
                 if (dir) {
-                    cells[1] = new Cell(cells[0].row, cells[0].col - 1, backImage);//👉
-                    cells[2] = new Cell(cells[0].row, cells[0].col - 2, backImage);
-                    cells[3] = new Cell(cells[0].row - 1, cells[0].col - 2, backImage);
-                    state = RIGHT;
+                    right();
                 } else {
-                    cells[1] = new Cell(cells[0].row, cells[0].col + 1, backImage);//←
-                    cells[2] = new Cell(cells[0].row, cells[0].col + 2, backImage);
-                    cells[3] = new Cell(cells[0].row + 1, cells[0].col + 2, backImage);
-                    state = LEFT;
+                    left();
                 }
                 break;
             case RIGHT:
                 if (dir) {
-                    cells[1] = new Cell(cells[0].row - 1, cells[0].col, backImage);//👇
-                    cells[2] = new Cell(cells[0].row - 2, cells[0].col, backImage);
-                    cells[3] = new Cell(cells[0].row - 2, cells[0].col + 1, backImage);
-                    state = DOWN;
+                    down();
                 } else {
-                    cells[1] = new Cell(cells[0].row + 1, cells[0].col, backImage);//👆
-                    cells[2] = new Cell(cells[0].row + 2, cells[0].col, backImage);
-                    cells[3] = new Cell(cells[0].row + 2, cells[0].col - 1, backImage);
-                    state = UP;
+                    up();
                 }
                 break;
             case DOWN:
                 if (dir) {
-                    cells[1] = new Cell(cells[0].row, cells[0].col + 1, backImage);//←
-                    cells[2] = new Cell(cells[0].row, cells[0].col + 2, backImage);
-                    cells[3] = new Cell(cells[0].row + 1, cells[0].col + 2, backImage);
-                    state = LEFT;
+                    left();
                 } else {
-                    cells[1] = new Cell(cells[0].row, cells[0].col - 1, backImage);//👉
-                    cells[2] = new Cell(cells[0].row, cells[0].col - 2, backImage);
-                    cells[3] = new Cell(cells[0].row - 1, cells[0].col - 2, backImage);
-                    state = RIGHT;
+                    right();
                 }
                 break;
             case LEFT:
                 if (dir) {
-                    cells[1] = new Cell(cells[0].row + 1, cells[0].col, backImage);//👆
-                    cells[2] = new Cell(cells[0].row + 2, cells[0].col, backImage);
-                    cells[3] = new Cell(cells[0].row + 2, cells[0].col - 1, backImage);
-                    state = UP;
+                    up();
                 } else {
-                    cells[1] = new Cell(cells[0].row - 1, cells[0].col, backImage);//👇
-                    cells[2] = new Cell(cells[0].row - 2, cells[0].col, backImage);
-                    cells[3] = new Cell(cells[0].row - 2, cells[0].col + 1, backImage);
-                    state = DOWN;
+                    down();
                 }
                 break;
         }
 
+    }
+
+    private void up() {
+        cells[1] = new Cell(cells[0].row + 1, cells[0].col, backImage);//👆
+        cells[2] = new Cell(cells[0].row + 2, cells[0].col, backImage);
+        cells[3] = new Cell(cells[0].row + 2, cells[0].col - 1, backImage);
+        state = UP;
+    }
+
+    private void down() {
+        cells[1] = new Cell(cells[0].row - 1, cells[0].col, backImage);//👇
+        cells[2] = new Cell(cells[0].row - 2, cells[0].col, backImage);
+        cells[3] = new Cell(cells[0].row - 2, cells[0].col + 1, backImage);
+        state = DOWN;
+    }
+
+    private void left() {
+        cells[1] = new Cell(cells[0].row, cells[0].col + 1, backImage);//←
+        cells[2] = new Cell(cells[0].row, cells[0].col + 2, backImage);
+        cells[3] = new Cell(cells[0].row + 1, cells[0].col + 2, backImage);
+        state = LEFT;
+    }
+
+    private void right() {
+        cells[1] = new Cell(cells[0].row, cells[0].col - 1, backImage);//👉
+        cells[2] = new Cell(cells[0].row, cells[0].col - 2, backImage);
+        cells[3] = new Cell(cells[0].row - 1, cells[0].col - 2, backImage);
+        state = RIGHT;
     }
 }

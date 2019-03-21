@@ -22,6 +22,12 @@ public class TetriminoO extends Tetrimino {
         cells[3] = new Cell(row + 1, col + 1, backImage);
     }
 
+    /**
+     * @return void
+     * @Param dir={}
+     * @description TODO 形态枚举
+     * @date 2019/3/21 0021 15:42
+     */
     @Override
     public void rotate(boolean dir) {
         //nothing

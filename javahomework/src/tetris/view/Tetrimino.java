@@ -121,5 +121,11 @@ public abstract class Tetrimino {
         }
     }
 
+    /**
+     * @return
+     * @Param
+     * @description TODO 抽象方法，变形
+     * @date 2019/3/21 0021 15:39
+     */
     public abstract void rotate(boolean dir);
 }

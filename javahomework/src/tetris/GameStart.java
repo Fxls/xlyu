@@ -21,6 +21,16 @@ public class GameStart extends JFrame {
     public static final int HEIGHT = 570;
 
     public static void main(String[] args) {
+        start();
+    }
+
+    /**
+     * @return void
+     * @Param
+     * @description TODO 开始方法
+     * @date 2019/3/21 0021 15:38
+     */
+    private static void start() {
         GameStart gameStart = new GameStart();
         gameStart.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//开关设置
         gameStart.setSize(WEIGHT, HEIGHT);

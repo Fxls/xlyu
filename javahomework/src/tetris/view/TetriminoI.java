@@ -20,8 +20,24 @@ public class TetriminoI extends Tetrimino {
     //接收方块状态的变量
     private int state;
 
+    /**
+     * @Param
+     * @description TODO 描述功能
+     * @date 2019/3/21 0021 15:46
+     * @return
+     */
     public TetriminoI(int row, int col, Image backImage) {
         super(row, col, backImage);
+        initial();
+    }
+
+    /**
+     * @return void
+     * @Param
+     * @description TODO 初始形态
+     * @date 2019/3/21 0021 15:45
+     */
+    private void initial() {
         cells[0] = new Cell(row, col, backImage);
         cells[1] = new Cell(row, col - 1, backImage);
         cells[2] = new Cell(row, col + 1, backImage);
@@ -29,6 +45,13 @@ public class TetriminoI extends Tetrimino {
         state = TRANSVERSE;
     }
 
+
+    /**
+     * @return void
+     * @Param dir={}
+     * @description TODO 形态枚举
+     * @date 2019/3/21 0021 15:42
+     */
     @Override
     public void rotate(boolean dir) {
         switch (state) {
