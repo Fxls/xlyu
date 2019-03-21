@@ -5,12 +5,19 @@
  */
 package tetris.view;
 
+import sun.applet.AppletAudioClip;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.applet.Applet;
+import java.applet.AudioClip;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -45,6 +52,44 @@ public class Tetris extends JPanel {
     private Cell[][] wall;
     //消行数
     private int rowDelete;
+    //这个整数组用来存储游戏难度等级
+    private int[] levArr = {1, 2, 3, 4, 5};
+
+
+
+    private int levNum() {
+        int levNum;
+        if (rowDelete >= 40) {
+            levNum = levArr[4];
+        } else if (rowDelete >= 30) {
+            levNum = levArr[3];
+        } else if (rowDelete >= 20) {
+            levNum = levArr[2];
+        } else if (rowDelete >= 10) {
+            levNum = levArr[1];
+        } else {
+            levNum = levArr[0];
+        }
+        return levNum;
+    }
+
+
+    private int levTime() {
+        int lev;
+        if (rowDelete >= 40) {
+            lev = 80;
+        } else if (rowDelete >= 30) {
+            lev = 310;
+        } else if (rowDelete >= 20) {
+            lev = 540;
+        } else if (rowDelete >= 10) {
+            lev = 770;
+        } else {
+            lev = 1000;
+        }
+        return lev;
+
+    }
 
 
     /**
@@ -54,6 +99,16 @@ public class Tetris extends JPanel {
      * @date 2019/3/19 0019 15:42
      */
     public Tetris() {
+        try {
+            URL cb;
+            File f = new File("E:\\soft\\git\\xlyu\\javahomework\\resource\\backmusic.wav");
+            cb = f.toURL();
+            AudioClip aau;
+            aau = Applet.newAudioClip(cb);
+            aau.play();
+        } catch (MalformedURLException e1) {
+            e1.printStackTrace();
+        }
         movingTetrimino = generateRandomTerimino();
         nextTetrimino = generateRandomTerimino();
         wall = new Cell[ROW][COL];//空墙体
@@ -92,7 +147,7 @@ public class Tetris extends JPanel {
 
 
             }
-        }, 0, 1000);
+        }, 0, levTime());
     }
 
     /**
@@ -140,10 +195,10 @@ public class Tetris extends JPanel {
     }
 
     /**
+     * @return
      * @Param
      * @description TODO 撞墙的判断方法
      * @date 2019/3/20 0020 20:12
-     * @return
      */
 
     private boolean hitWall(Tetrimino t) {
@@ -176,6 +231,7 @@ public class Tetris extends JPanel {
                 int code = e.getKeyCode();//接收键入值
                 switch (code) {
                     case KeyEvent.VK_SPACE:
+
                         movingTetrimino.rotate(true);
                         if (isOutBoundary(movingTetrimino)) {
                             movingTetrimino.rotate(false);
@@ -210,6 +266,16 @@ public class Tetris extends JPanel {
                         break;
 
                 }
+                try {
+                    URL cb;
+                    File f = new File("E:\\soft\\git\\xlyu\\javahomework\\resource\\press.wav");
+                    cb = f.toURL();
+                    AudioClip aau;
+                    aau = Applet.newAudioClip(cb);
+                    aau.play();
+                } catch (MalformedURLException e1) {
+                    e1.printStackTrace();
+                }
             }
         });
         //聚焦
@@ -219,10 +285,10 @@ public class Tetris extends JPanel {
     }
 
     /**
+     * @return
      * @Param
      * @description TODO 越界判断
      * @date 2019/3/20 0020 20:12
-     * @return
      */
 
     private boolean isOutBoundary(Tetrimino t) {
@@ -369,7 +435,11 @@ public class Tetris extends JPanel {
         g.setColor(Color.BLACK);
         g.drawString("消除的行数：" + Integer.toString(rowDelete), 300, 285);
         g.drawString("得分：" + Integer.toString(rowDelete * 10), 300, 230);
-
+        Font font2 = new Font("黑体", Font.BOLD, 18);
+        g.setFont(font2);
+        g.drawString("等级/" + Integer.toString(levNum()), 300, 175);
+        g.drawString("速度/" + Integer.toString(levTime()), 380, 175);
+        g.drawString("ms", 480, 175);
     }
 
     private void paintWall(Graphics g) {
