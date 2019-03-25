@@ -42,7 +42,6 @@ public abstract class Tetrimino {
         cells = new Cell[4];
         this.row = row;
         this.col = col;
-
     }
 
     /**

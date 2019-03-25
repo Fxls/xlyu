@@ -7,10 +7,14 @@ package tetris.view;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.applet.Applet;
+import java.applet.AudioClip;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -65,12 +69,13 @@ public class Tetris extends JPanel {
     /**
      * @return
      * @Param
-     * @description TODO 构造器
      * @date 2019/3/19 0019 15:42
+     * @description TODO 构造器
      */
     public Tetris() {
         addKeyBordListener();//Alt+Enter     create
         initTimer();//初始化定时器
+
     }
 
     /**
@@ -108,6 +113,11 @@ public class Tetris extends JPanel {
                 super.keyPressed(e);
                 int code = e.getKeyCode();//接收键入值
                 switch (code) {
+                    case KeyEvent.VK_E:
+                        if (gameState == RUNNING) {
+                            nextTetrimino = generateRandomTerimino();
+                        }
+                        break;
                     case KeyEvent.VK_S://s进入运行状态
                         if (gameState == READY || gameState == OVER) {
                             gameState = RUNNING;
@@ -318,13 +328,6 @@ public class Tetris extends JPanel {
     }
 
     /**
-     * @return
-     * @Param
-     * @description TODO 撞墙的判断方法
-     * @date 2019/3/20 0020 20:12
-     */
-
-    /**
      * @return boolean
      * @Param t={}
      * @description TODO 撞墙的判断
@@ -350,9 +353,10 @@ public class Tetris extends JPanel {
      * @date 2019/3/21 0021 15:19
      */
     private void startGame() {
-        //游戏开始，到结束之前都会一直声称随机方块和移动方块
+        //游戏开始，到结束之前都会一直生成随机方块和移动方块
         movingTetrimino = generateRandomTerimino();
         nextTetrimino = generateRandomTerimino();
+
         wall = new Cell[ROW][COL];//空墙体
         //初始化消行数
         rowDelete = 0;
@@ -513,8 +517,8 @@ public class Tetris extends JPanel {
      */
 
     public Tetrimino generateRandomTerimino() {
-//        int randomNum = (int) (Math.random() * 7);
-        int randomNum = 0;
+        int randomNum = (int) (Math.random() * 7);
+//        int randomNum = 0;
         switch (randomNum) {
             case 0:
                 return new TetriminoI(1, 5, ibackImage);
@@ -605,7 +609,10 @@ public class Tetris extends JPanel {
         nextTetrimino.paint(g, 250, 0);
         paintWall(g);
         paintGameInfo(g);
+
+//        o
     }
+
 
     /**
      * @return void

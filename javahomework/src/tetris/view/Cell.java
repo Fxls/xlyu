@@ -57,7 +57,9 @@ public class Cell {
                 (col - 1) * backImage.getHeight(null) + 15 + x,
                 (row - 1) * backImage.getWidth(null) + 15 + y,
                 null);
+
     }
+
 
     public void drop() {
         row++;
@@ -79,10 +81,10 @@ public class Cell {
     }
 
     /**
+     * @return
      * @Param
      * @description 重构左移
      * @date 2019/3/20 0020 13:01
-     * @return
      */
 
     public void moveLeft(int step) {

@@ -40,3 +40,4 @@ public class GameStart extends JFrame {
         gameStart.setVisible(true);//窗体可视化
     }
 }
+
