@@ -8,9 +8,6 @@ package javaSE1.day01;
 import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 /**
  * @program: javahomework
@@ -92,5 +89,7 @@ public class TaskNo7 {
         String[] s = {"Jay", "Chou", "have", "a", "daughter"};
         System.out.println(StringUtils.join(s, "-"));
     }
+
+
 }
 

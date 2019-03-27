@@ -21,6 +21,7 @@ import org.junit.Test;
  **/
 public class StringBuilder_Methods {
 
+
     @Test
     /**
      * @Param

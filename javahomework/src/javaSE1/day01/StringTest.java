@@ -43,8 +43,8 @@ public class StringTest {
         //false:都在堆中，但不是一个地址，他们是不同的
         System.out.println(str4 == str5);
 
-        //true:intern方法将hello添加到常量池中，并返回其在常量池中的地址，因为常量池中已经有了hello字符串，
-        // 所以intern方法直接返回地址；而s1在编译器就已经指向常量池了，因此s1和s6指向同一地址
+        /*true:intern方法将hello添加到常量池中，并返回其在常量池中的地址，因为常量池中已经有了hello字符串，
+         所以intern方法直接返回地址；而s1在编译器就已经指向常量池了，因此s1和s6指向同一地址*/
         System.out.println(str1 == str6);
     }
 

@@ -5,6 +5,8 @@
  */
 package javaSE1.day01;
 
+import org.junit.Test;
+
 /**
  * @program: javahomework
  * @description: 输出汉字--这里输出的是Unicode范围为4E00-9FA5的20902个汉字
