@@ -23,4 +23,12 @@ public class NumClassTest {
         System.out.println(d);
         System.out.println(d2);
     }
+
+    @Test
+    public void test() {
+        Number n = 15.0;
+        System.out.println(n.doubleValue());
+        System.out.println(n.longValue());
+        System.out.println(((Double) n).parseDouble("95"));
+    }
 }
