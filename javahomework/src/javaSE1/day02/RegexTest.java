@@ -7,6 +7,8 @@ package javaSE1.day02;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 /**
  * @program: javahomework
  * @description: 正则表达式测试
@@ -40,7 +42,29 @@ public class RegexTest {
     }
 
     @Test
+    /**
+     * @Param
+     * @description TODO 测试split功能
+     * @date 2019/3/28 0028 14:34
+     * @return void
+     */
     public void test3() {
+        String[] strArr;
+        String str = "1-8-8-5-5-0-5-2-3-4-0";
+        strArr = str.split("\\W");
+        System.out.println(Arrays.toString(strArr));
+    }
 
+    @Test
+    /**
+     * @Param
+     * @description TODO 测试replaceAll功能
+     * @date 2019/3/28 0028 14:37
+     * @return void
+     */
+    public void test4() {
+        String str = "1-8-8-5-5-0-5-2-3-4-0";
+        String str2 = str.replaceAll("\\d", "*");
+        System.out.println(str2);
     }
 }

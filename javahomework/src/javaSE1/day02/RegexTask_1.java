@@ -5,7 +5,6 @@
  */
 package javaSE1.day02;
 
-import org.junit.Test;
 
 import java.util.Scanner;
 

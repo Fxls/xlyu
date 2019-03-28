@@ -20,5 +20,8 @@ public class Palindrome {
         } else {
             System.out.println(sb + "不是回文");
         }
+        String str1 = "abc";
+        String str2 = "abc";
+        System.out.println(str1 == str2);
     }
 }

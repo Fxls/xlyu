@@ -5,7 +5,6 @@
  */
 package javaSE1.day02;
 
-import java.util.Scanner;
 
 /**
  * @program: javaHomework
@@ -20,7 +19,7 @@ public class SortString {
 
     public static void check_a_String() {
         String str = "flringonfaidbngdurgirgongoeig";
-        String str2 = str.replace("o","");
+        String str2 = str.replace("g","");
         System.out.println(str.length()-str2.length());
     }
 }

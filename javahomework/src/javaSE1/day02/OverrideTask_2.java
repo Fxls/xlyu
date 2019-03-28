@@ -47,8 +47,11 @@ public class OverrideTask_2 {
     public static void main(String[] args) {
         OverrideTask_2 o = new OverrideTask_2(5, 6);
         String str = o.toString();
-        System.out.println(str);
-        OverrideTask_2 o2 = new OverrideTask_2(6, 6);
-        System.out.println(o2.equals(o));
+        System.out.println(str);//OverrideTask_2{x=6, y=5}
+        OverrideTask_2 o2 = new OverrideTask_2(6, 5);
+        System.out.println(o2.toString());//OverrideTask_2{x=5, y=6}
+        System.out.println(o2.equals(o));//false:比较成员属性
+        System.out.println(o2 == o);//false：比较地址
+        System.out.println(o == o);//true
     }
 }
