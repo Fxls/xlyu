@@ -22,19 +22,26 @@ public class Promotion {
         Scanner sc = new Scanner(System.in);
         System.out.println("输入生产日期：yyyy-MM-dd");
         String dateOfManufacture = sc.next();
-        System.out.println("输入保质期：（天）");
-        int qualityGuaranteePeriod = sc.nextInt();
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date date = sdf.parse(dateOfManufacture);//固定
+        String regex = "\\d{4}-(([0][1-9])|([1][012]))-(([0][1-9])|([12]\\d)|([3][01]))";
+        boolean result = dateOfManufacture.matches(regex);
+        if (result == false) {
+            System.out.println("输入有误");
+            while (true) {
 
-        Calendar c = Calendar.getInstance();
-        c.setTime(date);
-        c.add(Calendar.DATE, (qualityGuaranteePeriod-14));
+            }
+        } else {
+            System.out.println("输入保质期：（天）");
+            int qualityGuaranteePeriod = sc.nextInt();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date manufacture = sdf.parse(dateOfManufacture);//固定
 
-        Date date1 = new Date(String.valueOf(c.getTime()));
-        System.out.println(sdf.format(date1));
-
-
+            Calendar c = Calendar.getInstance();
+            c.setTime(manufacture);
+            c.add(Calendar.DATE, (qualityGuaranteePeriod - 14));
+            c.set(Calendar.DAY_OF_WEEK, 4);
+            SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd");
+            System.out.println(sdf2.format(c.getTime()));
+        }
     }
 }

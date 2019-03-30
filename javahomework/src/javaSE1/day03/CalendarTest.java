@@ -40,8 +40,8 @@ public class CalendarTest {
         c1.set(Calendar.MONTH, Calendar.DECEMBER);//12月
         c1.set(Calendar.DATE, 11);//11日
         System.out.println(c1.getTime());//Thu Dec 11 16:52:25 CST 1997
-        c1.set(Calendar.DATE, 365);//过365天
-        System.out.println(c1.getTime());//Mon Nov 30 16:52:25 CST 1998
+        c1.set(Calendar.DATE, 11+365);//过365天
+        System.out.println(c1.getTime());//Fri Dec 11 16:52:25 CST 1998
         int dayOf = c1.get(c1.DAY_OF_MONTH);
         System.out.println(dayOf);
 
