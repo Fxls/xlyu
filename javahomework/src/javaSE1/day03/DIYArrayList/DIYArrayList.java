@@ -164,7 +164,7 @@ public class DIYArrayList<E> {
     }
 
     public static void main(String[] args) {
-        DIYArrayList<Integer> d1 = new DIYArrayList();
+        DIYArrayList<Integer> d1 = new DIYArrayList<>();
         /*遍历添加元素*/
         for (int i = 1; i <= 20; i++) {
             d1.add(i);

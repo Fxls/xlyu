@@ -1,1 +1,6 @@
 -1- Promotion.java
+-2- A
+-3- 简述contains和equals方法的关系。
+    - contains方法是用来判断一个集合是否包含另一个集合的全部元素，返回类型是boolean类型，而equals则是用来判断
+      两个对象的属性是否相同。
+-4- D
