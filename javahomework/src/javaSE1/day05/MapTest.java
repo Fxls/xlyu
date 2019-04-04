@@ -57,7 +57,7 @@ public class MapTest {
         map1.putAll(map);
         System.out.println(map1);//{1=!, 2=@, 3=#, 4=$, 5=%, 6=^, 7=&}
 
-        /*keyset:遍历Map中的key*/
+        /*keySet:遍历Map中的key*/
         Set<String> keySet = map.keySet();
         for (String key : keySet) {
             System.out.println(key);//key的值

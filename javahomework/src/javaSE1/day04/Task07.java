@@ -30,12 +30,8 @@ public class Task07 {
          * o1 < o2 return值小于0
          * o1 == o2 return 0；
          */
-        Collections.sort(emps, new Comparator<Emp>() {
-            @Override
-            public int compare(Emp o1, Emp o2) {
-                return (int) (o1.salary - o2.salary);
-            }
-        });
+        /*Lambda表达式，等价于匿名内部类*/
+        Collections.sort(emps, (o1, o2) -> (int) (o1.getSalary() - o2.getSalary()));
         System.out.println(emps);//[Emp{name='Smith', age=23, gender=m, salary=3000.0}, Emp{name='Allen', age=21, gender=f, salary=4000.0}, Emp{name='Terry', age=25, gender=m, salary=6000.0}]
     }
 }

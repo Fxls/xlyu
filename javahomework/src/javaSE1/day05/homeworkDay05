@@ -1,0 +1,26 @@
+-1- 简述Map集合的用处。
+    - Map集合是一个接口，主要适用于存放键值对的。特点是键值对的映射。它的一个常用实现类是HashMap，底层原理
+      是位桶数组，也就是数组中的数据为链表类型，通过获取key的哈希码，进行hash算法获取hash值返回地址到对应的
+      位桶数组中，hash值在同一范围类的对象以链表形式存储，如果hash计算的值超出数组范围，可以扩容数组，整个
+      位桶数组将会重组。简单来说就是数组和链表结合，再通过hash计算来合理分配存储位置。
+-2- 统计“good good study,day day up”中个字符出现的次数。
+    - Statistics.java
+-3- 简述hashCode方法的意义
+    - 哈希码是按照某种规则生成的int类型的数值
+      哈希码并不是完全唯一的。
+      让同一个类的对象按照自己不同的特征尽量的有不同的哈希码，但不是说不同的对象哈希码就一定不同，也有相同的情况。
+      所以可以通过hash算法来合理分配。而hashCode则是提供了hash的数据来源。
+-4- 重写hash算法
+-5- 简述Map对象的两种遍历方式。
+    - Set <K>  keySet();
+        - 该方法会将当前Map中的key值存入一个set中返回
+    - Set <Entry<K,V>>  entrySet();
+        - 该方法会将当前Map中每一组key——value对封装为一个Entry对象并存入一个set中返回
+-6- 在统计重复字符的程序的基础上遍历
+    - Statistics.java
+
+-7-   Statistics.java
+-8- Task.java（查看HelloWorld.txt大小）
+-9- Task.java（查看src大小）
+-10- Task.java 创建多级目录（a/b/c）
+-11- Task.java 删除10创建的目录及子目录

@@ -158,15 +158,15 @@ public class ArrayListTest {
         for (int i = 0; i < 10; i++) {
             list.add((int) (Math.random() * 100));
         }
-        System.out.println(list);
+        System.out.println(list);//[12, 34, 65, 93, 67, 70, 38, 57, 27, 36]
 
         /*用List自带的sort完成排序*/
         list.sort(Integer::compareTo);
-        System.out.println(list);
+        System.out.println(list);//[12, 27, 34, 36, 38, 57, 65, 67, 70, 93]
 
         /*使用Collections.sort方法完成排序*/
         Collections.sort(list);
-        System.out.println(list);
+        System.out.println(list);//[12, 27, 34, 36, 38, 57, 65, 67, 70, 93]
 
     }
 }

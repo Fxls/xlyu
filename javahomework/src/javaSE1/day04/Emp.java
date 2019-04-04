@@ -12,10 +12,10 @@ package javaSE1.day04;
  * @create: 2019-04-02 09:43
  **/
 public class Emp {
-    String name;
-    int age;
-    char gender;
-    double salary;
+    private String name;
+    private int age;
+    private char gender;
+    private double salary;
 
     public Emp(String name, int age, char gender, double salary) {
         this.age = age;
@@ -32,5 +32,13 @@ public class Emp {
                 ", gender=" + gender +
                 ", salary=" + salary +
                 '}';
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 }

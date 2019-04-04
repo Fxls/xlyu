@@ -1,0 +1,19 @@
+-1- 输出当前目录及其子目录下所有.jar文件.
+    - Task01.java
+-2- 简述RAFde实例化方式
+    -2.1    RandomAccessFile(File file, String mode);
+        - 通过已经实例化过的File对象作为参数
+    -2.2    RandomAccessFile(String filename, String mode)
+        - 直接输入文件的路径名作为参数
+-3- 简述RAF中read方法和write使用int型存储byte数据的方式和原因
+    - 1）RandomAccessFile提供了一个可以从文件中读取字节的方法:
+       int read()
+       该方法会从文件中读取一个byte(8位) 填充到int的低八位, 高24位为0, 返回值范围正数: 0~255,
+       如果返回-1表示读取到了文件末尾! 每次读取后自动移动文件指针, 准备下次读取。
+      2）RandomAccessFile提供了一个可以向文件中写出字节的方法:
+       void write(int d)
+       该方法会根据当前指针所在位置处写入一个字节，是将参数int的”低8位”写出。
+      3）使用int类型存储byte数据，这是因为，RandomAccessFile类的read方法，能读到的数据有257个数
+-4- 实现文件复制功能
+    - Task04.java
+-5- NEWYORK
