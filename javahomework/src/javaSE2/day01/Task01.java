@@ -6,7 +6,6 @@
 package javaSE2.day01;
 
 import java.io.File;
-import java.io.FileFilter;
 
 /**
  * @program: javaHomework

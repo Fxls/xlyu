@@ -25,6 +25,8 @@ public class FileTest {
     public void test() {
         /*使用不同的构造器创建实例，可以用separator表示路径分隔符*/
         File file = new File("E:/soft/git/xlyu/javahomework/resource");
+
+        /*File有多种构造，根据具体情况选择不同的构造器*/
         File file1 = new File(file, "I.png");
 
         /*isFile判断对象是否为一个文件*/
@@ -32,9 +34,10 @@ public class FileTest {
         System.out.println(file1.isFile());//true
 
         /*length方法：文件所占用的字节量*/
+        System.out.println(file.length());//4096
         System.out.println(file1.length());//3008
 
-        /*判断File对象是否存在*/
+        /*判断File对象是否存在（文件&目录）*/
         System.out.println(file.exists());//true
         System.out.println(file1.exists());//true
     }

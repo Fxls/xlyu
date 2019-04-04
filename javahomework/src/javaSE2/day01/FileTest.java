@@ -36,12 +36,7 @@ public class FileTest {
     @Test
     public void testFileFilter() {
         File dir = new File(".");//.表示当前目录
-        File[] list = dir.listFiles(new FileFilter() {
-            @Override
-            public boolean accept(File pathname) {
-                return pathname.getName().endsWith("a");
-            }
-        });
+        File[] list = dir.listFiles(pathname -> pathname.getName().endsWith("a"));
         for (File file : list) {
             System.out.print(file);//.\.idea
         }

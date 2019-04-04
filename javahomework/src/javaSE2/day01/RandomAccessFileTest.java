@@ -68,9 +68,9 @@ public class RandomAccessFileTest {
     @Test
     public void skipBytes() throws IOException {
         RandomAccessFile raf = new RandomAccessFile("E:\\soft\\git\\xlyu\\javahomework\\FileTest\\RandomAccessFileTest.txt", "r");
-        System.out.println("指针位置" + raf.getFilePointer());
+        System.out.println("指针位置" + raf.getFilePointer());//0
         raf.skipBytes(2);
-        System.out.println("指针位置"+raf.getFilePointer());
+        System.out.println("指针位置"+raf.getFilePointer());//2
     }
 
 }
