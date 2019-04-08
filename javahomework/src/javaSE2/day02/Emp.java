@@ -15,7 +15,7 @@ import java.util.Objects;
  * @create: 2019-04-06 11:22
  **/
 public class Emp implements Serializable {
-    public static final long serialVersionUID = 121l;
+    private static final long serialVersionUID = -5430387980688846648L;
     private String name;
     private int age;
     private double salary;
