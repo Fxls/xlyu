@@ -42,3 +42,26 @@
 -7- printStackTrace()的作用。
     -   输出错误信息，并查询错误发生处
 
+/**************************************************************************/
+
+-1- try block
+    finally block
+    b>25,b=100
+    100
+-2- try block
+    finally block
+    b>25,b=100
+    200
+-3- 同1
+-4- FINALLY
+-5- try block
+    catch block
+    finally block
+    b>25,b=35
+    204
+-6- try block
+    catch block
+    finally block
+    b>25,b=35
+    85
+

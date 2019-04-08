@@ -6,6 +6,7 @@
 package tetris.view;
 
 import java.awt.*;
+import java.io.Serializable;
 
 /**
  * @program: javahomework
@@ -13,7 +14,8 @@ import java.awt.*;
  * @author: xlyu
  * @create: 2019-03-19 13:17
  **/
-public class Cell {
+public class Cell implements Serializable {
+    private static final long serialVersionUID = 4047907580014589214L;
     int row;
     int col;
     Image backImage;

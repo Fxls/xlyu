@@ -6,6 +6,7 @@
 package tetris.view;
 
 import java.awt.*;
+import java.io.Serializable;
 
 /**
  * @program: javahomework
@@ -13,7 +14,9 @@ import java.awt.*;
  * @author: xlyu
  * @create: 2019-03-19 13:32
  **/
-public class TetriminoO extends Tetrimino {
+public class TetriminoO extends Tetrimino implements Serializable {
+    private static final long serialVersionUID = 6019547507258281406L;
+
     public TetriminoO(int row, int col, Image backImage) {
         super(row, col, backImage);
         cells[0] = new Cell(row, col, backImage);

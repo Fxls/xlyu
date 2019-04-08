@@ -5,12 +5,14 @@
  */
 package tetris.view;
 
+import tetris.GameStart;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.io.IOException;
+import java.io.*;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -20,7 +22,8 @@ import java.util.TimerTask;
  * @author: xlyu
  * @create: 2019-03-19 12:59
  **/
-public class Tetris extends JPanel {
+public class Tetris extends JPanel implements Serializable {
+    private static final long serialVersionUID = -1826139403133946406L;
     //图片资源
     private static Image backImage;
     private static Image tbackImage;

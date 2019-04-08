@@ -6,6 +6,7 @@
 package tetris.view;
 
 import java.awt.*;
+import java.io.Serializable;
 
 /**
  * @program: javahomework
@@ -13,12 +14,14 @@ import java.awt.*;
  * @author: xlyu
  * @create: 2019-03-19 13:32
  **/
-public class TetriminoJ extends Tetrimino {
+public class TetriminoJ extends Tetrimino implements Serializable {
+
     //表示四种状态的方块组合
     private static final int DOWN = 1;
     private static final int RIGHT = 2;
     private static final int UP = 3;
     private static final int LEFT = 4;
+    private static final long serialVersionUID = -3609348721425092786L;
     //用于接收状态的变量
     private int state;
 

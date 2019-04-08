@@ -8,6 +8,7 @@ package tetris;
 import tetris.view.Tetris;
 
 import javax.swing.*;
+import java.io.Serializable;
 
 /**
  * @program: javaHomework
@@ -15,10 +16,11 @@ import javax.swing.*;
  * @author: xlyu
  * @create: 2019-03-19 08:40
  **/
-public class GameStart extends JFrame {
+public class GameStart extends JFrame implements Serializable {
     //设置窗口规格的静态变量
     public static final int WEIGHT = 530;
     public static final int HEIGHT = 570;
+    private static final long serialVersionUID = -8756025802870565346L;
 
     public static void main(String[] args) {
         start();
@@ -30,7 +32,7 @@ public class GameStart extends JFrame {
      * @description TODO 开始方法
      * @date 2019/3/21 0021 15:38
      */
-    private static void start() {
+    public static void start() {
         GameStart gameStart = new GameStart();
         gameStart.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//开关设置
         gameStart.setSize(WEIGHT, HEIGHT);
