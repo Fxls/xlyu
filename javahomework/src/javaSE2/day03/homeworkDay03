@@ -2,13 +2,13 @@
     -   Task01.java
 -2- 简述Error和Exception的区别。
     -   Error是错误
-        -   1．可以是可被控制(checked) 或不可控制的(unchecked)。
-            2．表示一个由程序员导致的错误。
-            3．应该在应用程序级被处理。
-    -   Exception是异常
         -   1．总是不可控制的(unchecked)。
             2．经常用来用于表示系统错误或低层资源的错误。
             3．如何可能的话，应该在系统级被捕捉。
+    -   Exception是异常
+        -   1．可以是可被控制(checked) 或不可控制的(unchecked)。
+            2．表示一个由程序员导致的错误。
+            3．应该在应用程序级被处理。
 -3- A、错误。最后一个catch不一定是前一个的父类，但是如果有父类异常，一定要放在最后一个catch语句
     B、try——catch——finally
     C、正确
