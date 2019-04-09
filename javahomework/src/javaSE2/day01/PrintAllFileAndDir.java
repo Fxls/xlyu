@@ -14,6 +14,7 @@ import java.io.File;
  * @create: 2019-04-04 10:02
  **/
 public class PrintAllFileAndDir {
+
     public static void main(String[] args) {
         File file = new File("E:\\soft\\git\\xlyu\\javahomework\\src\\javaSE1");
         printName(file);
@@ -21,14 +22,15 @@ public class PrintAllFileAndDir {
 
     private static void printName(File src) {
         /*使用递归方法来打印所有文件和目录*/
-        System.out.println(src.getName());
+        System.out.println("-" + src.getName());
         if (null == src || !src.exists()) {
             return;
         } else if (src.isDirectory()) {
+
             for (File f : src.listFiles()) {
                 printName(f);
             }
         }
-
     }
+
 }
