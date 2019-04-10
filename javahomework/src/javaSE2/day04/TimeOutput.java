@@ -32,5 +32,6 @@ public class TimeOutput {
         time.setDaemon(true);
         time.start();
         Thread.sleep(30000);
+        System.out.println("main线程结束");
     }
 }
