@@ -49,5 +49,7 @@ public class BottomPanel extends JPanel {
         //边框
         setBorder(new TitledBorder("send area"));
         setBackground(new Color(0xBBFFFF));
+
+        sendBtn.setEnabled(false);
     }
 }

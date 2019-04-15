@@ -30,6 +30,7 @@ public class ServerTopPanel extends TopPanel {
         add(portText);
         add(connBtn);
         add(disconnBtn);
+        disconnBtn.setEnabled(false);
 
         /**
          * 面板设置

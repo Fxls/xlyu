@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.time.LocalDateTime;
+
 
 /**
  * @program: chatRoom
@@ -26,6 +28,7 @@ public class Client extends JFrame {
     private ClientTopPanel top;
     private CenterPanel center;
     private BottomPanel bottom;
+
 
     //用于执行io操作的变量
     private String ip;
@@ -41,6 +44,12 @@ public class Client extends JFrame {
     private static final String PUBLIC_TALK = "everybodyHappyTalk";
 
     private static final String ANNOUNCEMENT = "群通告";
+
+    private static final String INTERRUPT_REQUEST = "中断请求";
+
+    private static final String SERVER_STOP = "serverStop";
+
+    private static volatile boolean exit = false;
 
     //套接字对象变量
     private Socket clientSocket;
@@ -81,6 +90,30 @@ public class Client extends JFrame {
         addConnBtnAction();
         //send按钮响应
         addSendBtnAction();
+
+        //断开按钮响应
+        addDisConnBtnAction();
+    }
+
+    /**
+     * @return
+     * @Param
+     * @description TODO 断开按钮的功能实现
+     * @date 2019/4/15 11:50
+     */
+    private void addDisConnBtnAction() {
+        top.getDisconnBtn().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pw.println(buildClientSendMsg(INTERRUPT_REQUEST, nickname, INTERRUPT_REQUEST));
+
+
+                //中断请求成功，断开按钮不可用，连接按钮可用
+                top.disconnBtn.setEnabled(false);
+                top.connBtn.setEnabled(true);
+                bottom.getSendBtn().setEnabled(false);
+            }
+        });
     }
 
     /**
@@ -93,33 +126,35 @@ public class Client extends JFrame {
         bottom.getSendBtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 //获取send文本框中内容
                 String sendText = bottom.getSendText().getText();
-
                 //发送选中昵称
                 String nickname = (String) CenterPanel.getUserList().getSelectedValue();
-
-
-                //解析sendText
-                if (nickname != null) {
-                    sendText = buildClientSendMsg(CLIENT_TO_CLIENT, nickname, sendText);
+                /**
+                 * 如果选中的是自己的id系统提示信息，如果是其他人进入私聊模式，如果不选默认群聊
+                 */
+                if (nickname != null && nickname.equals(top.getNicknameText().getText())) {
+                    CenterPanel.getContenArea().append(buildNoticeMsg("你很无聊☺"));
+                    return;
+                } else if (nickname != null && !nickname.equals(top.getNicknameText().getText())) {
+                    if (nickname.equals("All Friends")) {
+                        sendText = buildClientSendMsg(PUBLIC_TALK, "every", sendText);
+                        pw.println(sendText);
+                        return;
+                    } else {
+                        sendText = buildClientSendMsg(CLIENT_TO_CLIENT, nickname, sendText);
+                    }
                 } else {
                     nickname = "everyone";
                     sendText = buildClientSendMsg(PUBLIC_TALK, nickname, sendText);
+                    pw.println(sendText);
+                    return;
                 }
-
                 //输出流发送
                 pw.println(sendText);
-
-                String type = parseMsgType(sendText);
                 String name = parseMsgName(sendText);
                 String content = parseMsgContent(sendText);
-
-                //显示自己发出的内容
                 CenterPanel.getContenArea().append(buildSendNoticeMsg(name, content));
-
-
             }
         });
     }
@@ -146,9 +181,17 @@ public class Client extends JFrame {
      * @date 2019/4/13 11:14
      */
     private String buildSendNoticeMsg(String toName, String sendText) {
-
+        LocalDateTime time = LocalDateTime.now();
         StringBuilder sb = new StringBuilder();
-        sb.append(nickname).append(" " + "To ").append(toName).append(":").
+        sb.append(time + "\t").append(nickname).append(" " + "To ").append(toName).append(":").
+                append("\n").append("\t").append(sendText).append("\n");
+        return sb.toString();
+    }
+
+    private String buildPublicTalk(String name, String sendText) {
+        LocalDateTime time = LocalDateTime.now();
+        StringBuilder sb = new StringBuilder();
+        sb.append(time + "\t").append(name).append(" " + "To ").append("everyone").append(":").
                 append("\n").append("\t").append(sendText).append("\n");
         return sb.toString();
     }
@@ -170,6 +213,9 @@ public class Client extends JFrame {
         connBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+
+                exit = false;
 
                 //获取ip地址
                 ip = top.getIpText().getText();
@@ -208,7 +254,7 @@ public class Client extends JFrame {
                         Thread receive = new Thread(new Runnable() {
                             @Override
                             public void run() {
-                                while (true) {
+                                while (exit == false) {
                                     try {
                                         //解密
                                         String receive = br.readLine();
@@ -221,43 +267,80 @@ public class Client extends JFrame {
                                             //广播当前在线成员
                                             case BRORDCASR_ONLINE_USERS:
                                                 CenterPanel.getListModel().clear();
+                                                CenterPanel.getListModel().addElement("All Friends");
                                                 String[] onlineUsers = content.split(",");
                                                 for (String onlineUser : onlineUsers) {
                                                     CenterPanel.getListModel().addElement(onlineUser);
                                                 }
                                                 break;
                                             case PUBLIC_TALK:
-                                                CenterPanel.getContenArea().append(buildSendNoticeMsg(name, content));
+                                                CenterPanel.getContenArea().append(buildPublicTalk(name, content));
                                                 break;
                                             case CLIENT_TO_CLIENT:
                                                 //显示别人私发的
-                                                CenterPanel.getContenArea().append(buildSendNoticeMsg(name, content));
+                                                CenterPanel.getContenArea().append(buildReceivePrivate(name, content));
                                                 break;
                                             case ANNOUNCEMENT:
                                                 CenterPanel.getContenArea().append(buildNoticeMsg(content));
                                                 break;
+                                            case INTERRUPT_REQUEST:
+                                                //TODO 客户端请求断开连接后，服务端返回指令，表示可以断开连接了
+
+                                                CenterPanel.getListModel().clear();
+
+                                                CenterPanel.getContenArea().append(buildNoticeMsg("您已断开了与服务器的连接"));
+                                                top.disconnBtn.setEnabled(false);
+                                                bottom.getSendBtn().setEnabled(false);
+                                                top.connBtn.setEnabled(true);
+                                                exit = true;
+                                                break;
+                                            case SERVER_STOP:
+                                                CenterPanel.getListModel().clear();
+
+                                                CenterPanel.getContenArea().append(buildNoticeMsg("服务器已停止工作,5s后将关闭该客户端"));
+                                                top.disconnBtn.setEnabled(false);
+                                                bottom.getSendBtn().setEnabled(false);
+                                                top.connBtn.setEnabled(true);
+                                                Thread.sleep(5000);
+                                                System.exit(0);
+                                                break;
                                         }
-
-
                                     } catch (IOException e1) {
                                         break;
+                                    } catch (InterruptedException e1) {
+                                        e1.printStackTrace();
                                     }
                                 }
+                                if (exit == true) {
+                                    return;
+                                }
+
                             }
+
                         });
                         receive.start();
 
                     } catch (IOException e1) {
                         e1.printStackTrace();
-//                    System.out.println("连接服务器失败");
+
                         CenterPanel.getContenArea().append(buildNoticeMsg("连接服务器失败！"));
                         return;
                     }
-//                System.out.println("成功连接服务器");
+
                     CenterPanel.getContenArea().append(buildNoticeMsg("连接服务器成功！"));
+                    top.connBtn.setEnabled(false);
+                    top.disconnBtn.setEnabled(true);
+                    bottom.getSendBtn().setEnabled(true);
                 }
             }
         });
+    }
+
+    private String buildReceivePrivate(String name, String content) {
+        LocalDateTime time = LocalDateTime.now();
+        StringBuilder sb = new StringBuilder();
+        sb.append(time + "\t").append(name).append("对我说：").append("\n").append("\t").append(content).append("\n");
+        return sb.toString();
     }
 
 
@@ -358,8 +441,9 @@ public class Client extends JFrame {
      * @date 2019/4/13 10:15
      */
     private String buildNoticeMsg(String string) {
+        LocalDateTime time = LocalDateTime.now();
         StringBuilder sb = new StringBuilder();
-        sb.append("【系统消息】").append(":").append(string).append("\n");
+        sb.append(time + "\t").append("【系统消息】").append(":").append(string).append("\n");
         return sb.toString();
     }
 

@@ -25,7 +25,8 @@ public class ClientTopPanel extends TopPanel {
     private JTextField ipText;
     //昵称输入框
     private JTextField nicknameText;
-    public ClientTopPanel(){
+
+    public ClientTopPanel() {
         super();
 
         /**
@@ -55,6 +56,11 @@ public class ClientTopPanel extends TopPanel {
 
         add(connBtn);
         add(disconnBtn);
+
+
+        //开始时，断开按钮处于禁用状态
+        disconnBtn.setEnabled(false);
+
 
         /**
          * 面板设置

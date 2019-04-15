@@ -46,19 +46,42 @@ public class Server extends JFrame {
 
     private static final String ANNOUNCEMENT = "群通告";
 
+    private static final String INTERRUPT_REQUEST = "中断请求";
+
+    private static final String SERVER_STOP = "serverStop";
+
+    private static volatile boolean exit = false;
+
     private Server() {
         //组件初始化
         initComponent();
         //窗体初始化
         initFrameConfig();
+        //button事件
+        addBtnAction();
 
+
+    }
+
+    private void addBtnAction() {
+        //连接按钮事件
+        addConnAction();
+    }
+
+    private void addConnAction() {
         //start响应
         top.getConnBtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 //1、获取端口号
                 String portStr = top.getPortText().getText();
-                port = Integer.valueOf(portStr);
+                try {
+                    port = Integer.valueOf(portStr);
+                } catch (NumberFormatException e1) {
+                    CenterPanel.getContenArea().append(buildNoticeMsg("请检查端口"));
+                    return;
+                }
 
 
                 /**
@@ -66,16 +89,22 @@ public class Server extends JFrame {
                  */
 
                 if (portJudge(portStr) == false) {
-                    CenterPanel.getContenArea().append("端口错误！！");
+                    CenterPanel.getContenArea().append(buildNoticeMsg("端口错误"));
                 } else {
 
                     //创建服务端ServerSocket
                     try {
                         server = new ServerSocket(port);
+                        exit = false;
+                        CenterPanel.getContenArea().append(buildNoticeMsg("服务器启动成功"));
                     } catch (IOException e1) {
                         CenterPanel.getContenArea().append(buildNoticeMsg("服务器启动失败"));
                     }
-                    CenterPanel.getContenArea().append(buildNoticeMsg("服务器启动成功"));
+
+
+                    top.disconnBtn.setEnabled(true);
+                    top.connBtn.setEnabled(false);
+                    bottom.getSendBtn().setEnabled(true);
 
                     //监听端口
 
@@ -83,9 +112,14 @@ public class Server extends JFrame {
                     Thread acceptTh = new Thread(new Runnable() {
                         @Override
                         public void run() {
-                            while (true) {
+                            while (exit == false) {
                                 try {
+
+
                                     Socket client = server.accept();
+
+                                    //关闭服务器的操作
+
 
                                     //读取客户端昵称
                                     BufferedReader br = new BufferedReader(new InputStreamReader(client.getInputStream()));
@@ -103,10 +137,10 @@ public class Server extends JFrame {
                                     //获取用户列表的昵称
                                     StringBuilder sb = new StringBuilder();
                                     //在线人数
-                                    int onlieCount = CenterPanel.getListModel().getSize();
+                                    int olineCount = CenterPanel.getListModel().getSize();
 
                                     //遍历赋值
-                                    for (int i = 0; i < onlieCount; i++) {
+                                    for (int i = 0; i < olineCount; i++) {
                                         String users = (String) CenterPanel.getListModel().get(i);
                                         sb.append(users).append(",");
                                     }
@@ -143,26 +177,12 @@ public class Server extends JFrame {
                                             String sendText = bottom.getSendText().getText();
                                             String nickname = "everyone";
                                             sendText = buildServerSendMsg(ANNOUNCEMENT, nickname, sendText);
-
-                                            String type = parseMsgType(sendText);
-                                            String name = parseMsgName(sendText);
-                                            String content = parseMsgContent(sendText);
-
                                             try {
-                                                for (Map.Entry<String, Socket> entry : entrySet) {
-                                                    Socket tips = entry.getValue();
-                                                    PrintWriter pw = new PrintWriter(tips.getOutputStream(), true);
-                                                    pw.println(sendText);
-                                                }
-
-
-                                                //显示自己发出的内容
-                                                CenterPanel.getContenArea().append(buildNoticeMsg(content));
+                                                PrintWriter pw = new PrintWriter(client.getOutputStream(), true);
+                                                pw.println(sendText);
                                             } catch (IOException e1) {
                                                 e1.printStackTrace();
                                             }
-
-
                                         }
                                     });
 
@@ -187,8 +207,8 @@ public class Server extends JFrame {
                                                             CenterPanel.getContenArea().append(buildReceiveNoticeMsg(nickname, content));
                                                             for (Map.Entry<String, Socket> entry : entrySet) {
                                                                 Socket tips = entry.getValue();
-                                                                PrintWriter pw = new PrintWriter(tips.getOutputStream(), true);
-                                                                pw.println(receive);
+                                                                PrintWriter pwPub = new PrintWriter(tips.getOutputStream(), true);
+                                                                pwPub.println(buildServerSendMsg(PUBLIC_TALK, nickname, content));
                                                             }
                                                             break;
                                                         case CLIENT_TO_CLIENT:
@@ -199,9 +219,39 @@ public class Server extends JFrame {
                                                                 if (entry.getKey().equals(name)) {
                                                                     Socket client = entry.getValue();
                                                                     PrintWriter pw = new PrintWriter(client.getOutputStream(), true);
-                                                                    pw.println(receive);
+                                                                    pw.println(buildServerSendMsg(CLIENT_TO_CLIENT, nickname, content));
                                                                 }
                                                             }
+                                                            break;
+                                                        case INTERRUPT_REQUEST:
+
+                                                            //TODO 接收中断请求后，清空相关的所有内容
+                                                            PrintWriter pw = new PrintWriter(client.getOutputStream(), true);
+
+                                                            clients.remove(name, client);
+                                                            CenterPanel.getListModel().removeElement(name);
+                                                            StringBuilder sb = new StringBuilder();
+                                                            //在线人数
+                                                            int olineCount = CenterPanel.getListModel().getSize();
+                                                            for (int i = 0; i < olineCount; i++) {
+                                                                String users = (String) CenterPanel.getListModel().get(i);
+                                                                sb.append(users).append(",");
+                                                            }
+                                                            String sendMsg = buildServerSendMsg(BRORDCASR_ONLINE_USERS, "sever", sb.toString());
+                                                            for (Map.Entry<String, Socket> entry : entrySet) {
+                                                                Socket tips = entry.getValue();
+                                                                PrintWriter tipsPw = null;
+                                                                try {
+                                                                    tipsPw = new PrintWriter(tips.getOutputStream(), true);
+                                                                } catch (IOException e1) {
+                                                                    e1.printStackTrace();
+                                                                }
+                                                                tipsPw.println(sendMsg);
+                                                            }
+
+                                                            CenterPanel.getContenArea().append(buildNoticeMsg(name + "已经断开与服务器的连接"));
+                                                            pw.println(buildServerSendMsg(INTERRUPT_REQUEST, name, INTERRUPT_REQUEST));
+
                                                             break;
                                                     }
                                                 } catch (IOException e1) {
@@ -212,6 +262,37 @@ public class Server extends JFrame {
                                     });
                                     receiveTh.start();
 
+                                    top.disconnBtn.addActionListener(new ActionListener() {
+                                        @Override
+                                        public void actionPerformed(ActionEvent e) {
+
+                                            //连接按键可见
+                                            top.getConnBtn().setEnabled(true);
+                                            //发送按键不可见
+                                            bottom.getSendBtn().setEnabled(false);
+                                            //断开不可见
+                                            top.getDisconnBtn().setEnabled(false);
+                                            try {
+                                                CenterPanel.getListModel().clear();
+                                                Thread.sleep(5000);
+                                                for (Map.Entry<String, Socket> entry : entrySet) {
+                                                    Socket tips = entry.getValue();
+                                                    PrintWriter pwPub = new PrintWriter(tips.getOutputStream(), true);
+                                                    pwPub.println(buildServerSendMsg(SERVER_STOP, "everyone", SERVER_STOP));
+                                                }
+
+
+                                                Thread.sleep(5000);
+                                                System.exit(0);
+
+                                            } catch (IOException e1) {
+                                                e1.printStackTrace();
+                                            } catch (InterruptedException e1) {
+                                                e1.printStackTrace();
+                                            }
+                                        }
+                                    });
+
 
                                 } catch (IOException e1) {
                                     CenterPanel.getContenArea().append(buildNoticeMsg("连接失败"));
@@ -220,7 +301,11 @@ public class Server extends JFrame {
 
                                 CenterPanel.getContenArea().append(buildNoticeMsg("连接成功"));
                             }
+                            if (exit == true) {
+                                return;
+                            }
                         }
+
                     });
                     acceptTh.start();
                 }
@@ -319,6 +404,9 @@ public class Server extends JFrame {
         String portRedex = "([0-9]|[1-9]\\d{1,3}|[1-5]\\d{4}|6[0-4]\\d{4}|65[0-4]\\d{2}|655[0-2]\\d|6553[0-5])";
         if (portStr.matches(portRedex)) {
             return true;
+        }
+        if (portStr == null) {
+            return false;
         }
         CenterPanel.getContenArea().append(buildNoticeMsg("请输入正确的端口号"));
         return false;
