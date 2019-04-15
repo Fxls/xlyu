@@ -90,6 +90,6 @@ public class CenterPanel extends JSplitPane {
 
     public CenterPanel() {
         super(JSplitPane.HORIZONTAL_SPLIT, leftPanel, rightPanel);
-        setDividerLocation(400);
+        setDividerLocation(450);
     }
 }
