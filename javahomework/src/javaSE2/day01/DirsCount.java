@@ -22,6 +22,10 @@ public class DirsCount {
         System.out.println("javahomework大小为：" + length);//53962034
     }
 
+    /**
+     * 递归思想
+     * @param src
+     */
     private static void count(File src) {
         if (null != src && src.exists()) {
             if (src.isFile()) {

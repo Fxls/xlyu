@@ -23,6 +23,7 @@ public class Number implements Runnable {
     public void run() {
         synchronized (lock) {
             for (int i = 1; i < 53; i++) {
+
                 if (i > 1 && i % 2 == 1) {
                     System.out.print("");
                 }
@@ -31,6 +32,9 @@ public class Number implements Runnable {
 
                     //先释放锁,唤醒其他线程,再使本线程阻塞
                     lock.notify();
+                    if (i == 52) {
+                        break;
+                    }
                     try {
                         lock.wait();
                     } catch (InterruptedException e) {

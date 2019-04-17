@@ -23,7 +23,7 @@ public class Client {
         Socket client = new Socket("127.0.0.1", 8111);
 
         //2、连接成功可以进行后续操作
-        OutputStream os = client.getOutputStream();
+               OutputStream os = client.getOutputStream();
         PrintWriter pw = new PrintWriter(os, true);
 
         LocalDate ld = LocalDate.now();
@@ -33,12 +33,11 @@ public class Client {
         Scanner sc = new Scanner(System.in);
         while (true) {
             String input = sc.next();
-            pw.println(input);
             if ("退出".equals(input)) {
                 break;
             }
+            pw.println(input);
         }
-
         client.close();
     }
 }

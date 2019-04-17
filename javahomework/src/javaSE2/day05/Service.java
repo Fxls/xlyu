@@ -17,7 +17,6 @@ import java.net.Socket;
  **/
 public class Service {
     public static void main(String[] args) throws IOException {
-
         //1、创建服务端对象
         ServerSocket service = new ServerSocket(8111);
 
@@ -29,6 +28,7 @@ public class Service {
         InputStreamReader isr = new InputStreamReader(is);
         BufferedReader br = new BufferedReader(isr);
 
+        //读操作
         while (true) {
             String str = br.readLine();
             if (str==null) {

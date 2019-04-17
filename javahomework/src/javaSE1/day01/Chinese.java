@@ -5,7 +5,6 @@
  */
 package javaSE1.day01;
 
-import org.junit.Test;
 
 /**
  * @program: javahomework

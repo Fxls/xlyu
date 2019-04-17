@@ -7,10 +7,7 @@ package javaSE2.day02;
 
 import org.junit.Test;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.*;
 
 /**
  * @program: javaHomework
@@ -62,14 +59,16 @@ public class FilesCopy {
     public void test3() throws Exception {
         FileInputStream fis = new FileInputStream("demo/BOS.txt");
         FileOutputStream fos = new FileOutputStream("demo/BOS_copy3.txt");
-        BufferedInputStream bis = new BufferedInputStream(fis);
-        BufferedOutputStream bos = new BufferedOutputStream(fos);
-        int length = -1;
-        byte[] bytes = new byte[10];
-        while ((length = bis.read(bytes)) != -1) {
-            bos.write(bytes, 0, length);
+        BufferedReader br = new BufferedReader(new InputStreamReader(fis));
+
+        String read = null;
+        String str = "";
+        while ((read = br.readLine()) != null) {
+            str+=read;
         }
-        bis.close();
-        bos.close();
+        PrintWriter pw = new PrintWriter(fos, true);
+        pw.println(str);
+
+
     }
 }

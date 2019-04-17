@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<user id="userId">
+
+    event log
+    <ds name="dsName">
+        <![CDATA[
+        这里是文本内容，由CDATA完成的。</ds>
+        ]]>
+    </ds>
+</user>
