@@ -3,7 +3,7 @@
  * @Date 2019/4/11
  * @Description
  */
-package chatRoom;
+package chatRoom.gui;
 
 import javax.swing.*;
 
@@ -22,6 +22,8 @@ public class TopPanel extends JPanel {
     protected JButton connBtn;
     //断开按钮
     protected JButton disconnBtn;
+    //
+
 
     //port输入框
     protected JTextField portText;

@@ -3,7 +3,7 @@
  * @Date 2019/4/11
  * @Description
  */
-package chatRoom;
+package chatRoom.gui;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
