@@ -1,0 +1,53 @@
+-1- DB：数据库
+    数据库分类
+        1、关系型数据库
+            二维数据表格
+            Oracle
+            MySQL
+            SQL Server
+        2、非关系型数据库
+            Redis（内存数据库）
+    表的概念
+        表的行（row）是横排数据，也被称作为记录（Record）
+        表的列（col）是纵列数据，也被称作为字段（Field）
+
+    Oracle
+        SQL（structured query language）：结构化查询语言
+            DDL（data definition language）：数据定义语言
+            用于建立、修改、删除数据库对象
+                CREATE：创建表或其他对象的结构
+                ALTER：修改表或其他对象的结构
+                DROP：删除表或其他对象的结构
+                TRUNCATE：删除表数据，保留表结构
+            DML（data manipulation language）
+            用于改变数据表中的数据
+                INSERT：插入数据到数据库
+                UPDATE:更新数据表
+                DELETE:删除
+            TCL（transaction control language）：事务控制语言
+            用来维护数据一致性的语言
+                COMMIT：提交，确认已经进行的数据改变
+                ROLLBACK：回滚，取消已经进行的数据改变
+                SAVEPOINT：保存点，使当前的事务可以回退到指定的保存点，便于取消部分改变
+            DQL（data query language）：数据查询语言
+            DCL（data control language）：数据控制语言
+
+
+
+
+        NUMBER：表示数值类型
+            NUMBER （P,S）
+            P表示数字的总位数
+            S表示小数点后面的位数
+            eg:sal NUMBER(6,2)  ->  9999.99(MAX)
+        CHAR：固定长度的字符类型（max==2000&&！=负数）
+        VARCHAR2：边长字符类型（1~4000）
+
+
+
+        DATE:用于定义日期时间和数据
+            长度是7个字节
+            默认格式：DD-MOM--RR
+
+
+
