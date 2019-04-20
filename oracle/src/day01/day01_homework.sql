@@ -38,7 +38,10 @@ alter table t_accout_xlyu drop(
 );
 
 insert into t_accout_xlyu(id,login_name,login_passwd,create_date,real_name,idcard_no,telephone) values(
-  1,'shili',256528,'28-1ÔÂ-08'£¬'shiyuanli',410381194302256523,13669351234
+  1,'shili','256528','28-1ÔÂ-08'£¬'shiyuanli','410381194302256523','13669351234'
 );
 
+update t_accout_xlyu set login_passwd = '801206'
+where id  =  1;
+select *  from  t_accout_xlyu;
 

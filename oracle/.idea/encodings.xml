@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/src/day01/day01.sql" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/day01/day01_homework.sql" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/day01/day01_homework2.sql" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/day02/day02.sql" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/day02/day02_homework.sql" charset="GBK" />
   </component>
 </project>
