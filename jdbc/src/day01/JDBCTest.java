@@ -22,7 +22,7 @@ public class JDBCTest {
         Class.forName("com.mysql.jdbc.Driver");
         //2、创建连接
         Connection conn = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/xlyu_test?useUnicode=true&characterEncoding = utf-8",
+                "jdbc:mysql://localhost:3306/xlyu_test?useUnicode=true&characterEncoding=utf-8",
                 "root",
                 "root"
         );
