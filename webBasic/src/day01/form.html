@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单测试</title>
+</head>
+<body>
+<form action="https://www.baidu.com">
+    <span>用户名：</span><input type="txt" value="marry" readonly/>
+    <br/>
+    <br/>
+    <span>密码：</span>&nbsp;&nbsp;<input type="password" maxlength="6"/>
+    <br/>
+    <br/>
+    <span>性别：&nbsp;&nbsp;</span><input type="radio" id="1" name="gender" value="man" checked/><label
+        for="1"><span>男</span></label>
+    <input type="radio" name="gender" value="woman"/><span>女</span>
+    <br/>
+    <br/>
+    <span>你想成为海贼王吗？&nbsp;&nbsp;</span><input type="checkbox" name="want" value="yes"/><span>想</span><input
+        type="checkbox" name="want" value="no"/><span>不想</span>
+    <br/>
+    <br/>
+    <input type="button" value="diy" onclick="alert('do not touch me')"/>
+    <br/>
+    <br/>
+    <input type="hidden">
+    <br/>
+    <br/>
+    <input type="file"/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <textarea style="resize: none;border-color: red" cols="20" rows="10"  readonly>
+        321321321321321321321321321
+    </textarea>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <input type="submit"/>&nbsp;<input type="reset"/>
+    <br/>
+    <br/>
+    <select>
+
+        <option>蜀山区</option>
+        <option>包河区</option>
+        <option>庐阳区</option>
+        <option>高新区</option>
+        <option>瑶海区</option>
+        <option selected>政务区</option>
+        <option>滨湖新区</option>
+        <option>庐西区</option>
+    </select>
+</form>
+</body>
+</html>
