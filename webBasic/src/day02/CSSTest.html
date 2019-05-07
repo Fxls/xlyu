@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css测试1</title>
+    <style>
+        h1 {
+            font-size: 20px;
+            color: black;
+        }
+
+        .divTest {
+            font-size: 10px;
+            color: aqua;
+            background-color: darkgreen;
+        }
+
+        .divTest2 {
+            font-size: 10px;
+            color: aqua;
+            background-color: #0e1dc5;
+        }
+
+        #idChoose {
+            font-size: 5px;
+            color: black;
+        }
+
+        .spanClass, ul {
+            font-size: 50px;
+        }
+
+        p strong {
+            color: darkgreen;
+        }
+
+        p > strong {
+            color: red;
+        }
+
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<h1 style="color: #ed5d2e">内联样式测试</h1>
+<div>
+    外部样式测试
+</div>
+<div class="divTest">类选择器测试</div>
+<div class="divTest2">类选择器测试2
+    <h1>我是h1</h1>
+    <h1 id="idChoose">我是h1</h1>
+    <h1>我是h1</h1>
+</div>
+<span class="spanClass">
+    选择器组
+</span>
+<ul>
+    无序列表
+    &nbsp;<li>啊啊啊</li>
+    &nbsp;<li>啊啊啊</li>
+    &nbsp;<li>啊啊啊</li>
+</ul>
+<p>
+    12
+    <strong>34</strong>
+    <span>
+        56
+        <strong>78</strong>
+    </span>
+</p>
+<strong>910</strong>
+</body>
+</html>
