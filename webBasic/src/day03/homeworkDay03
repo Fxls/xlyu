@@ -1,0 +1,15 @@
+-1- 简述css中的定位机制
+    ·1 流定位
+    ·2 相对定位 relative
+    ·3 绝对定位 absolute
+    ·4 浮动定位 float
+    ·5 固定定位 fixed
+-2- display属性的作用是什么？（显示方式）
+    none、block、inline、inline-block
+    none :不显示该元素，释放其占用位置
+    block :将元素显示方式设置为块，如可以将行内元素
+           <a>转换为块元素
+    inline :将元素显示方式设置为行内，如可以将块元素
+           <p>转换为行内元素
+    inline-block :将元素显示方式设置为行内块，如可以
+           将行内元素<span>转换为行内块元素
