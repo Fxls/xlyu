@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阶乘计算</title>
+    <script>
+        function method() {
+            var text1 = document.getElementById("inputVal");
+            var val = parseInt(text1.value);
+
+            //TODO 判断是否为一个数；判断是否是一个整数
+            if (val % 1 === 0) {
+                var result = 1;
+                for (var i = 1; i <= val; i++) {
+                    result = result * i;
+                }
+                var text2 = document.getElementById('resultVal');
+                text2.value = result;
+            } else {
+                alert("你输入的不是一个整数");
+            }
+
+        }
+    </script>
+</head>
+<body>
+<h1>计算整数阶乘</h1>
+<input type="text" id="inputVal">
+<button onclick="method();">计算阶乘</button>
+<br/>
+计算结果为<input type="text" id="resultVal">
+</body>
+</html>

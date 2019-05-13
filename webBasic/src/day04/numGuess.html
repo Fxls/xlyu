@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>猜数字游戏</title>
+    <script>
+        function f() {
+            var innerNum = 23;
+            var inputObj = document.getElementById('input');
+            var val = parseInt(inputObj.value);
+            if (val % 1 === 0) {
+                if (val > innerNum) {
+                    alert('猜大了');
+                } else if (val < innerNum) {
+                    alert('猜小了');
+                } else {
+                    alert('猜对了');
+                }
+            } else {
+                alert('输入类型有误');
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>猜数字游戏</h1>
+请输入您要猜测的数字<input type="text" id="input">
+<button onclick="f()">我猜</button>
+</body>
+</html>

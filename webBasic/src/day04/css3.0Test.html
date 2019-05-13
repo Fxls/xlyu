@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3.0Test</title>
+    <style>
+        @keyframes mymovie {
+            0% {
+                top: 0px;
+            }
+            50% {
+                top: 250px;
+            }
+            100% {
+                top: 0px;
+            }
+        }
+
+        @keyframes mymovie2 {
+            0% {
+                left: 0px;
+            }
+            50% {
+                left: 500px
+            }
+            100% {
+                left: 0px;
+            }
+        }
+
+        h1 {
+            /*text-align: center;*/
+            color: red;
+            margin-top: 150px;
+            text-shadow: 3px 3px 3px black;
+            transform: rotateX(20deg) rotateY(20deg) translate(20px, 20px);
+            transition: color 2s;
+            position: relative;
+            animation: mymovie 5s infinite,mymovie2 8s infinite;
+        }
+
+        h1:hover {
+            color: #1329ff;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function changeColor() {
+            var h1Color = document.getElementById('h1');
+            h1Color.color='blue';
+        }
+    </script>
+</head>
+<body style="background-color:#93cdff">
+<h1 id="h1">测试字体</h1>
+<button onclick="changeColor()">朴素的按钮</button>
+</body>
+</html>

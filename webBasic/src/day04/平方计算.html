@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>平方计算</title>
+    <script>
+        function method1() {
+            var val = document.getElementById("val");
+            var getval = val.value;
+            var num = parseInt(getval);
+            if (isNaN(num)) {
+                alert("输入有误")
+            } else {
+                var last = document.getElementById("valLast");
+                last.value=num*num;
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>计算数值平方</h1>
+<input type="text" id="val">
+<button onclick="method1();">计算</button>
+<br/>
+计算结果是<input type="text" id="valLast">
+</body>
+</html>
