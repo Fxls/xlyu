@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宏晶信息－NetCTOSS</title>
+    <script>
+        function hideTips() {
+            document.getElementById('tips').style = 'display:none';
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <style>
+        .nameRedex {
+            border: 1px solid red;
+            width: 300px;
+            height: 30px;
+            color: red;
+        }
+
+        .roleChoose {
+            width: 480px;
+            height: 80px;
+            border: 1px solid silver;
+            position: relative;
+            float: right;
+            margin-right: 150px;
+            margin-top: 230px;
+            line-height: 25px;
+        }
+
+        .six {
+            margin-top: 340px;
+            margin-bottom: 84px;
+            margin-left: 320px;
+
+        }
+
+        .six button {
+            width: 101px;
+            height: 36px;
+            background-image: url("img/tab_out.png");
+            outline: none;
+            border: none;
+
+        }
+
+        .roleName {
+            position: absolute;
+            margin-left: 260px;
+            margin-top: 233px;
+        }
+
+        .four {
+            position: absolute;
+            margin-top: 180px;
+            margin-left: 253px;
+        }
+
+        .three {
+            position: absolute;
+            margin-top: 130px;
+            margin-left: 261px;
+        }
+
+        .two {
+            position: absolute;
+            margin-top: 80px;
+            margin-left: 212px;
+        }
+
+        .one {
+            position: absolute;
+            margin-left: 260px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="topClass"><img src="img/logo.png" class="logo"><a href="" target="_self" class="out">[退出]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+<div class="center1">
+    <img src="img/index_out.png" class="index"/>
+    <img src="img/role_out.png" class="role"/>
+    <img src="img/admin_on.png" class="admin"/>
+    <img src="img/fee_out.png" class="fee"/>
+    <img src="img/account_out.png" class="account"/>
+    <img src="img/service_out.png" class="service"/>
+    <img src="img/bill_out.png" class="bill"/>
+    <img src="img/report_out.png" class="report"/>
+    <img src="img/information_out.png" class="info"/>
+    <img src="img/password_out.png" class="password"/>
+</div>
+<div class="center2">
+    <div class="center2-1">
+        <div class="one"><span>姓名:&nbsp;&nbsp;<input type="text" value="张三"></span> *
+            <span class="nameRedex">20长度以内的汉字、字母。数字的组合</span></div>
+        <div class="two">
+            <span>管理员账号:&nbsp;&nbsp;<input type="text" value="admin1"></span>
+
+        </div>
+        <div class="three">
+            <span>电话:&nbsp;&nbsp;<input type="text" value="18888888888"> *</span>
+            <span class="nameRedex">正确的电话格式，固话或手机</span>
+        </div>
+        <div class="four">
+            <span>Email:&nbsp;&nbsp;<input type="text" value="aa@aa.com"> *</span>
+            <span class="nameRedex">50长度以内，正确的邮箱格式</span>
+        </div>
+        <div>
+            <span><div class="roleName">角色：</div>
+                <div class="roleChoose">
+                    <input type="checkbox">超级管理员&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox">账务账号管理员
+                    <input type="checkbox">业务账号管理员<br/>
+                    <input type="checkbox">账务账号管理员
+                    <input type="checkbox">业务账号管理员<br/>
+                    <input type="checkbox">账务账号管理员
+                    <input type="checkbox">业务账号管理员
+                </div>
+            </span>
+        </div>
+        <div class="six">
+            <button class="save"></button>
+            <button class="cancel"></button>
+        </div>
+    </div>
+</div>
+<div class="bottom">
+    &lt;合肥市高新区望江西路800号创新产业园&gt;<br/>
+    版权所有&copy;合肥宏晶信息
+</div>
+
+</body>
+</html>

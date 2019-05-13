@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js测试</title>
+    <script type="text/javascript">
+        function method1() {
+            alert("Hello in method1.");
+        }
+    </script>
+    <script type="text/javascript" src="jsTest.js"></script>
+</head>
+<body>
+<!--事件定义式-->
+<input type="button" value="按钮" onclick="alert('hello,world');">
+<!--嵌入式-->
+<button onclick="method1();">我是按钮</button>
+<!--文件调用式-->
+<button onclick="method();">我是按钮2</button>
+</body>
+</html>

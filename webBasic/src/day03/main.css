@@ -1,0 +1,303 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background: #0EA8D8;
+}
+
+.topClass {
+
+    margin: 0px auto;
+    width: 960px;
+    height: 61px;
+    text-align: right;
+    line-height: 60px;
+    color: white;
+    font-family: '黑体';
+    font-size: 15px;
+    font-weight: lighter;
+    background-image: url("img/top_bg.png");
+}
+
+.out:link {
+    color: white;
+    text-decoration: none;
+}
+
+.out:visited {
+    color: white;
+}
+
+.out:active {
+    color: black;
+}
+
+.center1 {
+    /*border: 1px solid silver;*/
+
+    width: 100%;
+    height: 91px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+    background: #0488BB;
+}
+
+.center2 {
+    /*border: 1px solid silver;*/
+    margin: 0px auto;
+    width: 100%;
+    height: 410px;
+    padding-top: 10px;
+}
+
+.center2-1 {
+    width: 950px;
+    height: 390px;
+    border: 5px solid #8ac1db;
+    margin: 0px auto;
+    background: #e8f3f8;
+
+}
+
+.center2-1-1 {
+    width: 910px;
+    height: 40px;
+    /*border: 1px solid silver;*/
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.center2-1-2 {
+    width: 910px;
+    height: 310px;
+    /*border: 1px solid silver;*/
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.frame {
+    position: absolute;
+    border: 2px solid #F9C2C2;
+    background: #FDECEC;
+    width: 400px;
+    height: 80px;
+    margin-left: 255px;
+    margin-top: 75px;
+}
+
+.yes {
+    margin-top: 30px;
+}
+
+.closeBtn {
+    float: right;
+    background-image: url("img/close.png");
+    width: 22px;
+    height: 22px;
+    outline: none;
+    border: none;
+}
+
+.closeBtn:hover {
+
+    cursor: pointer;
+}
+
+.center2-1-3 {
+    width: 910px;
+    height: 40px;
+    /*border: 1px solid silver;*/
+    margin: 0px auto;
+    padding: 0px;
+    text-align: center;
+    line-height: 35px;
+}
+
+.center2-1-3 button {
+    outline: none;
+    border: none;
+    background-color: #E8F3F8;
+}
+
+.center2-1-3 button:hover {
+    cursor: pointer;
+    background-color: white;
+}
+
+.bottom {
+    /*border: 1px solid silver;*/
+    margin: 0px auto;
+    width: 960px;
+    height: 50px;
+    text-align: center;
+    line-height: 25px;
+    color: white;
+    font-family: '方正兰亭超细黑简体';
+}
+
+.tab {
+    border-collapse: collapse;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    background: white;
+    margin: 0px;
+}
+
+td, th {
+    border: 1px solid #97b9c9;
+}
+
+.tbody tr:hover {
+    cursor: pointer;
+    background-color: #F7F9FD;
+}
+
+.thead {
+    height: 35px;
+    background-color: #fbedce;
+}
+
+.modify {
+    background-image: url("img/modification.png");
+    width: 14px;
+    height: 15px;
+    outline: none;
+    border: none;
+}
+
+.delete {
+    background-image: url("img/delete.png");
+    width: 12px;
+    height: 12px;
+    outline: none;
+    border: none;
+}
+
+.modify:hover, .delete:hover {
+    cursor: pointer;
+}
+
+.tab_add {
+    width: 71px;
+    height: 26px;
+    background-image: url("img/btn_bg.png");
+    text-align: center;
+    outline: none;
+    border: none;
+    margin-top: 7px;
+    float: right;
+    color: white;
+}
+
+.tab_add:hover {
+    cursor: pointer;
+}
+
+.logo {
+    float: left;
+}
+
+.center1 img:hover {
+    cursor: pointer;
+}
+
+.index {
+    position: absolute;
+    right: 1185px;
+    margin-top: 7px;
+}
+
+.index:hover {
+    content: url("img/index_on.png");
+}
+
+.role {
+    position: absolute;
+    right: 1085px;
+    margin-top: 7px;
+}
+
+.role:hover {
+    content: url("img/role_on.png");
+}
+
+.admin {
+    position: absolute;
+    right: 985px;
+    margin-top: 7px;
+}
+
+.admin:hover {
+    content: url("img/admin_on.png");
+}
+
+.fee {
+    position: absolute;
+    right: 885px;
+    margin-top: 7px;
+}
+
+.fee:hover {
+    content: url("img/fee_on.png");
+}
+
+.account {
+    position: absolute;
+    right: 785px;
+    margin-top: 7px;
+}
+
+.account:hover {
+    content: url("img/account_on.png");
+}
+
+.service {
+    position: absolute;
+    right: 685px;
+    margin-top: 7px;
+}
+
+.service:hover {
+    content: url("img/service_on.png");
+}
+
+.bill {
+    position: absolute;
+    right: 585px;
+    margin-top: 7px;
+}
+
+.bill:hover {
+    content: url("img/bill_on.png");
+}
+
+.report {
+    position: absolute;
+    right: 485px;
+    margin-top: 7px;
+}
+
+.report:hover {
+    content: url("img/report_on.png");
+}
+
+.info {
+    position: absolute;
+    right: 385px;
+    margin-top: 7px;
+}
+
+.info:hover {
+    content: url("img/information_on.png");
+}
+
+.password {
+    position: absolute;
+    right: 285px;
+    margin-top: 7px;
+}
+
+.password:hover {
+    content: url("img/password_on.png");
+}
