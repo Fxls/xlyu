@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>窗口延迟关闭</title>
+
+    <script>
+        function delayClose() {
+            show();
+            setTimeout(hide,3000);
+
+        }
+
+        function show() {
+            var divObj = document.getElementById('hideDiv');
+            divObj.style=("display:block;");
+        }
+
+        function hide() {
+            var divObj = document.getElementById('hideDiv');
+            divObj.style=("display:none;");
+        }
+    </script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h1>窗口延迟关闭</h1>
+<button onclick="delayClose()">点击弹窗延迟关闭</button>
+<div id="hideDiv">隐藏div块</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+-1- 简述window对象除document外的其他子对象
+    1、history
+    back();forward();go(num);
+    2、location
+    href="..........";reload();
+-2- setInterval和setTimeout的区别
+    setInterval是周期性的
+    setTimeout是一次性的
+-3- document查询节点有哪些方式？
+    1、元素类型操作
+    document.getElementById();
+    document.getElementByName();
+    document.getElementByTagName();
+    document.getElementByClassName();
+    2、关系树选择
+    3、元素节点树选择

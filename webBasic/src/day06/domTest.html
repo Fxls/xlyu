@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom</title>
+    <script>
+        function f1() {
+            var t = document.getElementById('d1');
+            t.setAttribute("name","mynameis!");
+            var tname = t.nodeType;
+            alert(tname+t.getAttribute("name"));
+            t.style.color="red";
+            t.style.fontSize="30px";
+
+        }
+
+        function f2() {
+            var d = document.getElementById('d2');
+            var dname = d.nodeName;
+            alert(dname);
+        }
+
+        function innerTextTest() {
+            var i = document.getElementById('d1');
+            alert(i.innerText);
+        }
+
+        function innerHTMLTest() {
+            var i = document.getElementById('d1');
+            alert(i.innerHTML);
+        }
+
+        function removeAtt() {
+            var t = document.getElementById('d1');
+            t.removeAttribute("name");
+            alert(t.getAttribute("name")+"123456");
+        }
+    </script>
+</head>
+<body>
+<div id="d1" onclick="f1()" name="mynameis?">div1
+    <div id="d2" onclick="f2()">
+        div2
+        <div id="d3">
+            div3
+        </div>
+    </div>
+</div>
+<button onclick="innerTextTest();">innerText</button>
+<button onclick="innerHTMLTest();">innerHTML</button>
+<button onclick="removeAtt();">removeAtt</button>
+</body>
+</html>

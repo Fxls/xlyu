@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片轮播</title>
+    <script>
+        function picLoop() {
+
+
+            setInterval(function () {
+                var str = document.getElementById("pic");
+                var str2=str.getAttribute("src");
+                var num = parseInt(str2.charAt(0));
+                if (num == 3) {
+                    num = 1;
+                } else {
+                    num++;
+                }
+                document.getElementById('pic').src = num + ".png";
+            }, 2000)
+        }
+    </script>
+</head>
+<body onload="picLoop()">
+<div>
+    <img id="pic" src="1.png">
+</div>
+</body>
+</html>
