@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>stringTest</title>
+    <script>
+        function methodA() {
+            var str = "春风拂槛露,华,浓";
+            console.log(str.length);//字符串长度
+            console.log(str.charAt(2));//索引值2的字符
+            console.log(str.charCodeAt(2));//索引值2的字符的unicode编码
+            console.log(str.indexOf("风"));//“风”第一次出现的位置
+            console.log(str.lastIndexOf("浓"));//“浓”最后一次出线的位置
+            console.log(str.substring(0,2));//前包后不包
+            console.log(str.split(","));//分割字符串
+        }
+    </script>
+</head>
+<body>
+<button onclick="methodA()">测试一</button>
+</body>
+</html>

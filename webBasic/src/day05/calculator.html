@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在线计算器</title>
+    <style>
+
+        .main {
+            width: 450px;
+            height: 710px;
+            background-color: black;
+            position: absolute;
+            left: 500px;
+        }
+
+        .head1, .head2, .tr1, .tr2, .tr3, .tr4, .tr5 {
+            height: 99px;
+            color: white;
+        }
+
+        .tr1 button, .tr2 button, .tr3 button, .tr4 button {
+            width: 88px;
+            height: 88px;
+            padding: 0px;
+            margin: 8px;
+            border-radius: 44px;
+            background-color: #D6D0CE;
+        }
+
+        .tr2 button, .tr3 button, .tr4 button, .bottom1 {
+            background-color: #525252;
+        }
+
+        .bottom1 {
+            width: 176px;
+            height: 88px;
+            margin: 8px;
+            border-radius: 44px;
+        }
+
+        .bottom2 {
+            width: 88px;
+            height: 88px;
+            padding: 0px;
+            margin: 8px;
+            border-radius: 44px;
+        }
+
+        button {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bolder;
+            color: white;
+            outline: none;
+            border: none;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
+        .topText {
+            padding: 0px;
+            margin: 0px;
+            width: 445px;
+            height: 99px;
+            text-align: right;
+            font-size: 60px;
+            border: none;
+            outline: none;
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <script>
+        function getVal(a) {
+            document.getElementById('top1').value += a;
+        }
+
+        function getLastVal() {
+            var lastV = "";
+            lastV += document.getElementById('top1').value;
+            document.getElementById('top2').value = eval(lastV);
+        }
+
+        function clearText() {
+            document.getElementById('top1').value = "";
+            document.getElementById('top2').value = "";
+        }
+
+        function backSpace() {
+            var str = document.getElementById('top1').value;
+            var newStr = str.substring(0, str.length - 1);
+            document.getElementById('top1').value = newStr;
+        }
+    </script>
+</head>
+<body style="padding: 0px;margin: 0px">
+<div class="main">
+    <div class="head1"><input type="text" class="topText" id="top1" readonly></div>
+    <div class="head2"><input type="text" class="topText" id="top2" readonly></div>
+    <div class="tr1">
+        <button onclick="clearText()">AC</button>
+        <button onclick="backSpace()">C</button>
+        <button onclick="getVal('%')">%</button>
+        <button style="background-color: #F09C10" onclick="getVal('/')">/</button>
+    </div>
+    <div class="tr2">
+        <button onclick="getVal('7')">7</button>
+        <button onclick="getVal('8')">8</button>
+        <button onclick="getVal('9')">9</button>
+        <button style="background-color: #F09C10" onclick="getVal('*')">*</button>
+    </div>
+    <div class="tr3">
+        <button onclick="getVal('4')">4</button>
+        <button onclick="getVal('5')">5</button>
+        <button onclick="getVal('6')">6</button>
+        <button style="background-color: #F09C10" onclick="getVal('-')">-</button>
+    </div>
+    <div class="tr4">
+        <button onclick="getVal('1')">1</button>
+        <button onclick="getVal('2')">2</button>
+        <button onclick="getVal('3')">3</button>
+        <button style="background-color: #F09C10" onclick="getVal('+')">+</button>
+    </div>
+    <div class="tr5">
+        <button class="bottom1" onclick="getVal('0')">0</button>
+        <button class="bottom2" style="background-color: #525252" onclick="getVal('.')">.</button>
+        <button class="bottom2" style="background-color: #F09C10" onclick="getLastVal()">=</button>
+    </div>
+</div>
+</body>
+</html>
