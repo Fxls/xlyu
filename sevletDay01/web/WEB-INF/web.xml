@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+           version="3.0">
+
+    <!--定义servlet，tomcat程序自动读取web.xml，将servlet标签的类实例化-->
+    <servlet>
+        <!--name-->
+        <servlet-name>myServlet</servlet-name>
+        <!--servlet类型,对应src中文件的class路径-->
+        <servlet-class>com.itek.servlet.day01.MyFirstServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <!--name-->
+        <servlet-name>showTime</servlet-name>
+        <!--servlet类型,对应src中文件的class路径-->
+        <servlet-class>com.itek.servlet.day01.Task07</servlet-class>
+    </servlet>
+
+    <!--配置访问servlet中的service方法的入口路径-->
+    <servlet-mapping>
+        <servlet-name>myServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>showTime</servlet-name>
+        <url-pattern>/hello/time</url-pattern>
+    </servlet-mapping>
+
+</web-app>
