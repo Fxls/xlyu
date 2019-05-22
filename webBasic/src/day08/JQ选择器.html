@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.4.3.js"></script>
+    <script>
+        function f1() {
+            //同级选择器
+            // var same = $("#d1~div");
+            // alert(same.length);
+
+            //选择与d1同级的第一个元素
+            var d = $("#d1+div");
+            var dDom = d.get(0).id;
+            alert(dDom.id);
+        }
+        function f2() {
+            // var divJQ= $("#d1");
+            // console.log(divJQ.html());
+            //元素选择器
+            var p = $("h1");
+            alert(p.get(3).style.color);
+            //类选择器
+            var p2JQ = $(".h1");
+            p2JQ.css("color","pink");
+            //选择器组
+            var all = $(".h1,#h1-2,#h1-3,#h1-4");
+            all.css("font-size","50px");
+        }
+    </script>
+</head>
+<!--<body onload="f1();">-->
+<body onload="f2()">
+<div id="d1">
+    <h1 style="color: red" class="h1">h1.1</h1>
+    <h1 style="color: yellow" id="h1-2">h1.2</h1>
+    <h1 style="color: green" id="h1-3">h1.3</h1>
+    <h1 style="color: blue" id="h1-4">h1.4</h1>
+</div>
+<div id="d2" class="d2">2</div>
+<div id="d3">3</div>
+<div id="d4">4</div>
+</body>
+</html>

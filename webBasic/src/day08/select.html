@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.4.3.js"></script>
+    <script>
+        function f1() {
+            var JQ = $("option:selected");
+            alert(JQ.text());//DOM innerText
+        }
+    </script>
+</head>
+<body>
+<select onchange="f1();">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+</select>
+</body>
+</html>

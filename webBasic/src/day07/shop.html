@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物車</title>
+    <style>
+        div {
+            border: 1px solid #ccc;
+            width: 400px;
+            margin: 10px auto;
+        }
+    </style>
+    <script>
+        var totalPrice = 0 ;
+        function addCount(id) {
+            var name;
+            var count = document.getElementById(id).value;
+            var price;
+            switch (id) {
+                case "mouseCount":
+                    name = "鼠标";
+                    price = 680.0;
+                    break;
+                case "keyboardCount":
+                    name = "键盘";
+                    price = 900.0;
+                    break;
+                case "headsetCount":
+                    name = "耳机";
+                    price = 1680.0;
+                    break;
+                default:
+                    break;
+            }
+
+            var trObj = document.createElement("tr");
+            var td1Obj = document.createElement("td");
+            var td2Obj = document.createElement("td");
+            var td3Obj = document.createElement("td");
+            var td4Obj = document.createElement("td");
+            var td5Obj = document.createElement("td");
+
+            td1Obj.innerText = name;
+            td2Obj.innerText = price;
+            td3Obj.innerText = count;
+            td4Obj.innerText = price * count;
+            td5Obj.innerHTML = "<button onclick='deleteCar();'>删除</button>"+"<button>+</button> <button>-</button>";
+
+            trObj.appendChild(td1Obj);
+            trObj.appendChild(td2Obj);
+            trObj.appendChild(td3Obj);
+            trObj.appendChild(td4Obj);
+            trObj.appendChild(td5Obj);
+
+            document.getElementById("cartBody" +
+                "").append(trObj);
+            totalPrice += (price*count);
+            document.getElementById("total").innerText = totalPrice;
+        }
+
+        // function deleteCar() {
+        //
+        // }
+    </script>
+</head>
+<body>
+<div class="products">
+    <table>
+        <thead>
+        <tr>
+            <th>商品名称</th>
+            <th>商品单价</th>
+            <th>商品数量</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>鼠标</td>
+            <td>680.0</td>
+            <td><input type="text" id="mouseCount"></td>
+            <td>
+                <button onclick="addCount('mouse');">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>键盘</td>
+            <td>900.0</td>
+            <td><input type="text" id="keyboardCount"></td>
+            <td>
+                <button onclick="addCount('keyboard');">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>耳机</td>
+            <td>1680.0</td>
+            <td><input type="text" id="headsetCount"></td>
+            <td>
+                <button onclick="addCount('headset');">+</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="car">
+    <table>
+        <thead>
+        <tr>
+            <th>商品名称</th>
+            <th>商品单价</th>
+            <th>商品数量</th>
+            <th>小计</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody id="cartBody"></tbody>
+        <tfoot>
+        <tr>
+            <td>合计</td>
+            <td id="total" colspan="3">0</td>
+        </tr>
+        </tfoot>
+
+    </table>
+</div>
+</body>
+</html>

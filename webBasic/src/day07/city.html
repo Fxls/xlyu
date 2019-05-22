@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>省市下拉选</title>
+    <script>
+        function cityChange(obj) {
+            if (obj.value == 1) {
+                document.getElementById("parent").removeChild(document.getElementById("s2"));
+                var s2 = document.createElement("select");
+                s2.id = "s2";
+                document.getElementById("parent").append(s2);
+                var opObj1 = document.createElement("option");
+                opObj1.innerText = "合肥";
+                var opObj2 = document.createElement("option");
+                opObj2.innerText = "芜湖";
+                var s2Obj = document.getElementById("s2");
+                s2Obj.appendChild(opObj1);
+                s2Obj.appendChild(opObj2);
+            } else if (obj.value == 2) {
+                document.getElementById("parent").removeChild(document.getElementById("s2"));
+                var s2 = document.createElement("select");
+                s2.id = "s2";
+                document.getElementById("parent").append(s2);
+                var opObj1 = document.createElement("option");
+                opObj1.innerText = "杭州";
+                var opObj2 = document.createElement("option");
+                opObj2.innerText = "桐乡";
+                var s2Obj = document.getElementById("s2");
+                s2Obj.appendChild(opObj1);
+                s2Obj.appendChild(opObj2);
+            } else if (obj.value == 3) {
+                document.getElementById("parent").removeChild(document.getElementById("s2"));
+                var s2 = document.createElement("select");
+                s2.id = "s2";
+                document.getElementById("parent").append(s2);
+                var opObj1 = document.createElement("option");
+                opObj1.innerText = "南京";
+                var opObj2 = document.createElement("option");
+                opObj2.innerText = "芜湖";
+                var s2Obj = document.getElementById("s2");
+                s2Obj.appendChild(opObj1);
+                s2Obj.appendChild(opObj2);
+            } else if (obj.value == 4) {
+                document.getElementById("parent").removeChild(document.getElementById("s2"));
+                var s2 = document.createElement("select");
+                s2.id = "s2";
+                document.getElementById("parent").append(s2);
+                var opObj1 = document.createElement("option");
+                opObj1.innerText = "昆明";
+                var opObj2 = document.createElement("option");
+                opObj2.innerText = "玉溪";
+                var s2Obj = document.getElementById("s2");
+                s2Obj.appendChild(opObj1);
+                s2Obj.appendChild(opObj2);
+            } else {
+                document.getElementById("parent").removeChild(document.getElementById("s2"));
+                var s2 = document.createElement("select");
+                s2.id = "s2";
+                document.getElementById("parent").append(s2);
+            }
+        }
+    </script>
+</head>
+<body>
+省份
+<select id="s1" onchange="cityChange(this);">
+    <option value="-1">请选择</option>
+    <option value="1">安徽</option>
+    <option value="2">浙江</option>
+    <option value="3">江苏</option>
+    <option value="4">云南</option>
+</select>
+
+市
+<span id="parent">
+<select id="s2">
+
+</select>
+</span>
+</body>
+</html>

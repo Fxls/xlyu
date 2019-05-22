@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.4.3.js"></script>
+    <script>
+        function f1(s) {
+            var fontSizeStr = $("#div1").css("font-size");
+            var index = fontSizeStr.indexOf("px");
+            var size = parseInt(fontSizeStr.substring(0,index))+s;
+            $("#div1").css("font-size",size+"px");
+        }
+    </script>
+</head>
+<body>
+<div id="div1" style="font-size: 3px">
+    测试字体
+</div>
+<button onclick="f1(1);">+</button>
+<button onclick="f1(-1);">-</button>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <style>
+        div {
+            border: 1px solid #ccc;
+            width: 400px;
+            margin: 10px auto;
+        }
+    </style>
+    <script src="../day08/jquery-1.4.3.js"></script>
+    <script>
+        var totalPrice = 0;
+        $(function () {
+            //TODO 1 点击+获取input value
+            $("#button1,#button2,#button3").click(addCar);
+        });
+
+        //TODO 2 将获取的value添加到购物車
+        function addCar() {
+            var trJQ = $(this).parent().parent();
+            //TODO 2.1获取商品名，等其他属性
+            var name = trJQ.children("td:eq(0)").text();
+            var price = parseFloat(trJQ.children("td:eq(1)").text());
+            var count = parseInt(trJQ.children("td:eq(2)").children("input").val());
+
+
+            //TODO 2.2对输入框的内容进行校验，如果为空或者为非数字字符串弹窗提示
+            var countRedex = /^[1-9][0-9]{0,1}$/;
+            if (!count) {
+                alert("请输入购买数量后再添加");
+            }
+            if (!countRedex.test(count.toString())) {
+                alert("请输入正确的数量（1~99）");
+            }
+
+
+            //TODO 2.3添加进购物车
+            var trJQ2 = $("<tr>" +
+                "<td>" + name + "</td>" +
+                "<td>" + price + "</td>" +
+                "<td>" + count + "</td>" +
+                "<td>" + (price * count).toFixed(1) + "</td>" +
+                "<td><button onclick='deleteTr(this);'>删除</button><button onclick='changeCar(1,this);'>+</button><button onclick='changeCar(-1,this);'>-</button></td>" +
+                "</tr>");
+            $("#cartBody").append(trJQ2);
+            // $("#cartBody").children();
+            totalPrice += parseFloat((price * count).toFixed(1));
+            $("#total").text(totalPrice);
+        }
+
+        //TODO 3 操作购物车的按钮完成对应功能
+        //TODO 3.1删除按钮删除整行数据
+        function deleteTr(obj) {
+            var total = parseFloat($(obj).parent().prev().text());
+            totalPrice -= total;
+            $("#total").text(totalPrice);
+            $(obj).parent().parent().remove();
+        }
+
+        function changeCar(v, obj) {
+            //TODO 3.2+增加商品数量，小计，总价
+            //单价
+            var price = parseFloat($(obj).parent().parent().children("td:eq(1)").text());
+            //数量
+            var count = parseInt($(obj).parent().parent().children("td:eq(2)").text());
+            //数量更细
+            count += v;
+            $(obj).parent().parent().children("td:eq(2)").text(count);
+            //小计更新
+            $(obj).parent().parent().children("td:eq(3)").text(parseFloat((price * count).toFixed(1)));
+            //总价更新
+            totalPrice += (v * price);
+            $("#total").text(totalPrice);
+            //TODO 3.3-减少商品数量，小计，总价（进行判断，减到零删除整行记录）
+            if (count<=0) {
+                $(obj).parent().parent().remove();
+            }
+        }
+        //TODO 4合并同类项
+
+
+    </script>
+</head>
+<body>
+<div class="products">
+    <table border="1" style="border: 1px solid black;width: 100%;border-collapse: collapse">
+        <thead>
+        <tr>
+            <th>商品名称</th>
+            <th>商品单价</th>
+            <th>商品数量</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>鼠标</td>
+            <td>680.0</td>
+            <td><input type="text"></td>
+            <td>
+                <button id="button1">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>键盘</td>
+            <td>900.0</td>
+            <td><input type="text"></td>
+            <td>
+                <button id="button2">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>耳机</td>
+            <td>1680.0</td>
+            <td><input type="text"></td>
+            <td>
+                <button id="button3">+</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="car">
+    <table border="1" style="border: 1px solid black;width: 100%;border-collapse: collapse">
+        <thead>
+        <tr>
+            <th>商品名称</th>
+            <th>商品单价</th>
+            <th>商品数量</th>
+            <th>小计</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody id="cartBody"></tbody>
+        <tfoot>
+        <tr>
+            <td>合计</td>
+            <td id="total" colspan="4">0</td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+</body>
+</html>

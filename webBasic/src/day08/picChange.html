@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.4.3.js"></script>
+    <script>
+        function changePic() {
+            var JQ = $("img");
+            var width = JQ.css("width");
+            if (width == "1550px") {
+                JQ.css("width", "750px");
+            } else {
+                JQ.css("width", "1550px");
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <img src="1.png" width="1550px" onclick="changePic();">
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../day08/jquery-1.4.3.js"></script>
+    <script>
+        var timerID;
+        var timerID2;
+        $(function () {
+            $("img").hover(mouseIn, mouseOut);
+        });
+
+        function mouseIn() {
+            timerID = setInterval(function () {
+
+                var width = $("img").css("width");
+                if (!width) {
+                    width = "1550px";
+                    $("img").css("width", width);
+                } else {
+                    if (parseInt(width.substring(0, width.indexOf("px"))) <= 750) {
+                        clearInterval(timerID)
+                    }
+                    $("img").css("width", (parseInt(width.substring(0, width.indexOf("px"))) - 10) + "px");
+                }
+            }, 10);
+
+        }
+
+        function mouseOut() {
+            $("img").css("width", "1550px");
+        }
+    </script>
+</head>
+<body>
+<div>
+    <img src="1.png"/>
+</div>
+</body>
+</html>
