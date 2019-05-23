@@ -1,0 +1,7 @@
+-1-
+    A、错误，使用jQuery需要引入jQuery文件
+    B、错误，使用jQuery操作时第一步是通过url路径连接jQ文件
+    C、错误、$符号封装的对象不一定和document.getElementById等价
+    D、正确
+-2-
+        task02.html

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jqDay01课后作业第二题</title>
+    <style>
+        div {
+            width: 500px;
+            height: 350px;
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background-color: silver;
+        }
+
+        tbody {
+            background-color: #ffdaf3;
+        }
+    </style>
+    <script src="jquery-1.4.3.js"></script>
+    <script>
+        $(function () {
+            $("#check1,#check2,#check3,#check4").click(changeColor);
+        });
+
+        function changeColor() {
+            var check = $(this).attr("checked");
+            if (check==true) {
+                $(this).parent().parent().css("background-color", "#22ED8A");
+            }else{
+                $(this).parent().parent().css("background-color", "#ffdaf3");
+            }
+        }
+    </script>
+</head>
+<body>
+<div>员工信息
+    <table border="1">
+        <thead>
+        <tr>
+            <th></th>
+            <th>姓名</th>
+            <th>薪水</th>
+            <th>年龄</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input type="checkbox" id="check1"></td>
+            <td>张三</td>
+            <td>2000</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="check2"></td>
+            <td>李四</td>
+            <td>2500</td>
+            <td>28</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="check3"></td>
+            <td>王五</td>
+            <td>3000</td>
+            <td>38</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="check4"></td>
+            <td>赵六</td>
+            <td>3500</td>
+            <td>48</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
