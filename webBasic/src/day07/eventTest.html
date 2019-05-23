@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #h1 {
+            display: block;
+            margin: 10px auto;
+        }
+
+        div {
+            width: 500px;
+            height: 400px;
+            border: 1px solid black;
+            margin: 10px auto;
+        }
+    </style>
+    <script>
+        function getPosition(e) {
+            var h1Obj = document.getElementById("h1");
+            var x = e.clientX;
+            var y = e.clientY;
+            h1Obj.innerText = x + ":" + y;
+        }
+    </script>
+</head>
+<body>
+<h1 id="h1"></h1>
+<div onmousemove="getPosition(event);"></div>
+</body>
+</html>

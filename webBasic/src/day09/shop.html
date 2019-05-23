@@ -14,20 +14,20 @@
     <script>
         var totalPrice = 0;
         $(function () {
-            //TODO 1 点击+获取input value
+            // 1 点击+获取input value
             $("#button1,#button2,#button3").click(addCar);
         });
 
-        //TODO 2 将获取的value添加到购物車
+        // 2 将获取的value添加到购物車
         function addCar() {
             var trJQ = $(this).parent().parent();
-            //TODO 2.1获取商品名，等其他属性
+            // 2.1获取商品名，等其他属性
             var name = trJQ.children("td:eq(0)").text();
             var price = parseFloat(trJQ.children("td:eq(1)").text());
             var count = parseInt(trJQ.children("td:eq(2)").children("input").val());
 
 
-            //TODO 2.2对输入框的内容进行校验，如果为空或者为非数字字符串弹窗提示
+            // 2.2对输入框的内容进行校验，如果为空或者为非数字字符串弹窗提示
             var countRedex = /^[1-9][0-9]{0,1}$/;
             if (!count) {
                 alert("请输入购买数量后再添加");
@@ -37,7 +37,7 @@
             }
 
 
-            //TODO 2.3添加进购物车
+            // 2.3添加进购物车
             var trJQ2 = $("<tr>" +
                 "<td>" + name + "</td>" +
                 "<td>" + price + "</td>" +
@@ -51,8 +51,8 @@
             $("#total").text(totalPrice);
         }
 
-        //TODO 3 操作购物车的按钮完成对应功能
-        //TODO 3.1删除按钮删除整行数据
+        // 3 操作购物车的按钮完成对应功能
+        // 3.1删除按钮删除整行数据
         function deleteTr(obj) {
             var total = parseFloat($(obj).parent().prev().text());
             totalPrice -= total;
@@ -61,7 +61,7 @@
         }
 
         function changeCar(v, obj) {
-            //TODO 3.2+增加商品数量，小计，总价
+            // 3.2+增加商品数量，小计，总价
             //单价
             var price = parseFloat($(obj).parent().parent().children("td:eq(1)").text());
             //数量
@@ -74,7 +74,7 @@
             //总价更新
             totalPrice += (v * price);
             $("#total").text(totalPrice);
-            //TODO 3.3-减少商品数量，小计，总价（进行判断，减到零删除整行记录）
+            // 3.3-减少商品数量，小计，总价（进行判断，减到零删除整行记录）
             if (count<=0) {
                 $(obj).parent().parent().remove();
             }

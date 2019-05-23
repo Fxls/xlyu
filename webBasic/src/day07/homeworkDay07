@@ -1,0 +1,20 @@
+-1- appendChild 和 insertBefore 方法的区别是什么？
+    appendChild新增节点的参考节点是父节点，insertBefore新增节点的参考节点是兄弟节点
+-2- 如何在js代码中获取event对象并读取信息？
+    js代码中并不能直接使用event关键字，使用e来代替event关键字，获取时间源的方法是
+        - e.srcElement||e.target(兼容多个浏览器的写法)
+        - e.clientX x坐标
+        - e.clientY y坐标
+-3- 简述三中创建对象的方式。
+    first：直接创建Obj对象
+        - var personObj = new Object();
+    second：构造器创建
+        - function Person(n,a){
+            this.name = n;
+            this.age = a;
+        }
+    third：JSON创建
+        - var obj = {
+            "name":"马云";
+            "age":50
+        };

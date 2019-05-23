@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>登录页面</title>
     <link rel="stylesheet" type="text/css" href="login.css">
+    <script src="../day08/jquery-1.4.3.js"></script>
     <script>
         function check() {
             var name = document.getElementById('nameInput').value;
@@ -28,7 +29,7 @@
             var innerName = "18855052340";
             var innerPwd = "123456";
 
-            if (name!=innerName||pwd!=innerPwd) {
+            if (name != innerName || pwd != innerPwd) {
                 alert("用户名或密码不正确！");
                 return false;
             }
@@ -37,6 +38,11 @@
             return true;
         }
 
+        $(function () {
+            for (var i = 0; i < 10; i++) {
+
+            }
+        });
 
     </script>
 </head>
