@@ -32,6 +32,7 @@ public class Servlet1 extends HttpServlet {
         if (sc.getAttribute("totalCount") == null) {
             sc.setAttribute("totalCount",0);
         }
+        //第一次访问时totalCount是没有意义的，需要对他进行一个赋值
         int totalCount = (Integer) sc.getAttribute("totalCount");
         totalCount++;
         //重新设置访问次数
