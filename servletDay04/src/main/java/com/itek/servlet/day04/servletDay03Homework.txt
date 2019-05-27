@@ -1,0 +1,68 @@
+-1- 简述什么是重定向？
+    - 重定向：服务器向浏览器发送一个302状态码及一个location消息
+             头（该消息头的值是一个地址，称之为重定向地址），
+             浏览器收到后会立即重定向地址发出请求。
+
+             b - 程序：发送请求
+             程序 - b：返回302状态码和location，跳转指定的url地址
+
+             重定向的特点：
+             1、地址可以是任意的地址（eg：www.baidu.com&localhost:8080/servletDay04/html/account.html）
+             2、重定向之后，地址的内容会改变
+             3、重定向过程中涉及到的web组件不会共享同一个request和response资源
+
+-2- 详情请见项目代码。
+
+-3- url和uri的区别。
+    uri：Uniform Resource Identifier——统一资源标识符
+    url：Uniform Resource Locator——统一资源定位符
+    二者关联：
+    URI 属于 URL 更高层次的抽象，一种字符串文本标准。
+    就是说，URI 属于父类，而 URL 属于 URI 的子类。URL 是 URI 的一个子集。
+    二者的区别在于，URI 表示请求服务器的路径，定义这么一个资源。而 URL 同时说明要如何访问这个资源（http://）。
+
+-4- servlet分哪几个阶段？什么时候执行？
+    servlet的生命周期分为4个阶段
+    1、实例化：创建对应的servlet对象
+        1.1、容器启动时实例化
+        1.2、第一次访问servlet时实例化
+    2、初始化：创建servlet对象后，立刻运行init方法，只执行一次
+    3、就绪：调用service方法处理请求
+    4、销毁：通常和容器相关，容器关闭时，servlet销毁
+
+-5- 如何配置servlet初始参数？以及如何获取该初始参数？
+    可以通过重写Servlet接口的init(ServletConfig)方法并通过ServletConfig对象的getInitParameter()方法
+    来获取Servlet的初始化参数。
+
+-6- 什么是Servlet上下文？
+    servlet上下文是ServletContext，servletContext也可以被称作公共区域，服务器启动时创建，关闭时销毁
+    常用方法：（顶层原理-Map）
+             void setAttribute(键，值)
+            Object getAttribute(键)
+-7- servlet是否是线程安全的？如果不是，如何解决？
+    servlet是非线程安全的
+
+    why？
+    当Tomcat接收到Client的HTTP请求时，Tomcat从线程池中取出一个线程，之后找到该请求对应的Servlet对象
+    并进行初始化，之后调用service()方法。要注意的是每一个Servlet对象再Tomcat容器中只有一个实例对象，
+    即是单例模式。如果多个HTTP请求请求的是同一个Servlet，那么着两个HTTP请求对应的线程将并发调用Servlet的service()方法。
+
+    测试代码：ThreadSafeServlet.java
+    测试结果：/resources/servlet线程非安全验证.png
+
+    通过测试验证了servlet非线程安全的本质，我们来对代码稍作改动(在servlet的service方法上添加synchronized🔒)
+
+    测试结果：/resourcesservlet线程非安全改造.png
+
+    并没有太大改变，但是理论上，改造后的属于线程安全
+
+
+
+
+
+
+
+
+
+
+

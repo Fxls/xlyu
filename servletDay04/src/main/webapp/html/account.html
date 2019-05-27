@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>account</title>
+    <style>
+        span {
+            display: inline-block;
+            width: 80px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<fieldset>
+    <legend>添加账务账号</legend>
+    <form action="http://localhost:8080/servletDay04/account/add.do" method="post">
+        <span>姓名：</span><input type="text" name="real_name"><br/>
+        <span>身份证：</span><input type="text" name="idcard_no"><br/>
+        <span>登录名：</span><input type="text" name="login_name"><br/>
+        <span>手机号：</span><input type="text" name="telephone"><br/>
+        <span>开通状态：</span><input type="radio" name="status" value="开通">开通<input type="radio" name="status" value="未开通">未开通<br/><br/>
+        <input type="submit">
+    </form>
+</fieldset>
+</body>
+</html>
