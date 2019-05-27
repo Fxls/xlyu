@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动打分</title>
+    <script src="jquery-1.4.3.js"></script>
+    <script>
+        var index = 0;
+        $(function () {
+            $("button").click(function () {
+                $("input:eq("+index+")").focus();
+                index++;
+                if (index >= 4) {
+                    index = 0;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+1<input type="text"><br/>
+2<input type="text"><br/>
+3<input type="text"><br/>
+4<input type="text"><br/>
+
+<button>自动打分</button>
+
+
+</body>
+</html>
