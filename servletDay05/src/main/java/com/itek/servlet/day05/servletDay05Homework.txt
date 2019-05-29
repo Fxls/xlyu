@@ -1,0 +1,23 @@
+-1- 简述jsp页面中能够包含哪些内容？各有什么作用？
+    - 注释
+        html注释<!---->
+        jsp注释<%----%>
+    - html文本
+    - java代码
+        jsp小脚本
+        jsp表达式
+        jsp声明
+    - 指令
+        include
+        page
+        taglib
+    - 隐含对象
+        输入/输出：request、response、out
+        作用域通信对象：session，application，pageContext
+        servlet对象：page，config
+        错误对象：exception
+-2-
+    1、jsp的page指令，pageEncoding是页面编码字符集的设置，contenType是编码的字符集设置（jsp不是直接输出的，而是经过编译后输出）
+    2、<%  %>是jsp中的java小脚本标签，里面可以写入java代码串
+    3、<%= %>是jsp中的java表达式的标签，用于输出java表达式的值
+-3- 代码请见servletDay05

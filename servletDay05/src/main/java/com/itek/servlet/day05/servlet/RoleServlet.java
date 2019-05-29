@@ -30,16 +30,17 @@ public class RoleServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");
-
-
         String uri = req.getRequestURI();
 
         switch (uri) {
+
             case "/servletDay05/role/select.do":
                 resp.sendRedirect("http://localhost:8080/servletDay05/jsp/role/role_list.jsp");
                 break;
+
             case "/servletDay05/role/add.do":
                 String name = req.getParameter("name");
                 String[] priviege = req.getParameterValues("priviege");
@@ -52,26 +53,22 @@ public class RoleServlet extends HttpServlet {
                 ri.addRole(new Role(null, name, pValue));
                 resp.sendRedirect("http://localhost:8080/servletDay05/jsp/role/role_list.jsp");
                 break;
+
             case "/servletDay05/role/delete.do":
                 String nameDel = req.getParameter("id");
                 System.out.println(nameDel);
-
                 ri.deleteRole(Integer.parseInt(nameDel));
                 resp.sendRedirect("http://localhost:8080/servletDay05/jsp/role/role_list.jsp");
                 break;
-//            case "/servletDay05/role/update.do":
-//                String idUpdate = req.getParameter("id");
-//
-//                resp.sendRedirect("http://localhost:8080/servletDay05/jsp/role/role_modif.jsp?䶞=" + idUpdate);
-//                break;
+
             case "/servletDay05/role/update2.do":
-//              String idUpdate2 = req.getParameter("䶞");
                 Integer idHidden = Integer.parseInt(req.getParameter("idHidden"));
                 String nameUpdate = req.getParameter("name");
                 String[] priviegeUp = req.getParameterValues("priviege");
                 System.out.println(idHidden);
                 System.out.println(nameUpdate);
                 System.out.println(Arrays.toString(priviegeUp));
+
                 String pValue2 = "";
 
                 for (int i = 0; i < priviegeUp.length; i++) {
