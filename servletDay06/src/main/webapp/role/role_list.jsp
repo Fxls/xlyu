@@ -12,8 +12,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>宏晶信息－NetCTOSS</title>
-    <link type="text/css" rel="stylesheet" media="all" href="../styles/global.css"/>
-    <link type="text/css" rel="stylesheet" media="all" href="../styles/global_color.css"/>
+    <link type="text/css" rel="stylesheet" media="all" href="<%=request.getContextPath()%>/styles/global.css"/>
+    <link type="text/css" rel="stylesheet" media="all" href="<%=request.getContextPath()%>/styles/global_color.css"/>
     <script language="javascript" type="text/javascript">
         function deleteRole() {
             var r = window.confirm("确定要删除此角色吗？");
@@ -31,16 +31,16 @@
 <!--导航区域开始-->
 <div id="navi">
     <ul id="menu">
-        <li><a href="../index.html" class="index_off"></a></li>
-        <li><a href="../role/role_list.html" class="role_on"></a></li>
-        <li><a href="../admin/admin_list.html" class="admin_off"></a></li>
-        <li><a href="../fee/fee_list.html" class="fee_off"></a></li>
-        <li><a href="../account/account_list.html" class="account_off"></a></li>
-        <li><a href="../service/service_list.html" class="service_off"></a></li>
-        <li><a href="../bill/bill_list.html" class="bill_off"></a></li>
-        <li><a href="../report/report_list.html" class="report_off"></a></li>
-        <li><a href="../user/user_info.html" class="information_off"></a></li>
-        <li><a href="../user/user_modi_pwd.html" class="password_off"></a></li>
+        <li><a href="<%=request.getContextPath()%>/index.html" class="index_off"></a></li>
+        <li><a href="<%=request.getContextPath()%>/role/role_list.html" class="role_on"></a></li>
+        <li><a href="<%=request.getContextPath()%>/admin/admin_list.html" class="admin_off"></a></li>
+        <li><a href="<%=request.getContextPath()%>/fee/fee_list.html" class="fee_off"></a></li>
+        <li><a href="<%=request.getContextPath()%>/account/account_list.html" class="account_off"></a></li>
+        <li><a href="<%=request.getContextPath()%>/service/service_list.html" class="service_off"></a></li>
+        <li><a href="<%=request.getContextPath()%>/bill/bill_list.html" class="bill_off"></a></li>
+        <li><a href="<%=request.getContextPath()%>/report/report_list.html" class="report_off"></a></li>
+        <li><a href="<%=request.getContextPath()%>/user/user_info.html" class="information_off"></a></li>
+        <li><a href="<%=request.getContextPath()%>/user/user_modi_pwd.html" class="password_off"></a></li>
     </ul>
 </div>
 <!--导航区域结束-->
@@ -76,8 +76,8 @@
                     <td><%=r.getName()%></td>
                     <td><%=r.getPowerNames()%></td>
                     <td>
-                        <input type="button" value="修改" class="btn_modify" onclick="location.href='role_modi.html';"/>
-                        <input type="button" value="删除" class="btn_delete" onclick="deleteRole();" />
+                        <input type="button" value="修改" class="btn_modify" onclick="location.href='http://localhost:8080/servletDay06/Role/modi.role?powerNames=<%=r.getPowerNames()%>&name=<%=r.getName()%>';"/>
+                        <input type="button" value="删除" class="btn_delete" onclick="location.href='http://localhost:8080/servletDay06/Role/delete.role?deleteId=<%=r.getId()%>';" />
                     </td>
                 </tr>
                 <%

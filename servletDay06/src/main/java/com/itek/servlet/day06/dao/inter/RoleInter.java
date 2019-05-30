@@ -26,4 +26,7 @@ public interface RoleInter {
 
     Integer selectId(String roleName);
     int addN_role_power(Integer id,String [] arr);//role_id,power_id数组
+
+    int deleteById(Integer id);
+
 }

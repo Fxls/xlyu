@@ -43,6 +43,7 @@ public class RoleImpl implements RoleInter {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+
             System.out.println("select方法运行错误！");
         } finally {
             DBUtil.closeConnection(conn);
@@ -109,8 +110,8 @@ public class RoleImpl implements RoleInter {
             ps = conn.prepareStatement("insert into n_role_power values(?,?)");
             for (int i = 0; i < arr.length; i++) {
 
-                ps.setInt(1,id);
-                ps.setInt(2,Integer.parseInt(arr[i]));
+                ps.setInt(1, id);
+                ps.setInt(2, Integer.parseInt(arr[i]));
                 ps.addBatch();
 
             }
@@ -120,4 +121,29 @@ public class RoleImpl implements RoleInter {
         }
         return 0;
     }
+
+    @Override
+    public int deleteById(Integer id) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        try {
+            conn = DBUtil.getPoolConnection();
+            ps = conn.prepareStatement("delete from role where id =?");
+            ps.setInt(1, id);
+            int count = ps.executeUpdate();
+            if (count >= 1) {
+                System.out.println("role delete successful!");
+            } else {
+                System.out.println("role delete wrong!!");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("wrong!!!");
+        } finally {
+            DBUtil.closeConnection(conn);
+        }
+        return -1;
+    }
+
+
 }

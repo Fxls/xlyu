@@ -1,3 +1,11 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Administrator
+  Date: 2019/5/30
+  Time: 15:37
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +32,7 @@
         <div class="pwd"><input class="pwdText" type="password" placeholder="QQ密码" name="loginInfo"/></div>
         &nbsp;<input class="remember" type="checkbox" name="loginInfo" title="为了确保你的信息安全，请不要在网吧等公共场所勾选此选项" id="cb"/><label
             for="cb"><span class="tip"
-                           title="为了确保你的信息安全，请不要在网吧等公共场所勾选此选项"><div style="position: absolute"><strong>&nbsp;&nbsp;下次自动登录</strong></div></span></label><br/>
+                           title="为了确保你的信息安全，请不要在网吧等公共场所勾选此选项"><strong>&nbsp;&nbsp;下次自动登录</strong></span></label><br/>
         <input class="submit" type="submit" value="登  录"/><br/>
     </form>
     <img src="扫码登录.png" class="QR"/>&nbsp;<span class="tip2"><strong>扫码快捷登录</strong></span><br/>
