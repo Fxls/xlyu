@@ -1,0 +1,37 @@
+-1- 简述什么是状态管理？
+    - 状态管理即对客服两端的交互数据进行管理
+    - 状态管理分为两种
+        1、客户端状态管理｛cookie｝
+            - cookie：储存在用户本地终端上的数据
+                - 创建cookie对象
+                Cookie cookie = request.getCookie(String name ,String value);
+                - 调用response.addCookie添加cookie
+                response.addCookie(cookie);
+                - 查询cookie
+                Cookies [] cookies = req.getCookies();
+                for(Cookie cookie:cookies){
+                    cookie.getName();
+                    cookie.getValue();
+                }
+                - 对cookie进行设置
+                cookie.setValue(String newValue);
+                response.addCookie(cookie.setValue(String newValue));
+                - 修改cookie生存时间
+                Cookie.setMaxAge(int seconds);｛>0-外,<0-内｝
+
+        2、服务段状态管理｛session｝
+            - 请看day08
+
+-2- 简述什么是cookie？
+    - cookie就是储存在用户本地终端上的数据
+    - cookie的特点
+        ·cookie可以被用户禁止
+        ·cookie的长度有限，大约为4kb
+        ·cookie只能以字符串的形式存储
+        ·cookie存在的个数是有限制
+        ·cookie不安全
+-3-
+    - 1 创建cookie数组，用于接收客户端的所有cookie
+    - 2 接收cookie名
+-4- 使用cookie 实现自动登录功能
+    请看AutoLoginByCookieServlet
