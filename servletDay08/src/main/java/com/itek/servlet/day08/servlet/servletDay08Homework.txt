@@ -1,0 +1,35 @@
+-1- 简述session的 工作原理
+    - session中文翻译为时域，其实也就是状态管理的服务端状态管理。browser访问server时，server会为每一个browser分配内存空间
+      并单独创建session对象，其id为sid，server会把sid返回browser（cookie实现，所以说session依赖于cookie）当browser再度访问时，
+      browser会根据sid来获取session对象。
+
+      session的创建
+      HttpSession s = request.getSession();
+
+      session的数据处理
+      Session.setAttribute(String name,Object value);void (绑定)
+      Session.getAttribute(String name);Object (获取)
+      Session.removeAttribute(String name);void (移除)
+
+      session对象删除
+      Session.invalidate();
+
+-2- A、Session是需要创建的（HttpSession s = request.getSession() ）
+    B、正确
+    C、Session对象删除-Session.invalidate();
+    D、正确
+-3- 简述什么是session超时？如何修改缺省的时间限制？
+
+    于客户端长时间（休眠时间）没有与服务器交互，服务器将此Session销毁，
+    客户端再一次与服务器交互时之前的Session就不存在了
+
+    - <session-config>
+        <session-timeout>30</session-timeout>
+      </session-config>
+
+    默认30分钟，在tomcat\conf下的web.xml里
+
+
+    通过上述标签进行修改o&setMaxInactiveInterval
+-4- 请看本工程代码
+
