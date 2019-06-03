@@ -1,0 +1,29 @@
+-1- 简述什么是过滤器？
+    - 过滤器： 
+    过滤器是Servlet2.3规范中定义的一种小型的、可插入的
+    Web组件。用来拦截Servlet容器的请求和响应过程，以
+    便查看、提取或以某种方式操作正在客户机和服务器之
+    间交换的数据。
+
+
+    过滤器是指拦截请求，并对传给被请求资源的ServletRequest 或 ServletResponse
+    进行处理的一个对象。过滤器可以用于登录、加密和解密、会话检查等等。过滤器可以配置为拦截一个或
+    多个资源。如果同一个资源或同一组资源中应用了多个过滤器，则调用顺序有显示显得比较重要，这时候
+    就需要部署描述符(web.xml)来控制其先后顺序【也可以通过注解的方式来部署过滤器程序】。
+    - Filter（位于javax.servlet），是一个接口，有三个接口方法，
+    1、init(FilterConfig var1) throws ServletException;
+    2、doFilter(ServletRequest var1, ServletResponse var2, FilterChain var3) throws IOException, ServletException;
+    3、void destroy();
+    其中ini的初始值可以再web.xml中配置
+-2- 简述过滤器的开发步骤。
+    - 1、创建一个filter类
+      2、实现Filter接口方法
+      3、在doFilter中声明拦截方法
+      4、调用doFilter中的filterChain对象的doFilter方法实现拦截（传入参数为，servletRequest, servletResponse）
+-3-
+-4- 简述什么是监听器？
+    - Servlet规范中定义的一种特殊的组件，用来监听Servlet
+      容器产生的事件并进行相应的处理
+-5-
+
+
