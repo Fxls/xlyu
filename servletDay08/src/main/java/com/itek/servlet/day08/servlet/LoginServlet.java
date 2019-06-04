@@ -68,41 +68,53 @@ public class LoginServlet extends HttpServlet {
                 }
                 break;
             case "/servletDay08/captcha.log":
-                //验证码环节
-                BufferedImage image = new BufferedImage(100, 40, BufferedImage.TYPE_INT_RGB);
-                Graphics g = image.getGraphics();
-                Random r = new Random();
-                g.setColor(new Color(r.nextInt(255), r.nextInt(255), r.nextInt(255)));
-
-                //验证码背景抠图
-                g.fillRect(0, 0, 150, 40);
+                //验证码制作方法generateCap();
+                BufferedImage image = generateCap();
+                //生成随机字符串方法，并进行session绑定
                 String randomStr = generateRandomString(5);
                 sOfCap.setAttribute("cap", randomStr);
-
-
-                g.setColor(new Color(r.nextInt(255), r.nextInt(255), r.nextInt(255)));
-                g.setFont(new Font("微软雅黑", Font.BOLD, 30));
-                g.drawString(randomStr, 5, 30);
-
-                for (int i = 1; i <= 8; i++) {
-                    g.setColor(new Color(r.nextInt(255), r.nextInt(255), r.nextInt(255)));
-                    g.drawLine(r.nextInt(150), r.nextInt(40), r.nextInt(150), r.nextInt(40));
-                }
-
+                //设置页面输出格式
                 resp.setContentType("image/jpeg");
                 OutputStream os = resp.getOutputStream();
-
                 ImageIO.write(image, "jpeg", os);
                 os.close();
-
-
                 break;
             case "/servletDay08/error.log":
                 req.getRequestDispatcher("/WEB-INF/jsp/error.jsp").forward(req, resp);
                 break;
+            default:
+                req.getRequestDispatcher("/error.jsp").forward(req, resp);
+                break;
         }
 
 
+    }
+
+    /**
+     * @Param
+     * @description 验证码制作方法
+     * @date 2019/6/4 12:30
+     * @return
+     */
+
+    private static BufferedImage generateCap() {
+        BufferedImage image = new BufferedImage(100, 40, BufferedImage.TYPE_INT_RGB);
+        Graphics g = image.getGraphics();
+        Random r = new Random();
+        g.setColor(new Color(r.nextInt(255), r.nextInt(255), r.nextInt(255)));
+
+        //验证码背景抠图
+        g.fillRect(0, 0, 150, 40);
+        g.setColor(new Color(r.nextInt(255), r.nextInt(255), r.nextInt(255)));
+        g.setFont(new Font("微软雅黑", Font.BOLD, 30));
+        String randomStr = generateRandomString(5);
+        g.drawString(randomStr, 5, 30);
+
+        for (int i = 1; i <= 8; i++) {
+            g.setColor(new Color(r.nextInt(255), r.nextInt(255), r.nextInt(255)));
+            g.drawLine(r.nextInt(150), r.nextInt(40), r.nextInt(150), r.nextInt(40));
+        }
+        return image;
     }
 
     /**
@@ -112,7 +124,7 @@ public class LoginServlet extends HttpServlet {
      * @date 2019/6/1 14:29
      */
 
-    private String generateRandomString(int length) {
+    private static String generateRandomString(int length) {
         Random r = new Random();
         StringBuffer stringBuffer = new StringBuffer();
         for (int i = 0; i < length; i++) {
