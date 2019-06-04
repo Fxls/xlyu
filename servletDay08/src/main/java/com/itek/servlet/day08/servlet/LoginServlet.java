@@ -16,7 +16,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.RandomAccessFile;
 import java.util.Random;
 
 /**
@@ -60,7 +59,9 @@ public class LoginServlet extends HttpServlet {
                 req.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(req, resp);
                 break;
             case "/servletDay08/index.log":
-                if (s.getAttribute("isLogin") != null && (Boolean) s.getAttribute("isLogin") == true) {
+                boolean notNull = (s.getAttribute("isLogin") != null);
+                boolean isLogin = ((Boolean) s.getAttribute("isLogin") == true);
+                if (notNull && isLogin) {
                     req.getRequestDispatcher("/WEB-INF/jsp/index.jsp").forward(req, resp);
                 } else {
                     req.getRequestDispatcher("/servletDay08/login.log");
