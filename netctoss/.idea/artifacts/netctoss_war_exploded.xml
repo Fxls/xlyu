@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="netctoss:war exploded">
+    <output-path>$PROJECT_DIR$/target/netctoss</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>netctoss</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="netctoss" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.36" />
+          <element id="library" level="project" name="Maven: commons-dbcp:commons-dbcp:1.2.2" />
+          <element id="library" level="project" name="Maven: commons-pool:commons-pool:1.3" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/netctoss/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="netctoss/web/Web" />
+    </root>
+  </artifact>
+</component>

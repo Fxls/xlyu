@@ -1,0 +1,180 @@
+body {
+    margin: 0px;
+    background: url("背景2.png");
+}
+
+.main {
+
+    width: 334.2px;
+    height: 360px;
+    border: 5px solid black;
+    margin-left: 850px;
+    margin-top: 150px;
+    padding: 1px;
+    border-radius: 15px;
+    box-shadow: 3px 2px 1px #ff92a9;
+
+}
+
+.head {
+
+    width: 334px;
+    height: 49.6px;
+    border-bottom: 3px solid black;
+
+}
+
+.username {
+    /*border: 1px solid black;*/
+    width: 282px;
+    height: 40px;
+    padding: 0px;
+    margin-top: 46px;
+    margin-left: 23px;
+}
+
+.userText, .pwdText, .remember {
+    width: 271px;
+    height: 30px;
+    padding: 2px;
+    margin: 1px;
+    background: #ffdaf3;
+    border-radius: 30px;
+    outline: none;
+    border-color: black;
+    text-indent: 20px;
+
+}
+
+
+.pwd {
+    /*border: 1px solid black;*/
+    width: 282px;
+    height: 40px;
+    padding: 0px;
+    margin-top: 15px;
+    margin-left: 23px;
+}
+
+.remember {
+    margin-top: 15px;
+    margin-left: 23px;
+    width: 80px;
+    height: 20px;
+}
+
+.tip {
+    position: absolute;
+    font-size: 16px;
+    left: 900px;
+    top: 364px;
+    color: black;
+    text-shadow: 1px 1px 1px white;
+}
+
+.submit {
+    margin-top: 10px;
+    margin-left: 23px;
+    width: 290px;
+    height: 50px;
+    background: #0EA8D8;
+    font-family: '方正兰亭超细黑简体';
+    font-size: 20px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    outline: 0px;
+    box-shadow: 3px 2px 2px #0f15ff;
+    font-weight: bolder;
+}
+
+.QR {
+    margin-top: 15px;
+    margin-left: 110px;
+    padding: 0px;
+}
+
+.forget {
+    font-size: 15px;
+    margin-left: 250px;
+    padding: 0px 0px 3px 0px;
+    color: black;
+}
+
+ .tip:hover, .QR:hover, .tip2:hover {
+    cursor: pointer;
+}
+
+.submit:hover {
+    cursor: pointer;
+    background: #0AD4DB;
+}
+
+.forget:hover {
+    cursor: pointer;
+    border-bottom: black solid 1px;
+}
+
+.headName {
+    color: #ffdaf3;
+    font-size: 32px;
+    margin-left: 4px;
+    padding-top: 4px;
+    position: absolute;
+    text-shadow: 7px 2px 2px black, -1px -1px 0px black;
+    -webkit-user-select: none;
+
+
+}
+
+.forgetA:link {
+    text-decoration: none;
+}
+
+.userText:focus::-webkit-input-placeholder, .pwdText:focus::-webkit-input-placeholder {
+    color: silver;
+}
+
+.webName {
+    position: absolute;
+    top: 10px;
+    left: 150px;
+    font-size: 50px;
+    color: white;
+    text-shadow: 7px 2px 2px black, -2px 2px 2px black, 1px -1px 2px black;
+    -webkit-user-select: none;
+}
+
+.message {
+    color: white;
+    font-size: 35px;
+    position: absolute;
+    height: 330px;
+    writing-mode: vertical-rl;
+    left: 85px;
+    top: 215px;
+    text-shadow: -7px -2px 2px hotpink, 2px 2px 1px black, 1px -2px 2px black;
+    -webkit-user-select: none;
+
+}
+
+.foot {
+    color: black;
+    position: absolute;
+    top: 700px;
+    left: 650px;
+    -webkit-user-select: none;
+
+}
+
+.menuName {
+    position: absolute;
+    top: 600px;
+    left: 400px;
+    border-color: #9ac563;
+}
+
+#myCanvas {
+    background-image: url("背景2.png");
+    pointer-events: none;
+}
