@@ -5,13 +5,13 @@
  */
 package com.iek.netctoss.servlet;
 
+
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -29,15 +29,12 @@ public class CapServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-        //存验证码的session
-
         //验证码制作方法generateCap();
         BufferedImage image = generateCap();
         //生成随机字符串方法，并进行session绑定
         String randomStr = generateRandomString(5);
 
-        session.setAttribute("cap", randomStr);
+        req.getSession().setAttribute("capStr", randomStr);
         //设置页面输出格式
         resp.setContentType("image/jpeg");
         OutputStream os = resp.getOutputStream();

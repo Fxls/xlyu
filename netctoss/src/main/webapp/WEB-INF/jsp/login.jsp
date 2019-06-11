@@ -45,9 +45,9 @@
             <scan class="headName"><font face="MS Mincho"><strong>秒速五センチメートル</strong></font></scan>
         </div>
         <div class="username"><input class="userText" id="nameId" type="text" placeholder="支持QQ号/手机号/邮箱登录"
-                                     name="username" value="<%=request.getAttribute("loginName")%>"/><span></span></div>
+                                     name="username" value="${loginName}"/><span></span></div>
         <div class="pwd"><input class="pwdText" id="pwdId" type="password" placeholder="QQ密码" name="pwd"
-                                value="<%=request.getAttribute("loginPwd")%>"/><span></span></div>
+                                value="${loginPwd}"/><span></span></div>
         <script>
             if (document.getElementById("nameId").value == "null") {
                 document.getElementById("nameId").value = "";
@@ -56,7 +56,7 @@
         </script>
         &nbsp;<input class="remember" type="text" name="cap" placeholder="验证码" id="cb"/><img
             style="position: absolute;margin-top: 5px;margin-left: 10px" src="<%=request.getContextPath()%>/cap"
-            onclick="this.src='<%=request.getContextPath()%>/cap?d='+Math.random();"><span>${param.msg}</span><br/>
+            onclick="this.src='<%=request.getContextPath()%>/cap?d='+Math.random();"><span style="position: absolute;margin-left: 130px;margin-top: 10px;font-size: 30px;font-weight: bolder;color: #ff1b54;">${param.msg}</span><br/>
         <input class="submit" type="submit" value="登  录"/><br/>
     </form>
     <img src="<%=request.getContextPath()%>/static/扫码登录.png" class="QR"/>&nbsp;<span

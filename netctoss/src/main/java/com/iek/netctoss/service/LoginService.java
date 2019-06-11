@@ -3,6 +3,8 @@ package com.iek.netctoss.service;
 import com.iek.netctoss.commons.ServiceResult;
 import com.iek.netctoss.module.User;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * @Param
  * @description 业务处理接口
@@ -12,5 +14,5 @@ import com.iek.netctoss.module.User;
 
 
 public interface LoginService {
-    ServiceResult<User> result(String name, String pwd, String cap);
+    ServiceResult<User> result(HttpServletRequest req, String name, String pwd, String cap);
 }
