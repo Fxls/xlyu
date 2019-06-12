@@ -30,11 +30,8 @@ public class CapServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //验证码制作方法generateCap();
-        BufferedImage image = generateCap();
-        //生成随机字符串方法，并进行session绑定
-        String randomStr = generateRandomString(5);
+        BufferedImage image = generateCap(req);
 
-        req.getSession().setAttribute("capStr", randomStr);
         //设置页面输出格式
         resp.setContentType("image/jpeg");
         OutputStream os = resp.getOutputStream();
@@ -42,7 +39,7 @@ public class CapServlet extends HttpServlet {
         os.close();
     }
 
-    private static BufferedImage generateCap() {
+    private static BufferedImage generateCap(HttpServletRequest req) {
         BufferedImage image = new BufferedImage(100, 40, BufferedImage.TYPE_INT_RGB);
         Graphics g = image.getGraphics();
         Random r = new Random();
@@ -53,6 +50,9 @@ public class CapServlet extends HttpServlet {
         g.setColor(new Color(r.nextInt(255), r.nextInt(255), r.nextInt(255)));
         g.setFont(new Font("微软雅黑", Font.BOLD, 30));
         String randomStr = generateRandomString(5);
+        req.getSession().setAttribute("capStr",randomStr);
+        System.out.println(randomStr);
+
         g.drawString(randomStr, 5, 30);
 
         for (int i = 1; i <= 8; i++) {

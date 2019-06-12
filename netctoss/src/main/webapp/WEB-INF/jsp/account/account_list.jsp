@@ -10,7 +10,9 @@
     <title>宏晶信息－NetCTOSS</title>
     <link type="text/css" rel="stylesheet" media="all" href="${base}/styles/global.css"/>
     <link type="text/css" rel="stylesheet" media="all" href="${base}/styles/global_color.css"/>
+    <script src="${base}/static/jquery-1.4.3.js"></script>
     <script language="javascript" type="text/javascript">
+
         //删除
         function deleteAccount() {
             var r = window.confirm("确定要删除此账务账号吗？\r\n删除后将不能恢复，且会删除其下属的所有业务账号。");
@@ -22,9 +24,17 @@
             var r = window.confirm("确定要开通此账务账号吗？");
             document.getElementById("operate_result_info").style.display = "block";
         }
+
+
+        function loadPage() {
+
+            var getPage = "${current}";//"1"
+            document.getElementById(getPage).className = "current_page";
+        }
+
     </script>
 </head>
-<body>
+<body onload="loadPage();">
 <!--Logo区域开始-->
 <div id="header">
     <img src="${base}/images/logo.png" alt="logo" class="left"/>
@@ -96,7 +106,6 @@
                 </c:forEach>
 
 
-
             </table>
             <p>业务说明：<br/>
                 1、创建则开通，记载创建时间；<br/>
@@ -108,16 +117,30 @@
                 7、删除账务账号，同时删除下属的所有业务账号。</p>
         </div>
         <!--分页-->
+
         <div id="pages">
-            <a href="#">首页</a>
-            <a href="#">上一页</a>
-            <a href="#" class="current_page">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">下一页</a>
-            <a href="#">末页</a>
+            <a href="${base}/list.acc?pageNo=1">首页</a>
+            <c:if test="${current<=1}">
+                <a href="${base}/list.acc?pageNo=1">上一页</a>
+            </c:if>
+            <c:if test="${current > 1}">
+                <a href="${base}/list.acc?pageNo=${current - 1}">上一页</a>
+            </c:if>
+
+
+            <a id="1" href="${base}/list.acc?pageNo=1" class="">1</a>
+            <a id="2" href="${base}/list.acc?pageNo=2" class="">2</a>
+            <a id="3" href="${base}/list.acc?pageNo=3" class="">3</a>
+            <a id="4" href="${base}/list.acc?pageNo=4" class="">4</a>
+            <a id="5" href="${base}/list.acc?pageNo=5" class="">5</a>
+
+            <c:if test="${current == endPage}">
+                <a href="${base}/list.acc?pageNo=${endPage}">下一页</a>
+            </c:if>
+            <c:if test="${current != endPage}">
+                <a href="${base}/list.acc?pageNo=${current+1}">下一页</a>
+            </c:if>
+            <a href="${base}/list.acc?pageNo=${endPage}">末页</a>
         </div>
     </form>
 </div>

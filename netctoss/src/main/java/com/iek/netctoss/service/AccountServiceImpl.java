@@ -5,6 +5,7 @@
  */
 package com.iek.netctoss.service;
 
+import com.iek.netctoss.commons.Const;
 import com.iek.netctoss.dao.impl.AccountImpl;
 import com.iek.netctoss.dao.inter.AccountInter;
 import com.iek.netctoss.module.Account;
@@ -23,5 +24,18 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public List<Account> getAccount() {
         return accountInter.selectAll();
+    }
+
+    @Override
+    public List<Account> getAccountByPage(int pageSize, int pageNo) {
+
+        return accountInter.selectByPage(pageSize, pageNo);
+    }
+
+    @Override
+    public int getAccountEndPage() {
+        int totalCount = accountInter.getAccountTotalCount();
+
+        return totalCount / Const.PAGE_SIZE + totalCount % Const.PAGE_SIZE;
     }
 }

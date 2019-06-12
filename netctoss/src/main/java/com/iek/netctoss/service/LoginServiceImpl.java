@@ -31,6 +31,7 @@ public class LoginServiceImpl implements LoginService {
     public ServiceResult<User> result(HttpServletRequest req, String name, String pwd, String cap) {
         ServiceResult result = new ServiceResult();
         String capStr = (String) req.getSession().getAttribute("capStr");
+
         String formName = "[a-z]{2,7}";
         String formPwd = "[a-z]{2,7}";
 
@@ -42,12 +43,10 @@ public class LoginServiceImpl implements LoginService {
         } else if (!name.matches(formName) || !pwd.matches(formPwd)) {
             result.setMsg("用户名或密码格式错误");
             result.setSuccess(false);
-        }
-//        else if (!cap.equals(capStr)) {
-//            result.setMsg("×");
-//            result.setSuccess(false);
-//        }
-        else if (loginedUser == null) {
+        } else if (!(cap.toLowerCase()).equals(capStr.toLowerCase())) {
+            result.setMsg("×");
+            result.setSuccess(false);
+        } else if (loginedUser == null) {
             //登录失败了
             result.setMsg("登录失败，用户名或密码错误！");
             result.setSuccess(false);

@@ -20,4 +20,9 @@ public interface AccountService {
      */
 
     List<Account> getAccount();
+
+    List<Account> getAccountByPage(int pageSize, int pageNo);
+
+    int getAccountEndPage();
+
 }

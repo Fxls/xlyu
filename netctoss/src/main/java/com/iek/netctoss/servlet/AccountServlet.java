@@ -5,6 +5,7 @@
  */
 package com.iek.netctoss.servlet;
 
+import com.iek.netctoss.commons.Const;
 import com.iek.netctoss.module.Account;
 import com.iek.netctoss.service.AccountService;
 import com.iek.netctoss.service.AccountServiceImpl;
@@ -31,10 +32,19 @@ public class AccountServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String uri = req.getRequestURI();
         switch (uri) {
+            //分页查询
             case "/netctoss/list.acc":
-                List<Account> accounts = accountService.getAccount();
+                String pageNoGet = req.getParameter("pageNo");
+                int pageNo = 1;
+                if (pageNoGet != null && !"".equals(pageNoGet)) {
+                    pageNo = Integer.parseInt(pageNoGet);
+                }
+                List<Account> accounts = accountService.getAccountByPage(Const.PAGE_SIZE, pageNo);
+                int endPage = accountService.getAccountEndPage();
 
                 req.setAttribute("accounts", accounts);
+                req.setAttribute("current", pageNo);
+                req.setAttribute("endPage", endPage);
 
                 req.getRequestDispatcher("/WEB-INF/jsp/account/account_list.jsp").forward(req, resp);
                 break;
