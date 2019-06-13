@@ -1,0 +1,999 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ajax:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bab4e842-03c2-4ab7-8b48-a9002552342b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ajax_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ajax_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_dbcp_commons_dbcp_1_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_pool_commons_pool_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jstl_jstl_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_36.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ezmorph_ezmorph_1_0_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_json_lib_json_lib_JDK15_2_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ajax.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.itek.ajax/dao/AreaImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.itek.ajax/dao/AreaInter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.itek.ajax/dao/CityImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.itek.ajax/dao/CityInter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.itek.ajax/dao/ProvinceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.itek.ajax/dao/ProvinceInter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.itek.ajax/filter/CodeRegular.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.itek.ajax/module/Area.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.itek.ajax/module/City.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.itek.ajax/module/Province.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.itek.ajax/service/AreaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.itek.ajax/service/AreaServiceImplent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.itek.ajax/service/CityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.itek.ajax/service/CityServiceImplent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.itek.ajax/service/ProvinceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.itek.ajax/service/ProvinceServiceImplment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.itek.ajax/servlet/CityServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.itek.ajax/util/DBUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/city.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/jquery-1.4.3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/json.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../leetCode/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../leetCode/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../leetCode/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../leetCode/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../leetCode/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../leetCode/leetCode.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../leetCode/src/No1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../leetCode/src/No2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay06/src/main/java/com/itek/servlet/day06/test/test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/servletDay10.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/java/com/itek/servlet/day10/dao/impl/RoleImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/java/com/itek/servlet/day10/dao/inter/RoleInter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/java/com/itek/servlet/day10/filter/CodeFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/java/com/itek/servlet/day10/module/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/java/com/itek/servlet/day10/module/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/java/com/itek/servlet/day10/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/java/com/itek/servlet/day10/servlet/ELTestServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/java/com/itek/servlet/day10/servlet/LoginServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/java/com/itek/servlet/day10/servlet/RoleServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/java/com/itek/servlet/day10/servlet/TestServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/java/com/itek/servlet/day10/servlet/ToLoginServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/java/com/itek/servlet/day10/test/ComparedArrayListAndLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/java/com/itek/servlet/day10/test/HashMap存储数据过程.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/java/com/itek/servlet/day10/test/位桶数组.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/java/com/itek/servlet/day10/test/哈希碰撞.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/java/com/itek/servlet/day10/util/DBUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/java/servletDay10Homework" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/resources/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/ELtest.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/account/account_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/account/account_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/account/account_list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/account/account_modi.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/account/account_modi.html.bak" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/admin/admin_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/admin/admin_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/admin/admin_modi.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/bill/bill_item.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/bill/bill_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/bill/bill_service_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/fee/fee_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/fee/fee_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/fee/fee_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/fee/fee_modi.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/getPara.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/loginTest.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/nopower.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/report/report_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/role/role_add.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/role/role_list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/role/role_modi.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/service/service_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/service/service_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/service/service_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/service/service_modi.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/user.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/user/user_info.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/jsp/user/user_modi_pwd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../servletDay10/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chatroom/src/chatRoom/files/teat.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chatroom/src/chatRoom/files/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../chatroom/src/chatRoom/files/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codebook/codebook.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../codebook/codebook.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codebook/resource/I.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codebook/resource/J.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codebook/resource/L.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codebook/resource/O.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codebook/resource/S.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codebook/resource/T.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codebook/resource/TETRIS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codebook/resource/Z.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codebook/resource/game-over.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codebook/resource/pause.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../codebook/src/book/book02/Stars.java" beforeDir="false" afterPath="$PROJECT_DIR$/../codebook/src/book/book02/Stars.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day02.code.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../firstweek" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../homework.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../homeworkday02/CashRegister.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../homeworkday02/HWday02" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../homeworkday02/Time.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../javahomework/src/javaSE2/day07/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../javahomework/src/javaSE2/day07/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../netctoss/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../netctoss/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../netctoss/src/main/java/com/iek/netctoss/commons/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/../netctoss/src/main/java/com/iek/netctoss/commons/Const.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../netctoss/src/main/java/com/iek/netctoss/servlet/AccountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../netctoss/src/main/java/com/iek/netctoss/servlet/AccountServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../netctoss/src/main/java/com/iek/netctoss/util/GetSession.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../netctoss/src/main/webapp/WEB-INF/jsp/account/account_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../netctoss/src/main/webapp/WEB-INF/jsp/account/account_list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../oracle/src/day04/homeworkDay04" beforeDir="false" afterPath="$PROJECT_DIR$/../oracle/src/day04/homeworkDay04" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servletDay04/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../servletDay04/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servletDay04/src/main/java/com/itek/servlet/day04/servlet/InitParamServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servletDay04/src/main/java/com/itek/servlet/day04/servlet/InitParamServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servletDay05/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../servletDay05/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servletDay05/src/main/webapp/jsp/role/role_add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../servletDay05/src/main/webapp/jsp/role/role_add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servletDay06/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../servletDay06/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servletDay06/src/main/java/com/itek/servlet/day06/dao/impl/RoleImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servletDay06/src/main/java/com/itek/servlet/day06/dao/impl/RoleImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servletDay06/src/main/java/com/itek/servlet/day06/servlet/RoleServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servletDay06/src/main/java/com/itek/servlet/day06/servlet/RoleServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servletDay06/src/main/webapp/role/role_modi.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../servletDay06/src/main/webapp/role/role_modi.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servletDay07/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../servletDay07/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servletDay09/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../servletDay09/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servletDay09/src/main/java/com/itek/servlet/day09/listener/LoginListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servletDay09/src/main/java/com/itek/servlet/day09/listener/LoginListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../servletDay09/src/main/java/com/itek/servlet/day09/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../servletDay09/src/main/java/com/itek/servlet/day09/servlet/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sevletDay01/src/com/itek/servlet/day01/MyFirstServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sevletDay01/src/com/itek/servlet/day01/MyFirstServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sevletDay01/src/com/itek/servlet/day01/task07.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day02/CashierTestV01.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day02/DaysOfMonth.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day02/LeapYearTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day02/MaxChoose.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day02/MaxChoose2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day02/OrderOfArrangement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day02/TaxTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day02/TimeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day02/homeworkTXT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day04/SumOfSequences.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day04/SumOfSequences2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day04/homeworkday04txt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day5/ArrCopy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day5/ArrInitialization.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day5/ArrInitialization2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day5/ArrMax.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day5/ArrMax2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day5/ArrMine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day5/BubbleSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day5/MultiplicationTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day5/PrimeNumber.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/day5/homeworkday05" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webBasic/src/day05/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../webBasic/src/day05/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webBasic/src/day06/frameDelayClose.html" beforeDir="false" afterPath="$PROJECT_DIR$/../webBasic/src/day06/frameDelayClose.html" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com.itek.ajax/dao/ProvinceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com.itek.ajax/servlet/CityServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="566">
+              <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>contentTy</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/com.itek.ajax/java/filter/CodeRegular.java" />
+        <option value="$PROJECT_DIR$/src/main/com.itek.ajax/java/service/AjaxServlet.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/util/DBUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/servlet/AjaxServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/servlet/ProvinceService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/servlet/ProvinceInter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/servlet/ProvinceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/servlet/ProvinceServiceImplment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/service/ProvinceService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/module/Province.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jquery-1.4.3.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/filter/CodeRegular.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/servlet/City.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/module/City.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/service/CityService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/service/CityServiceImplent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/service/CityInter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/service/CityImp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/dao/CityImp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/module/Area.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/service/AreaService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/service/AreaServiceImplent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/dao/AreaInter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/dao/AreaImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/city.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/dao/ProvinceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.itek.ajax/servlet/CityServlet.java" />
+      </list>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="960" />
+    <option name="height" value="1032" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ajax" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ajax" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ajax" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ajax" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ajax" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com.itek.ajax" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ajax" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com.itek.ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ajax" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com.itek.ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="filter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ajax" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com.itek.ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ajax" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com.itek.ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ajax" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com.itek.ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ajax" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com.itek.ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ajax" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ajax" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ajax" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ajax" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ajax" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560439292852" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.itek.ajax.dao" />
+      <recent name="com.itek.ajax.service" />
+      <recent name="com.itek.ajax.module" />
+      <recent name="com.itek.ajax.servlet" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\soft\git\xlyu\ajax\src\main\resources" />
+      <recent name="E:\soft\git\xlyu\ajax\src\main\webapp" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.itek.ajax.util" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\soft\git\xlyu\ajax\src\main\java" />
+      <recent name="E:\soft\git\xlyu\ajax\src\main\com.itek.ajax" />
+      <recent name="E:\soft\git\xlyu\ajax\src\main" />
+      <recent name="E:\soft\git\xlyu\ajax\src\main\com.itek.ajax\java" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 7.0.67" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.67" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <deployment>
+        <artifact name="ajax:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/ajax" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_ajax" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="60222" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="ajax:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bab4e842-03c2-4ab7-8b48-a9002552342b" name="Default Changelist" comment="" />
+      <created>1560420341348</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1560420341348</updated>
+      <workItem from="1560420345623" duration="7091000" />
+      <workItem from="1560430388521" duration="9005000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="16096000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26824033" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3295711" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.71444696" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.3295711" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3295711" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" weight="0.3299356" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Designer" order="0" />
+      <window_info id="Image Layers" order="1" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info id="Web" order="5" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.32505643" />
+      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Application Servers" order="0" weight="0.3295711" />
+      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="4" />
+      <window_info anchor="bottom" id="Database Changes" order="5" />
+      <window_info anchor="bottom" id="Version Control" order="6" />
+      <window_info anchor="bottom" id="Message" order="7" />
+      <window_info anchor="bottom" id="Find" order="8" />
+      <window_info anchor="bottom" id="Run" order="9" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="13" />
+      <window_info anchor="right" id="Maven" order="0" />
+      <window_info anchor="right" id="Palette" order="1" />
+      <window_info anchor="right" id="Capture Analysis" order="2" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="767">
+          <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.itek.ajax/servlet/AjaxServlet.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="1" column="77" selection-start-line="1" selection-start-column="60" selection-end-line="1" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.itek.ajax/util/DBUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="52" column="9" lean-forward="true" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.itek.ajax/service/ProvinceService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.itek.ajax/service/ProvinceServiceImplment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/json.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jquery-1.4.3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-505">
+          <caret line="5469" column="69" lean-forward="true" selection-start-line="5469" selection-start-column="34" selection-end-line="5469" selection-end-column="69" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.itek.ajax/filter/CodeRegular.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="12" column="17" lean-forward="true" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.itek.ajax/service/CityService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.itek.ajax/service/CityServiceImplent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="18" column="4" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.itek.ajax/module/Province.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#595#596#0" expanded="true" />
+            <element signature="e#693#694#0" expanded="true" />
+            <element signature="e#725#726#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.itek.ajax/module/City.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1604">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.itek.ajax/dao/ProvinceInter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="33" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.itek.ajax/dao/CityInter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.itek.ajax/dao/CityImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.itek.ajax/module/Area.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="89" column="1" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
+          <folding>
+            <element signature="e#768#769#0" expanded="true" />
+            <element signature="e#829#830#0" expanded="true" />
+            <element signature="e#331#332#0" expanded="true" />
+            <element signature="e#356#357#0" expanded="true" />
+            <element signature="e#393#394#0" expanded="true" />
+            <element signature="e#421#422#0" expanded="true" />
+            <element signature="e#452#453#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#519#520#0" expanded="true" />
+            <element signature="e#551#552#0" expanded="true" />
+            <element signature="e#582#583#0" expanded="true" />
+            <element signature="e#609#610#0" expanded="true" />
+            <element signature="e#649#650#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+            <element signature="e#716#717#0" expanded="true" />
+            <element signature="e#747#748#0" expanded="true" />
+            <element signature="e#795#796#0" expanded="true" />
+            <element signature="e#835#836#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.itek.ajax/service/AreaService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.itek.ajax/service/AreaServiceImplent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="23" column="54" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#489#490#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.itek.ajax/dao/AreaInter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.itek.ajax/dao/AreaImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/city.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="63" column="14" lean-forward="true" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.itek.ajax/dao/ProvinceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.itek.ajax/servlet/CityServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="566">
+          <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>ajax:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>ajax</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: junit:junit:4.11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
