@@ -39,6 +39,30 @@ public class Account {
     public Account() {
     }
 
+    public Account(Integer id, Integer recommenderId) {
+        this.id = id;
+        this.recommenderId = recommenderId;
+    }
+
+    public Account(String realName,
+                   String idcardNo,
+                   String loginName,
+                   String status) {
+        this.realName = realName;
+        this.idcardNo = idcardNo;
+        this.loginName = loginName;
+        this.status = status;
+
+    }
+
+    public Account(Integer id,
+                   String idcardNo,
+                   String loginName) {
+        this.id = id;
+        this.idcardNo = idcardNo;
+        this.loginName = loginName;
+    }
+
     public Account(Integer id,
                    String realName,
                    String idcardNo,
@@ -53,6 +77,48 @@ public class Account {
         this.status = status;
         this.createDate = createDate;
         this.lastLoginTime = lastLoginTime;
+    }
+
+    public Account(Integer id,
+                   Integer recommenderId,
+                   String loginName,
+                   String loginPasswd,
+                   String status,
+                   Date createDate,
+                   Date pauseDate,
+                   Date closeDate,
+                   String realName,
+                   String idcardNo,
+                   Date birthdate,
+                   String gender,
+                   String occupation,
+                   String telephone,
+                   String email,
+                   String mailaddress,
+                   String zipcode,
+                   String qq,
+                   Date lastLoginTime,
+                   String lastLoginIp) {
+        this.id = id;
+        this.recommenderId = recommenderId;
+        this.loginName = loginName;
+        this.loginPasswd = loginPasswd;
+        this.status = status;
+        this.createDate = createDate;
+        this.pauseDate = pauseDate;
+        this.closeDate = closeDate;
+        this.realName = realName;
+        this.idcardNo = idcardNo;
+        this.birthdate = birthdate;
+        this.gender = gender;
+        this.occupation = occupation;
+        this.telephone = telephone;
+        this.email = email;
+        this.mailaddress = mailaddress;
+        this.zipcode = zipcode;
+        this.qq = qq;
+        this.lastLoginTime = lastLoginTime;
+        this.lastLoginIp = lastLoginIp;
     }
 
     @Override

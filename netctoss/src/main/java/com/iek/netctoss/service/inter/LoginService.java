@@ -1,4 +1,4 @@
-package com.iek.netctoss.service;
+package com.iek.netctoss.service.inter;
 
 import com.iek.netctoss.commons.ServiceResult;
 import com.iek.netctoss.module.User;

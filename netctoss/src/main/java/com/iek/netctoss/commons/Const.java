@@ -13,6 +13,6 @@ package com.iek.netctoss.commons;
  **/
 public class Const {
 
-    public static final int PAGE_SIZE = 2;
+    public static final int PAGE_SIZE = 3;
 
 }

@@ -3,11 +3,12 @@
  * @Date 2019/6/11
  * @Description
  */
-package com.iek.netctoss.service;
+package com.iek.netctoss.service.impl;
 
 import com.iek.netctoss.dao.impl.AdminImpl;
 import com.iek.netctoss.dao.inter.AdminInter;
 import com.iek.netctoss.module.Menu;
+import com.iek.netctoss.service.inter.MenuService;
 
 import java.util.List;
 

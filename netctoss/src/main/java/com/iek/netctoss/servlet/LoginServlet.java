@@ -7,10 +7,10 @@ package com.iek.netctoss.servlet;
 
 import com.iek.netctoss.commons.ServiceResult;
 import com.iek.netctoss.module.User;
-import com.iek.netctoss.service.LoginService;
-import com.iek.netctoss.service.LoginServiceImpl;
-import com.iek.netctoss.service.MenuService;
-import com.iek.netctoss.service.MenuServiceImpl;
+import com.iek.netctoss.service.inter.LoginService;
+import com.iek.netctoss.service.impl.LoginServiceImpl;
+import com.iek.netctoss.service.inter.MenuService;
+import com.iek.netctoss.service.impl.MenuServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -63,6 +63,10 @@ public class LoginServlet extends HttpServlet {
             case "/netctoss/index.log":
                 User loginedUser = (User) req.getSession().getAttribute("loginedUser");
                 req.getRequestDispatcher("/WEB-INF/jsp/index.jsp").forward(req, resp);
+                break;
+            case "/netctoss/logout.log":
+                session.invalidate();
+                resp.sendRedirect("http://localhost:8080/netctoss/login.log");
                 break;
         }
     }
