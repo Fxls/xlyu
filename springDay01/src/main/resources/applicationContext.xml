@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--设计“图纸”-->
+    <!--通过bean标签声明配置信息-->
+    <!--
+        bean:声明生产对象
+            属性：id*********唯一标志符
+                 class：生产对象类型(必须使用全限定类名)
+    -->
+    <!--id必须保证唯一-->
+
+    <!--bean实例化的三种方式
+            1、构造器实例化
+            2、静态工厂方法  ac.getBean("cal"); == Calendar.getInstance();
+            3、实例工厂方法实例化
+    -->
+
+    <!--bean的作用域  scope属性-->
+    <!--<bean id="d1" class="com.itek.spring.day01.module.User">-->
+    <!--</bean>-->
+
+    <bean id="cal" class="java.util.Calendar" factory-method="getInstance">
+    </bean>
+
+    <bean id="cal1" class="java.util.GregorianCalendar">
+    </bean>
+    <bean id="cal2" factory-bean="cal1" factory-method="getTime">
+    </bean>
+
+    <!--bean的别名-->
+    <!--<alias name="d1" alias="user"></alias>-->
+    <!--设置多例模式的bean-->
+    <!--<bean id="muti" class="com.itek.spring.day01.module.Multiple" scope="prototype"></bean>-->
+    <!--设置延迟实例化和非延迟实例化-->
+    <!--<bean id="muti" class="com.itek.spring.day01.module.Multiple" lazy-init="true"></bean>-->
+    <!--<bean id="muti" class="com.itek.spring.day01.module.Multiple" lazy-init="false"></bean>-->
+
+    <!--bean初始化回调和销毁回调-->
+    <bean id="d1" class="com.itek.spring.day01.module.User" lazy-init="false" init-method="init" destroy-method="destroy"></bean>
+
+</beans>
