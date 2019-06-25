@@ -1,0 +1,19 @@
+-1- 什么是EL表达式？
+    - EL；Expression Language 表达语言。
+    简而言之就是简化jsp页面的一种表达式
+-2- EL表达式的作用有哪些？
+    1、访问bean属性
+    2、数学运算、逻辑运算
+    3、取参
+-3- A、错误。pageContext>request>session>application
+    B、正确。EL获取正确对象的错误属性是会弱化输出
+    C、正确。通过scope限制查找范围，将不会再查找其他范围
+    D、错误。可以使用下标的形式，例如输出数组的第一个值${arr[0]}
+-4- 简述JSTL的作用。
+    JSTL:JSP Standard Tag Library (jsp标准标签库)
+    JSTL的引入使Web程序员能够利用JSTL和EL来开发Web程序，取代传统直接在页面上嵌入Java程序的做法，以提高程序的阅读性、维护性和方便性。
+-5- A、错误。只有if拥有test属性
+    B、正确
+    C、错误。可以通过varStatus获取
+    D、正确
+-6- 请看工程代码

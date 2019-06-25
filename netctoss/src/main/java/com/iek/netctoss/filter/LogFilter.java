@@ -8,6 +8,7 @@ package com.iek.netctoss.filter;
 import com.iek.netctoss.module.User;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -18,6 +19,7 @@ import java.io.IOException;
  * @author: xlyu
  * @create: 2019-06-10 14:28
  **/
+@WebFilter(filterName = "Log",urlPatterns = "/*")
 public class LogFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -32,7 +34,9 @@ public class LogFilter implements Filter {
         if (!"/netctoss/login.log".equals(uri) &&
                 !"/netctoss/check.log".equals(uri) &&
                 !uri.startsWith("/netctoss/images") &&
-                !uri.startsWith("/netctoss/styles")) {
+                !uri.startsWith("/netctoss/styles") &&
+                !uri.startsWith("/netctoss/static") &&
+                !uri.startsWith("/netctoss/cap")) {
             //根据session中的数据判定该用户是否已经登录过
             User loginedUser = (User) ((HttpServletRequest) servletRequest).getSession().getAttribute("loginedUser");
             if (loginedUser == null) {

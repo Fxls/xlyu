@@ -19,9 +19,11 @@ import java.util.Enumeration;
  * @author: xlyu
  * @create: 2019-05-22 10:11
  **/
+
 public class MyFirstServlet extends HttpServlet {
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void service(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
 //        super.service(req, resp);
         System.out.println("successful");
 

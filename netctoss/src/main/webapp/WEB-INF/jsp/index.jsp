@@ -17,8 +17,28 @@
     <title>宏晶信息－NetCTOSS</title>
     <link type="text/css" rel="stylesheet" media="all" href="<%=request.getContextPath()%>/styles/global.css"/>
     <link type="text/css" rel="stylesheet" media="all" href="<%=request.getContextPath()%>/styles/global_color.css"/>
+    <style>
+        #Time {
+            color: white;
+            font-weight: bolder;
+            position: absolute;
+            font-size: 35px;
+            margin: 400px 650px;
+        }
+    </style>
+    <script>
+        function time() {
+            setInterval(function () {
+                var now = new Date();
+                var obj = document.getElementById("Time");
+                obj.innerText = now.toLocaleTimeString();
+
+            }, 1000)
+        }
+    </script>
 </head>
-<body class="index">
+<body class="index" onload="time();">
+<div id="Time"></div>
 <!--导航区域开始-->
 <div id="index_navi">
     <ul id="menu">

@@ -50,7 +50,7 @@ public class CapServlet extends HttpServlet {
         g.setColor(new Color(r.nextInt(255), r.nextInt(255), r.nextInt(255)));
         g.setFont(new Font("微软雅黑", Font.BOLD, 30));
         String randomStr = generateRandomString(5);
-        req.getSession().setAttribute("capStr",randomStr);
+        req.getSession().setAttribute("capStr", randomStr);
         System.out.println(randomStr);
 
         g.drawString(randomStr, 5, 30);
@@ -79,6 +79,8 @@ public class CapServlet extends HttpServlet {
                     break;
                 case 2:
                     stringBuffer.append(new Random().nextInt(10));
+                    break;
+                default:
                     break;
             }
         }

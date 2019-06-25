@@ -70,33 +70,27 @@
             <div class="input_info_scroll">
                 <ul>
                     <%
-                        String powerNames = (String) request.getAttribute("powerNames");
-                        String getPowerNames = (String) request.getAttribute("getPowerNames");
-                        String[] powerName = powerNames.split(",");//要勾的
-                        String[] getPowerName = getPowerNames.split(",");//所有的
-                        for (int i = 0; i < getPowerName.length; i++) {
-                            for (int j = 0; j < powerName.length; j++) {
-                                if (getPowerName[i].equals(powerName[j])) {
-                                    out.print(" <li><input type='checkbox' checked/>");
-                                    out.print(powerName[j]);
-                                    out.print("</li>");
-                                } else {
-                                    out.print("<li><input type='checkbox' />");
-                                    out.print(getPowerName[i]);
-                                    return;
-                                }
+                        String[] strArr = (String[]) request.getAttribute("powerNames");
+                        for (int i = 0; i < strArr.length; i++) {
+
+                            if ("管理员管理".equals(strArr[i])) {
+                                out.print("<li><input type='checkbox' name='powerId' value='2' checked/>管理员管理</li>");
+                            } else if ("角色管理".equals(strArr[i])) {
+                                out.print("<li><input type='checkbox' name='powerId' value='1' checked/>角色管理</li>");
+                            } else if ("资费管理".equals(strArr[i])) {
+                                out.print("<li><input type='checkbox' name='powerId' value='3' checked/>资费管理</li>");
+                            } else if ("账务账号".equals(strArr[i])) {
+                                out.print("<li><input type='checkbox' name='powerId' value='4' checked/>账务账号</li>");
+                            } else if ("业务账号".equals(strArr[i])) {
+                                out.print("<li><input type='checkbox' name='powerId' value='5' checked/>业务账号</li>");
+                            } else if ("账单".equals(strArr[i])) {
+                                out.print("<li><input type='checkbox' name='powerId' value='6' checked/>账单</li>");
+                            } else if ("报表".equals(strArr[i])) {
+                                out.print("<li><input type='checkbox' name='powerId' value='7' checked/>报表</li>");
                             }
                         }
                     %>
 
-
-                    <li><input type="checkbox"/>管理员管理</li>
-                    <li><input type="checkbox"/>角色管理</li>
-                    <li><input type="checkbox"/>资费管理</li>
-                    <li><input type="checkbox"/>账务账号</li>
-                    <li><input type="checkbox"/>业务账号</li>
-                    <li><input type="checkbox"/>账单</li>
-                    <li><input type="checkbox"/>报表</li>
                 </ul>
             </div>
             <span class="required">*</span>

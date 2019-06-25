@@ -152,10 +152,10 @@ public class AccountServlet extends HttpServlet {
                 String tencqq = req.getParameter("tencqq");
                 if (newPasswd == null || newPasswd.equals("")) {
 //                    req.getRequestDispatcher("/WEB-INF/jsp/account/account_list.jsp").forward(req, resp);
-                    resp.sendRedirect("http://localhost:8080/netctoss/list.acc");
+                    resp.sendRedirect("http://192.168.0.84:8003/netctoss/list.acc");
                 } else {
                     accountService.modiInfoById(realName1, newPasswd, telno, em, occupation, radSex, adr, zi, tencqq, id3);
-                    resp.sendRedirect("http://localhost:8080/netctoss/list.acc");
+                    resp.sendRedirect("http://192.168.0.84:8003/netctoss/list.acc");
                 }
 
                 break;
@@ -179,7 +179,7 @@ public class AccountServlet extends HttpServlet {
 
                 accountService.insertAccount(status2, realName2, idcard_no, login_name, login_passwd,
                         teleplone, birthdate, email, occupation1, gender, mailaddress, zipcode, qq);
-                resp.sendRedirect("http://localhost:8080/netctoss/list.acc");
+                resp.sendRedirect("http://192.168.0.84:8003/netctoss/list.acc");
 
                 break;
             case "/netctoss/ajax/list.acc":

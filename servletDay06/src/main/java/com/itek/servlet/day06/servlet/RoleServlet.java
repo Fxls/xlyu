@@ -68,30 +68,25 @@ public class RoleServlet extends HttpServlet {
                 resp.sendRedirect("http://localhost:8080/servletDay06/Role/list.role");
                 return;
 
-//            case "/servletDay06/Role/modi.role":
-//                String roleNameModi = req.getParameter("name");
-//                String  powerNamesModi = req.getParameter("powerNames");//value数组
-//
-//
-//                Integer id = roleInter.selectId(roleNameModi);//获取修改所在行id
-//                String getPowerNames = roleInter.selectPowerNames();
-//
-//                System.out.println(roleNameModi);//name:超级账号
-//                System.out.println(id);//id：1
-//
-//                req.setAttribute("roleName", roleNameModi);
-//                req.setAttribute("powerNames",powerNamesModi);//拥有的
-//                req.setAttribute("getPowerNames",getPowerNames);//所有的
-//                req.getRequestDispatcher("/role/role_modi.jsp").forward(req,resp);
-//
-//
-//
-//
-//
-////                resp.sendRedirect("chrome://dino");
-//
-//                return;
+            case "/servletDay06/Role/modi.role":
+                String nameModi = req.getParameter("powerNames");//所拥有的所有权限
+                String nameRole = req.getParameter("name");//角色
 
+                System.out.println(nameModi);
+                System.out.println(nameRole);
+
+
+                String[] strArr = nameModi.split(",");
+
+
+                req.setAttribute("roleName", nameRole);
+                req.setAttribute("powerNames", strArr);
+                req.getRequestDispatcher("/role/role_modi.jsp").forward(req, resp);
+//                resp.sendRedirect("https://www.baidu.com");
+
+
+                return;
+//
             case "/servletDay06/Role/delete.role":
 
                 //删除（只需要删除role表中的字段即可）
@@ -100,11 +95,7 @@ public class RoleServlet extends HttpServlet {
                 roleInter.deleteById(Integer.parseInt(deleteId));
 
 
-
-
-
-
-               resp.sendRedirect("http://localhost:8080/servletDay06/Role/list.role");
+                resp.sendRedirect("http://localhost:8080/servletDay06/Role/list.role");
                 return;
             default:
                 //异常界面设置

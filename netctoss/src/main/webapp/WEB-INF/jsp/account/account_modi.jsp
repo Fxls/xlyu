@@ -264,7 +264,7 @@
 <!--Logo区域开始-->
 <div id="header">
     <img src="${base}/images/logo.png" alt="logo" class="left"/>
-    <a href="http://localhost:8080/netctoss/logout.log" >[退出]</a>
+    <a href="http://192.168.0.84:8003/netctoss/logout.log" >[退出]</a>
 </div>
 <!--Logo区域结束-->
 <!--导航区域开始-->
@@ -279,7 +279,7 @@
 <div id="main">
     <!--保存成功或者失败的提示消息-->
     <div id="save_result_info" class="save_fail">保存失败，旧密码错误！</div>
-    <form action="http://localhost:8080/netctoss/sure/update.acc?id=${modi.id}" method="post" class="main_form" onsubmit="return checkData()">
+    <form action="http://192.168.0.84:8003/netctoss/sure/update.acc?id=${modi.id}" method="post" class="main_form" onsubmit="return checkData()">
         <!--必填项-->
         <div class="text_info clearfix"><span>账务账号ID：</span></div>
         <div class="input_info">

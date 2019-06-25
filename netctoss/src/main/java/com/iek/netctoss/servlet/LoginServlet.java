@@ -54,9 +54,9 @@ public class LoginServlet extends HttpServlet {
                 if (result.isSuccess()) {
                     session.setAttribute("loginedUser", result.getData());
                     session.setAttribute("menus", menuService.selectMenusByUserId(result.getData().getId()));
-                    resp.sendRedirect("/netctoss/index.log");
+                    resp.sendRedirect("http://192.168.0.84:8003/netctoss/index.log");
                 } else {
-                    resp.sendRedirect("/netctoss/login.log?msg=" + result.getMsg());
+                    resp.sendRedirect("http://192.168.0.84:8003/netctoss/login.log?msg=" + result.getMsg());
                     System.out.println(result.getMsg());
                 }
                 break;
@@ -66,7 +66,10 @@ public class LoginServlet extends HttpServlet {
                 break;
             case "/netctoss/logout.log":
                 session.invalidate();
-                resp.sendRedirect("http://localhost:8080/netctoss/login.log");
+                resp.sendRedirect("http://192.168.0.84:8003/netctoss/login.log");
+                break;
+            default:
+                resp.sendRedirect("http://192.168.0.84:8003/netctoss/error404.jsp");
                 break;
         }
     }

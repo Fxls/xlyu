@@ -20,12 +20,12 @@ public class LoginListener implements HttpSessionListener {
     @Override
     public void sessionCreated(HttpSessionEvent httpSessionEvent) {
         onlineCount++;
-        System.out.println("在线人数为："+onlineCount);
+        System.out.println("在线人数为：" + onlineCount);
     }
 
     @Override
     public void sessionDestroyed(HttpSessionEvent httpSessionEvent) {
         onlineCount--;
-        System.out.println("在线人数为："+onlineCount);
+        System.out.println("在线人数为：" + onlineCount);
     }
 }

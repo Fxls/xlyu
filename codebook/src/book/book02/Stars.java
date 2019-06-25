@@ -36,7 +36,7 @@ public class Stars extends JFrame {
 
 }
 
-class MyPanel extends JPanel implements Runnable {
+class MyPanel extends JPanel implements Runnable {//implements:接口
     final int count = 100;
     int[] x = new int[count];
     int[] y = new int[count];
@@ -52,13 +52,13 @@ class MyPanel extends JPanel implements Runnable {
         }
     }
 
-    public void paint(Graphics g) {
+    public void paint(Graphics g) {//重写paint方法
         g.clearRect(0, 0, 1920, 1080);//清除
         for (int i = 0; i < count; i++) {
             g.setColor(c[i]);
             if ((int) (Math.random() * 400) != 0) {
                 g.setFont(new Font("", Font.BOLD, 60));
-                g.drawString("⭐", x[i], y[i]);
+                g.drawString("❤", x[i], y[i]);
             }
         }
     }

@@ -45,7 +45,7 @@ public class LoginServiceImpl implements LoginService {
             result.setMsg("用户名或密码格式错误");
             result.setSuccess(false);
         } else if (!(cap.toLowerCase()).equals(capStr.toLowerCase())) {
-            result.setMsg("×");
+            result.setMsg("X");
             result.setSuccess(false);
         } else if (loginedUser == null) {
             //登录失败了

@@ -14,7 +14,7 @@
     <link type="text/css" rel="stylesheet" media="all" href="../../static/css/styles/global.css" />
     <link type="text/css" rel="stylesheet" media="all" href="../../static/css/styles/global_color.css" />
     <script language="javascript" type="text/javascript">
-        保存成功的提示消息
+        // 保存成功的提示消息
         function showResult() {
             showResultDiv(true);
             window.setTimeout("showResultDiv(false);", 3000);

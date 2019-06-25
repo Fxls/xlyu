@@ -51,14 +51,12 @@ public class CityServlet extends HttpServlet {
                 //获取前端发送的省对应的编码
                 String province = req.getParameter("code");
                 List<City> list1 = city.getAllCityByProvince(province);
-//                System.out.println(list1);
                 JSONArray jsonArray1 = JSONArray.fromObject(list1);
                 resp.getWriter().println(jsonArray1.toString());
                 break;
             case "/ajax/area.city":
                 String city = req.getParameter("code2");
                 List<Area> list2 = area.getAllAreaByCity(city);
-//                System.out.println(list2);
                 JSONArray jsonArray2 = JSONArray.fromObject(list2);
                 resp.getWriter().println(jsonArray2.toString());
                 break;

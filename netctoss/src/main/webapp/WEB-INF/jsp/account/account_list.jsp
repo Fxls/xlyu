@@ -73,7 +73,7 @@
                         //重写html
                         var newHtml = $('<input type="button" value="暂停" class="btn_pause" onclick="setStopState(' + id + ');"/>\n' +
                             '                                <input type="button" value="修改" class="btn_modify"\n' +
-                            '                                       onclick="location.href=\'http://localhost:8080/netctoss/update.acc?id=' + id + '\';"/>\n' +
+                            '                                       onclick="location.href=\'http://192.168.0.84:8003/netctoss/update.acc?id=' + id + '\';"/>\n' +
                             '                                <input type="button" value="删除" class="btn_delete" onclick="deleteAccount(' + id + ');"/>');
                         $("#btn" + id).append(newHtml);
                         alert("开通功能修改" + data);
@@ -99,7 +99,7 @@
                         var newHtml = $('  <input type="button" value="开通" class="btn_start"\n' +
                             '              onclick="setOpenState(' + id + ');"/>\n' +
                             '              <input type="button" value="修改" class="btn_modify"\n' +
-                            '              onclick="location.href=\'http://localhost:8080/netctoss/update.acc?id=' + id + '\';"/>\n' +
+                            '              onclick="location.href=\'http://192.168.0.84:8003/netctoss/update.acc?id=' + id + '\';"/>\n' +
                             '              <input type="button" value="删除" class="btn_delete" onclick="deleteAccount(' + id + ');"/>');
                         $("#btn" + id).append(newHtml);
                         alert("暂停功能修改" + data);
@@ -182,7 +182,7 @@
                                 "                                <input type='button' value='暂停' class='btn_pause'\n" +
                                 "                                       onclick='setStopState(" + data[i].id + ");'/>\n" +
                                 "                                <input type='button' value='修改' class='btn_modify'\n" +
-                                "                                       onclick=\"location.href='http://localhost:8080/netctoss/update.acc?id=" + data[i].id + "';\"/>\n" +
+                                "                                       onclick=\"location.href='http://192.168.0.84:8003/netctoss/update.acc?id=" + data[i].id + "';\"/>\n" +
                                 "                                <input type='button' value='删除' class='btn_delete'\n" +
                                 "                                       onclick='deleteAccount(" + data[i].id + ");'/>\n" +
 
@@ -195,7 +195,7 @@
                                 "                                <input type='button' value='开通' class='btn_start'\n" +
                                 "                                       onclick='setStopState(" + data[i].id + ");'/>\n" +
                                 "                                <input type='button' value='修改' class='btn_modify'\n" +
-                                "                                       onclick=\"location.href='http://localhost:8080/netctoss/update.acc?id=" + data[i].id + "';\"/>\n" +
+                                "                                       onclick=\"location.href='http://192.168.0.84:8003/netctoss/update.acc?id=" + data[i].id + "';\"/>\n" +
                                 "                                <input type='button' value='删除' class='btn_delete'\n" +
                                 "                                       onclick='deleteAccount(" + data[i].id + ");'/>\n" +
 
@@ -289,7 +289,7 @@
 <!--Logo区域开始-->
 <div id="header">
     <img src="${base}/images/logo.png" alt="logo" class="left"/>
-    <a href="http://localhost:8080/netctoss/logout.log" >[退出]</a>
+    <a href="http://192.168.0.84:8003/netctoss/logout.log" >[退出]</a>
 </div>
 <!--Logo区域结束-->
 <!--导航区域开始-->
@@ -320,7 +320,7 @@
             </div>
             <div><input type="submit" value="搜索" class="btn_search"/></div>
             <input type="button" value="增加" class="btn_add"
-                   onclick="location.href='http://localhost:8080/netctoss/add.acc';"/>
+                   onclick="location.href='http://192.168.0.84:8003/netctoss/add.acc';"/>
         </div>
         <!--删除等的操作提示-->
         <div id="operate_result_info" class="operate_success">
@@ -375,7 +375,7 @@
                                 <input type="button" value="暂停" class="btn_pause"
                                        onclick="setStopState(${account.id});"/>
                                 <input type="button" value="修改" class="btn_modify"
-                                       onclick="location.href='http://localhost:8080/netctoss/update.acc?id=${account.id}';"/>
+                                       onclick="location.href='http://192.168.0.84:8003/netctoss/update.acc?id=${account.id}';"/>
                                 <input type="button" value="删除" class="btn_delete"
                                        onclick="deleteAccount(${account.id});"/>
                             </c:if>
@@ -383,7 +383,7 @@
                                 <input type="button" value="开通" class="btn_start"
                                        onclick="setOpenState(${account.id});"/>
                                 <input type="button" value="修改" class="btn_modify"
-                                       onclick="location.href='http://localhost:8080/netctoss/update.acc?id=${account.id}';"/>
+                                       onclick="location.href='http://192.168.0.84:8003/netctoss/update.acc?id=${account.id}';"/>
                                 <input type="button" value="删除" class="btn_delete"
                                        onclick="deleteAccount(${account.id});"/>
                             </c:if>

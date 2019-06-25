@@ -15,12 +15,6 @@ import java.io.IOException;
  * @author: xlyu
  * @create: 2019-06-06 16:41
  **/
-/**
- * @Param
- * @description 过滤器：用于设置web的字符集
- * @date 2019/6/6 16:46
- * @return
- */
 
 @WebFilter(filterName = "AFilter", urlPatterns = "/*")
 public class CodeRegular implements Filter {

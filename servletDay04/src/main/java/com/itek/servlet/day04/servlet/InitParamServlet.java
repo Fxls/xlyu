@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.Serializable;
 
 /**
  * @program: servletDay04
@@ -20,7 +21,9 @@ import java.io.IOException;
  **/
 
 
-public class InitParamServlet extends HttpServlet {
+public class InitParamServlet extends HttpServlet implements Serializable {
+    private static final long serialVersionUID = 9079557783388932474L;
+
     /**
      *
      * 重写父类中的init方法
@@ -30,6 +33,7 @@ public class InitParamServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 
     }
 

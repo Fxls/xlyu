@@ -30,7 +30,7 @@
 <!--Logo区域开始-->
 <div id="header">
     <img src="${base}/images/logo.png" alt="logo" class="left"/>
-    <a href="http://localhost:8080/netctoss/logout.log" >[退出]</a>
+    <a href="http://192.168.0.84:8003/netctoss/logout.log" >[退出]</a>
 </div>
 <!--Logo区域结束-->
 <!--导航区域开始-->
@@ -148,7 +148,7 @@
         <!--操作按钮-->
         <div class="button_info clearfix">
             <input type="button" value="返回" class="btn_save"
-                   onclick="location.href='http://localhost:8080/netctoss/list.acc';"/>
+                   onclick="location.href='http://192.168.0.84:8003/netctoss/list.acc';"/>
         </div>
     </form>
 </div>

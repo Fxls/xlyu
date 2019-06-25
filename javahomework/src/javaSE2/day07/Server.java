@@ -30,18 +30,22 @@ public class Server {
         Socket client = server.accept();
         BufferedReader br = new BufferedReader(new InputStreamReader(client.getInputStream()));
         String read = null;
-        StringBuilder sb = new StringBuilder();
-        while ((read = br.readLine()) != null) {
-            sb.append(read);
-        }
-
         FileOutputStream fos = new FileOutputStream("E:\\soft\\git\\xlyu\\javaHomework\\src\\javaSE2\\day07\\EmpCopy.xml");
-        XMLWriter writer = new XMLWriter();
-        writer.setOutputStream(fos);
 
         PrintWriter pw = new PrintWriter(fos, true);
-        pw.println(sb);
-        writer.close();
+        while ((read = br.readLine()) != null) {
+//            sb.append(read);
+            pw.println(read);
+
+        }
+
+
+
+
+
+
+
+
         SAXReader reader = new SAXReader();
         Document doc = reader.read("E:\\soft\\git\\xlyu\\javaHomework\\src\\javaSE2\\day07\\EmpCopy.xml");
         /**

@@ -10,6 +10,7 @@ import org.apache.commons.dbcp.BasicDataSource;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Properties;
@@ -31,8 +32,8 @@ public class DBUtil {
 
     static {
         try {
-            FileInputStream fis = new FileInputStream("E:/soft/git/xlyu/netctoss/src/main/resources/jdbc.properties");
-            props.load(fis);
+            InputStream is = DBUtil.class.getClassLoader().getResourceAsStream("jdbc.properties");
+            props.load(is);
             driver = props.getProperty("driver");
             url = props.getProperty("url");
             name = props.getProperty("name");

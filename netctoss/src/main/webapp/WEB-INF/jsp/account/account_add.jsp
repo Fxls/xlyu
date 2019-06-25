@@ -207,7 +207,7 @@
 <!--Logo区域开始-->
 <div id="header">
     <img src="${base}/images/logo.png" alt="logo" class="left"/>
-    <a href="http://localhost:8080/netctoss/logout.log" >[退出]</a>
+    <a href="http://192.168.0.84:8003/netctoss/logout.log" >[退出]</a>
 </div>
 <!--Logo区域结束-->
 <!--导航区域开始-->
@@ -222,7 +222,7 @@
 <div id="main">
     <!--保存成功或者失败的提示消息-->
     <%--<div id="save_result_info" class="save_fail">保存失败，该身份证已经开通过账务账号！</div>--%>
-    <form action="http://localhost:8080/netctoss/sure/add.acc?status=0" method="post" class="main_form" onsubmit="return checkSubmit();">
+    <form action="http://192.168.0.84:8003/netctoss/sure/add.acc?status=0" method="post" class="main_form" onsubmit="return checkSubmit();">
         <!--必填项-->
         <div class="text_info clearfix"><span>姓名：</span></div>
         <div class="input_info">

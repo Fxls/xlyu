@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$.ajax();</title>
+    <script type="text/javascript" src="jquery-1.4.3.js"></script>
+    <script>
+
+        function get() {
+            $.ajax({
+                url: "/ajax/test",
+                type: "get",
+                data: "",
+                dataType: "text",
+                success: function (data) {
+
+                    alert(data);
+                },
+                error: function () {
+                    alert("*****");
+                }
+            });
+        }
+
+
+    </script>
+</head>
+<body>
+
+<button onclick="get();">click</button>
+
+</body>
+</html>

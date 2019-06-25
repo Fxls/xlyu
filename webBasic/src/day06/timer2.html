@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时钟启动和停止</title>
+    <script>
+        // function showNow() {
+        //     var now = new Date();
+        //     var inputObj = document.getElementById('showContent');
+        //     inputObj.value = now.toLocaleTimeString();
+        //
+        // }
+        //
+        // function startTimer() {
+        //     timerID = setInterval(showNow, 1000);
+        // }
+        //
+        // function stopTimer() {
+        //     clearInterval(timerID);
+        // }
+        function time() {
+            setInterval(function () {
+                var now = new Date();
+                var obj = document.getElementById("Time");
+                obj.innerText = now.toLocaleTimeString();
+
+            }, 1000)
+        }
+    </script>
+</head>
+<body onload="time();">
+<!--<h1 onclick="showNow()">时钟显示</h1>-->
+<!--<input type="text" readonly id="showContent">-->
+<!--<button onclick="startTimer();">启动</button>-->
+<!--<button onclick="stopTimer();">停止</button>-->
+
+<div id="Time"></div>
+</body>
+</html>

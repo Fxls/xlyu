@@ -18,6 +18,7 @@
             if (window.XMLHttpRequest) {
                 xhr = new XMLHttpRequest();
             } else {
+                //针对ie6以前的浏览器
                 xhr = new ActiveXObject('Microsoft.XMLHttp');
             }
             return xhr;
@@ -45,6 +46,9 @@
             //发送
             ajax.send();
         }
+        $.ajax(
+
+        );
 
         function getCity() {
             //获取选中省对应的code
@@ -109,8 +113,10 @@
 <label>省份</label>
 <select id="province" onchange="getCity()">
     <option value="-1">--请选择--</option>
+
 </select>
 <label>城市</label>
+
 <select id="city" onchange="getArea();">
     <option id="opheadC" value="-1">--请选择--</option>
 </select>
