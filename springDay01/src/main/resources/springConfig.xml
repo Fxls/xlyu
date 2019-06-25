@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--<bean id="pc" class="com.itek.spring.day01.module.Computer">-->
+        <!--&lt;!&ndash;DI依赖注入&ndash;&gt;-->
+        <!--&lt;!&ndash;-->
+            <!--1、setter注入-->
+            <!--使用bean下的property-->
+            <!--name属性-->
+            <!--value属性-->
+            <!--构造器-》set方法 -》 初始化回调-->
+        <!--&ndash;&gt;-->
+        <!--<property name="name" value="hp"></property>-->
+        <!--<property name="price" value="5965"></property>-->
+        <!--<property name="cpu" value="i5"></property>-->
+    <!--</bean>-->
+
+    <bean id="pc2" class="com.itek.spring.day01.module.Computer">
+        <!--2、构造器注入-->
+        <constructor-arg index="0" value="华为"></constructor-arg>
+        <constructor-arg index="1" value="4000"></constructor-arg>
+        <constructor-arg index="2" value="i7"></constructor-arg>
+    </bean>
+
+</beans>
