@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="shop" class="com.itek.spring.day02.Shop">
+        <property name="bt" value="120"></property>
+        <property name="name" value="Name"></property>
+        <property name="aBoolean" value="false"></property>
+        <property name="aChar" value="一"></property>
+        <property name="aLong" value="12567"></property>
+        <property name="anInt" value="1321"></property>
+        <property name="aShort" value="12"></property>
+        <property name="aDouble" value="123456.0"></property>
+        <property name="icbc" ref="icbc"></property>
+        <!--list注入-->
+        <property name="list">
+            <list>
+                <value>123</value>
+                <value>123</value>
+                <value>123</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>321</value>
+                <value>123</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="123" value="123"></entry>
+                <entry key="123" value="123"></entry>
+                <entry key="123" value="123"></entry>
+            </map>
+        </property>
+        <property name="props">
+            <props>
+                <prop key="key1">value1</prop>
+                <prop key="key2">value2</prop>
+                <prop key="key3">value3</prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="icbc" class="com.itek.spring.day02.ICBC">
+        <property name="name" value="工商银行"></property>
+    </bean>
+
+</beans>

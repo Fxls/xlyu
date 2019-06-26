@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--util需要引入命名空间-->
+    <util:properties id="const" location="classpath:const.properties"></util:properties>
+    <bean id="shop" class="com.itek.spring.day02.Shop">
+        <!--spring表达式，引用其他bean对象的值-->
+        <!--#｛beanId.属性｝-->
+        <property name="name" value="#{const.name}"></property>
+    </bean>
+
+</beans>
