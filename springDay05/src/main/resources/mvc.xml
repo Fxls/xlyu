@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp"/>
+
+    <!--mapping和adapter-->
+    <mvc:annotation-driven>
+    </mvc:annotation-driven>
+
+    <!--启用组件扫描-->
+    <context:component-scan base-package="com.itek.spring.day05.dao"/>
+    <context:component-scan base-package="com.itek.spring.day05.service"/>
+    <context:component-scan base-package="com.itek.spring.day05.controller"/>
+
+    <!--拦截器：不拦截静态资源，只进行权限单方面的拦截-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/*"/>
+            <mvc:exclude-mapping path="/login.do"/>
+            <mvc:exclude-mapping path="/static/**"/>
+            <mvc:exclude-mapping path="/style/**"/>
+            <mvc:exclude-mapping path="/cap.do"/>
+            <mvc:exclude-mapping path="/images/**"/>
+            <bean class="com.itek.spring.day05.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+
+    </mvc:interceptors>
+
+    <!--全局异常处理组件-->
+    <!--<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">-->
+    <!--<property name="exceptionMappings">-->
+    <!--<props>-->
+    <!--&lt;!&ndash;声明异常类型和处理界面&ndash;&gt;-->
+    <!--&lt;!&ndash;<prop key="java.lang.Exception">error</prop>&ndash;&gt;-->
+    <!--</props>-->
+    <!--</property>-->
+    <!--</bean>-->
+
+</beans>
