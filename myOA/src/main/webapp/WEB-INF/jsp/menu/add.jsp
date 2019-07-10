@@ -39,7 +39,7 @@
         <body onload="hidden();">
         <div style="margin-left: 400px">
         <%--放置顶部菜单--%>
-        <c:forEach items="${parentMenu}" var="list">
+        <c:forEach items="${topMenus}" var="list">
             <%--<img  src="${base}/static/${list.menuIcon}1.png" alt="${list.menuName}"/>--%>
             <button class="parentMenuClass" onclick="location.href='${base}/${list.menuLink}?parentId=${list.id}'">${list.menuName}</button>
         </c:forEach>

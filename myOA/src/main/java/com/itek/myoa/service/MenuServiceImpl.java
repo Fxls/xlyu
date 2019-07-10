@@ -11,7 +11,9 @@ import com.itek.myoa.domain.MenuExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @program: myOA
@@ -47,6 +49,27 @@ public class MenuServiceImpl implements MenuService {
         MenuExample menuExample = new MenuExample();
         menuExample.createCriteria().andParentIdEqualTo(Integer.valueOf(parentId));
         List<Menu> list = menuMapper.selectByExample(menuExample);
+        return list;
+    }
+
+    @Override
+    public List<Menu> getTopMenuByLoginName(String loginName) {
+        List<Menu> list = menuMapper.selectTopMenuByLoginName(loginName);
+        if (list == null || list.isEmpty()) {
+            return null;
+        }
+        return list;
+    }
+
+    @Override
+    public List<Menu> getSonMenuByLoginNameAndParentId(String parentId, String name) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("parentId", Integer.parseInt(parentId));
+        map.put("name", name);
+        List<Menu> list = menuMapper.selectSonMenuByLoginNameAndParentId(map);
+        if (list == null || list.isEmpty()) {
+            return null;
+        }
         return list;
     }
 }

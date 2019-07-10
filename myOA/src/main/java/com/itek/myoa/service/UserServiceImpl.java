@@ -7,8 +7,11 @@ package com.itek.myoa.service;
 
 import com.itek.myoa.dao.UserMapper;
 import com.itek.myoa.domain.User;
+import com.itek.myoa.domain.UserExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @program: myOA
@@ -29,5 +32,17 @@ public class UserServiceImpl implements UserService {
             return "用户新增成功";
         }
         return "用户新增失败";
+    }
+
+    @Override
+    public Integer getId(String applyerName) {
+        UserExample exam = new UserExample();
+        exam.createCriteria().andNameEqualTo(applyerName);
+        List<User> list = userMapper.selectByExample(exam);
+        if (list == null || list.isEmpty()) {
+            return -1;
+        } else {
+            return list.get(0).getId();
+        }
     }
 }

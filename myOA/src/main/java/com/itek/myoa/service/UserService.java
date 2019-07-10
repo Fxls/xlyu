@@ -11,4 +11,11 @@ public interface UserService {
      * 新增user
      */
     String insertUser(User user);
+
+    /**
+     * 查询用户id
+     * @param applyerName
+     * @return
+     */
+    Integer getId(String applyerName);
 }

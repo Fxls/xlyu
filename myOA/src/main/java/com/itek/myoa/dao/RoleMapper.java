@@ -96,4 +96,6 @@ public interface RoleMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(Role record);
+
+    int seleceRoleId(Integer applicationId);
 }

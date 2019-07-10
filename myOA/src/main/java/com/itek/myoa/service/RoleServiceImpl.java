@@ -31,4 +31,10 @@ public class RoleServiceImpl implements RoleService {
         }
         return "角色插入失败";
     }
+
+    @Override
+    public int getRoleIdByTables(Integer applicationId) {
+        int result = roleMapper.seleceRoleId(applicationId);
+        return result;
+    }
 }

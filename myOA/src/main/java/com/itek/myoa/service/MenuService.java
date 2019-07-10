@@ -28,4 +28,7 @@ public interface MenuService {
      */
     List<Menu> getSonMenu(String parentId);
 
+    List<Menu> getTopMenuByLoginName(String loginName);
+
+    List<Menu> getSonMenuByLoginNameAndParentId(String parentId, String name);
 }

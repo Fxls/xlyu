@@ -55,6 +55,7 @@ public class PaginationMysqlPlugin extends PluginAdapter {
 		topLevelClass.addMethod(method);
 	}
 
+
 	public boolean validate(List<String> warnings) {
 		return true;
 	}

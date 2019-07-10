@@ -53,7 +53,7 @@
 		<!--
 		*******************************
 		要生成哪些表 -->
-		<table tableName="t_role" domainObjectName="Role"
+		<table tableName="t_approval" domainObjectName="Approval"
 			enableCountByExample="true" enableUpdateByExample="true"
 			enableDeleteByExample="true" enableSelectByExample="true"
 			selectByExampleQueryId="true">

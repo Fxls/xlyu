@@ -3,6 +3,8 @@ package com.itek.myoa.dao;
 import com.itek.myoa.domain.Menu;
 import com.itek.myoa.domain.MenuExample;
 import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Param;
 
 /**
@@ -96,4 +98,8 @@ public interface MenuMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(Menu record);
+
+    List<Menu> selectTopMenuByLoginName(String loginName);
+
+    List<Menu> selectSonMenuByLoginNameAndParentId(Map<String, Object> map);
 }
