@@ -5,12 +5,8 @@
  */
 package com.itek.myoa.controller;
 
-import com.itek.myoa.domain.ApplicationLeave;
-import com.itek.myoa.domain.Menu;
-import com.itek.myoa.service.ApplicationLeaveService;
-import com.itek.myoa.service.ApprovalProcessService;
-import com.itek.myoa.service.MenuService;
-import com.itek.myoa.service.UserService;
+import com.itek.myoa.domain.*;
+import com.itek.myoa.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -47,16 +43,114 @@ public class ApplicationController {
     @Qualifier("userServiceImpl")
     private UserService userService;
 
+    @Autowired
+    @Qualifier("approvalService")
+    private ApprovalService approvalService;
+
+    @Autowired
+    @Qualifier("productService")
+    private ProductService productService;
+
+    @Autowired
+    @Qualifier("zcApplicationService")
+    private ZCApplicationService zcApplicationService;
+
     @RequestMapping("index")
-    public String app(String parentId, Model model, HttpSession session) {
-//        List<Menu> list = menuService.getSonMenu(parentId);
-//        model.addAttribute("list", list);
+    public String app(String parentId, HttpSession session) {
         String loginName = (String) session.getAttribute("nameNav");
         List<Menu> list = menuService.getSonMenuByLoginNameAndParentId(parentId, loginName);
-        model.addAttribute("list", list);
-
-
+        session.setAttribute("leavelist", list);
         return "application/index";
+    }
+
+    @RequestMapping("zcApplication")
+    public String zcApplication(HttpSession session, Model model) {
+        String name = (String) session.getAttribute("nameNav");
+        Integer userId = userService.getId(name);
+        model.addAttribute("applyerId", userId);
+        return "application/zcApplication";
+    }
+
+    @RequestMapping("zcHandle")
+    public String zcHandle(String applyerName,
+                           String applyerId,
+                           String resonShopping,
+                           String proName,
+                           String proNumber,
+                           String proPrice,
+                           String applyTime,
+                           String tip,
+                           RedirectAttributes attributes) {
+        /**
+         * 获取流程表中的第一个处理角色id
+         */
+        String approvalName = "资产申请";
+        String[] roleIdList = approvalProcessService.getRoleList(approvalName);
+        Integer approvalRoleId = Integer.valueOf(roleIdList[0]);
+        ZCApplication zcApplication = new ZCApplication(null,
+                Integer.parseInt(applyerId.trim()),
+                applyerName.trim(),
+                applyTime.trim(),
+                "0",
+                approvalRoleId,
+                resonShopping.trim(),
+                proName.trim(),
+                Integer.parseInt(proNumber.trim()),
+                Double.valueOf(proPrice.trim()),
+                tip.trim()
+        );
+        System.out.println(zcApplication);
+
+        /**
+         * 通过产品表查询采购产品是否存在，存在执行插入方法，不存在返回提示信息。
+         */
+        boolean isHave = productService.isHaveThisProduction(zcApplication.getProName());
+
+        if (isHave == true) {
+            System.out.println("此产品存在");
+            /**
+             * 此时执行插入方法
+             */
+            boolean isSuccess = zcApplicationService.insertThisZCApplication(zcApplication);
+            if (isSuccess == true) {
+                attributes.addFlashAttribute("zcApplicationMsg", "资产采购申请成功");
+                return "redirect:zcApplication";
+            } else {
+                attributes.addFlashAttribute("zcApplicationMsg", "资产采购申请失败");
+                return "redirect:zcApplication";
+            }
+        } else {
+            attributes.addFlashAttribute("zcApplicationMsg", "此产品不存在于采购表中，请联系管理员添加");
+            return "redirect:zcApplication";
+        }
+    }
+
+
+    @RequestMapping("zcHistory")
+    public String zcHistory(HttpSession session, Model model) {
+        /**
+         * 历史纪录页
+         * TODO 查询该用户的所有申请记录
+         */
+        String userName = (String) session.getAttribute("nameNav");
+        int userId = userService.getId(userName);
+        List<ZCApplication> list = zcApplicationService.getHistoryByUserId(userId);
+        model.addAttribute("zcHistory", list);
+
+        /**
+         * 审批信息
+         */
+        List<Approval> listApproval = approvalService.getZcApprovalHandlerName(userId);
+        model.addAttribute("listZcApproval", listApproval);
+        return "application/zcHistory";
+    }
+
+
+    @RequestMapping("zcHistoryDetail")
+    public String zcHistoryDetail(String id,Model model){
+        ZCApplication list = zcApplicationService.getDeatilZCApplicationById(Integer.parseInt(id));
+        model.addAttribute("zcHistoryDetail",list);
+        return "application/zcHistoryDetail";
     }
 
 
@@ -107,5 +201,26 @@ public class ApplicationController {
             attributes.addFlashAttribute("appMsg", "申请失败");
             return "redirect:index?parentId=2";
         }
+    }
+
+
+    @RequestMapping("leaveHistory")
+    public String applicationHistory(HttpSession session, Model model) {
+        /**
+         * 获取当前用户提交的所有的申请记录
+         */
+        String userName = (String) session.getAttribute("nameNav");
+        List<ApplicationLeave> list = applicationLeaveService.getAllApplication(userName);
+
+
+        /**
+         * 获取对应的处理人姓名
+         */
+        List<Approval> approvals = approvalService.getHandlerName();
+
+        model.addAttribute("applicationOfLeave", list);
+        model.addAttribute("approvalToLeave", approvals);
+
+        return "application/leaveHistory";
     }
 }

@@ -203,6 +203,23 @@
       <include refid="Example_Where_Clause" />
     </if>
   </select>
+    <select id="selectByTables" resultType="com.itek.myoa.domain.Approval">
+
+      SELECT
+	 appr.application_id,appr.handle_name
+  FROM
+	 t_application_leave al
+ LEFT JOIN t_approval appr ON al.id = appr.application_id
+ WHERE al.id = appr.application_id
+
+
+    </select>
+  <select id="getZcApproval" resultType="com.itek.myoa.domain.Approval">
+
+    SELECT appr.* from t_approval appr LEFT JOIN t_application_zc az ON appr.application_id = az.id
+
+ WHERE appr.approval_type = '资产采购审批'  AND az.applyer_id = #{userId}
+  </select>
   <update id="updateByExampleSelective" parameterType="map" >
     <!--
       WARNING - @mbggenerated

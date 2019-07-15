@@ -42,12 +42,12 @@ public class ApplicationLeaveServiceImpl implements ApplicationLeaveService {
     }
 
     @Override
-    public List<ApplicationLeave> getApplication() {
+    public List<ApplicationLeave> getApplication(int thisUserRoleId) {
         ApplicationLeaveExample exam = new ApplicationLeaveExample();
         /**
          * 查询还没有被审批的申请
          */
-        exam.createCriteria().andStatusEqualTo("0");
+        exam.createCriteria().andStatusEqualTo("0").andApprovalRoleIdEqualTo(String.valueOf(thisUserRoleId));
         List<ApplicationLeave> list = applicationLeaveMapper.selectByExample(exam);
         if (list == null || list.isEmpty()) {
             return null;
@@ -85,5 +85,16 @@ public class ApplicationLeaveServiceImpl implements ApplicationLeaveService {
         }
         return 0;
 
+    }
+
+    @Override
+    public List<ApplicationLeave> getAllApplication(String userName) {
+        ApplicationLeaveExample exam = new ApplicationLeaveExample();
+        exam.createCriteria().andApplyerNameEqualTo(userName);
+        List<ApplicationLeave> list = applicationLeaveMapper.selectByExample(exam);
+        if (list == null || list.isEmpty()) {
+            return null;
+        }
+        return list;
     }
 }

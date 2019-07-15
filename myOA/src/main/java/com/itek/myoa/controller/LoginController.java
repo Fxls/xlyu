@@ -47,20 +47,25 @@ public class LoginController {
         if (list != null) {
             User user2 = list.get(0);
             String name = user2.getName();
-            session.setAttribute("nameNav",name);
+            session.setAttribute("nameNav", name);
 
 
             /**
              * 登录成功查询角色的所有权限包括顶级菜单以及子菜单
              */
             List<Menu> menuList = menuService.getTopMenuByLoginName(user.getLoginName());
-            session.setAttribute("topMenus",menuList);
+            session.setAttribute("topMenus", menuList);
             return "index";
         } else {
             model.addAttribute("loginMsg", "登录失败");
             return "login";
         }
 
+    }
+
+    @RequestMapping("login/index")
+    public String index() {
+        return "index";
     }
 
 }

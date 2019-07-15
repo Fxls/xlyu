@@ -93,4 +93,9 @@ public interface ApprovalMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(Approval record);
+
+    List<Approval> selectByTables();
+
+    List<Approval> getZcApproval(Integer userId);
+
 }

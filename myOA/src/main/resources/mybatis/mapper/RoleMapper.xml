@@ -189,6 +189,18 @@
  LEFT JOIN t_user_role ur ON ur.user_id = u.id
  where arrp.application_id = #{applicationId};
     </select>
+    <select id="getRoleId" resultType="java.lang.Integer" parameterType="string">
+       SELECT
+	 r.id
+ FROM
+	 t_user u
+ LEFT JOIN t_user_role ur ON ur.user_id = u.id
+ LEFT JOIN t_role r ON r.id = ur.role_id
+ WHERE u.name = #{name}
+
+
+
+    </select>
     <update id="updateByExampleSelective" parameterType="map" >
     <!--
       WARNING - @mbggenerated

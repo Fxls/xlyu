@@ -19,4 +19,6 @@ public interface RoleService {
      * @return
      */
     int getRoleIdByTables(Integer applicationId);
+
+    int getRoleIdByUserName(String name);
 }

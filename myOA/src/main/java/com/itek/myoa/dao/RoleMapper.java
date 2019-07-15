@@ -3,6 +3,8 @@ package com.itek.myoa.dao;
 import com.itek.myoa.domain.Role;
 import com.itek.myoa.domain.RoleExample;
 import java.util.List;
+import java.util.Set;
+
 import org.apache.ibatis.annotations.Param;
 
 /**
@@ -97,5 +99,7 @@ public interface RoleMapper {
      */
     int updateByPrimaryKey(Role record);
 
-    int seleceRoleId(Integer applicationId);
+    Set<Integer> seleceRoleId(Integer applicationId);
+
+    int getRoleId(String name);
 }

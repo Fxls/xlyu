@@ -18,12 +18,12 @@ import javax.servlet.http.HttpServletRequest;
  **/
 @ControllerAdvice
 public class ExceptionHandle {
-    @ExceptionHandler(value = Exception.class)
-
-    public String exceptionHandle(Exception e, HttpServletRequest req) {
-
-        System.out.println(e.getMessage());
-        req.setAttribute("errorMsg",e.getMessage());
-        return "error";
-    }
+//    @ExceptionHandler(value = Exception.class)
+//
+//    public String exceptionHandle(Exception e, HttpServletRequest req) {
+//
+//        System.out.println(e.getMessage());
+//        req.setAttribute("errorMsg",e.getMessage());
+//        return "error";
+//    }
 }

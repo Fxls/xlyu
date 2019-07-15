@@ -10,6 +10,10 @@ import com.itek.myoa.domain.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
 /**
  * @program: myOA
  * @description:
@@ -34,7 +38,19 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public int getRoleIdByTables(Integer applicationId) {
-        int result = roleMapper.seleceRoleId(applicationId);
-        return result;
+        Set<Integer> set = roleMapper.seleceRoleId(applicationId);
+        List<Integer> list = new ArrayList<>(set);
+        if (list == null || list.isEmpty()) {
+            return 0;
+        }
+        return list.get(0);
+    }
+
+    @Override
+    public int getRoleIdByUserName(String name) {
+        int roleId = roleMapper.getRoleId(name);
+
+
+        return roleId;
     }
 }

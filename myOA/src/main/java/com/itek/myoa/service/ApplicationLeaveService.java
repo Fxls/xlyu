@@ -19,10 +19,10 @@ public interface ApplicationLeaveService {
     boolean insert(ApplicationLeave applicationLeave, int approvalRoleId, String status);
 
     /**
-     * 查询所有未处理的请假审批
+     * 查询该角色所有未处理的请假审批
      * @return
      */
-    List<ApplicationLeave> getApplication();
+    List<ApplicationLeave> getApplication(int thisUserRoleId);
 
     /**
      * 修改状态为1
@@ -39,4 +39,6 @@ public interface ApplicationLeaveService {
     int setApprovalRoleIdToNext(Integer applicationId, String newId);
 
     int setStatusTo2(Integer applicationId);
+
+    List<ApplicationLeave> getAllApplication(String userName);
 }

@@ -18,7 +18,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>login</title>
+    <title>请假审批</title>
     <link href="${base}/static/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="${base}/static/bootstrap/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <style>
@@ -48,7 +48,7 @@
         <div class="col-md-12 column">
             <ul class="nav nav-tabs">
                 <li>
-                    <a href="#">首页</a>
+                    <a href="${base}/login/index">首页</a>
                 </li>
                 <c:forEach items="${topMenus}" var="top">
 
@@ -89,14 +89,14 @@
     <div class="row clearfix">
         <div class="col-md-4 column">
             <div class="panel panel-default">
-                <c:forEach items="${list}" var="son">
+                <c:forEach items="${leavelist}" var="son">
                     <c:if test="${son.menuName=='请假申请'}">
                         <div class="panel-heading">
                                 ${son.menuName}
                         </div>
                     </c:if>
                     <c:if test="${son.menuName!='请假申请'}">
-                        <div class="panel-body">
+                        <div onclick="location.href='${base}/${son.menuLink}'" class="panel-body">
                                 ${son.menuName}
                         </div>
                     </c:if>
@@ -104,6 +104,8 @@
             </div>
         </div>
         <div class="col-md-8 column">
+
+            <button onclick="location.href='${base}/application/leaveHistory'" type="button" class="btn btn-lg btn-block btn-info">查看我的请假申请记录</button>
 
             <form class="form-horizontal" role="form" action="${base}/application/leave" method="post">
                 <div class="form-group">

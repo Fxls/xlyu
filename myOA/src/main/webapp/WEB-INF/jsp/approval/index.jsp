@@ -19,7 +19,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>login</title>
+    <title>请假审批</title>
     <link href="${base}/static/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="${base}/static/bootstrap/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <style>
@@ -49,7 +49,7 @@
         <div class="col-md-12 column">
             <ul class="nav nav-tabs">
                 <li>
-                    <a href="#">首页</a>
+                    <a href="${base}/login/index">首页</a>
                 </li>
                 <c:forEach items="${topMenus}" var="top">
 
@@ -90,14 +90,14 @@
     <div class="row clearfix">
         <div class="col-md-4 column">
             <div class="panel panel-default">
-                <c:forEach items="${list}" var="son">
+                <c:forEach items="${leaveApprovalList}" var="son">
                     <c:if test="${son.menuName=='请假审批'}">
                         <div class="panel-heading">
                                 ${son.menuName}
                         </div>
                     </c:if>
                     <c:if test="${son.menuName!='请假审批'}">
-                        <div class="panel-body">
+                        <div class="panel-body" onclick="location.href='${base}/${son.menuLink}'">
                                 ${son.menuName}
                         </div>
                     </c:if>
@@ -105,14 +105,15 @@
             </div>
         </div>
         <div class="col-md-8 column">
-            <div class="page-header">
-                <c:forEach items="${applicationLeaves}" var="leave">
+            <button onclick="location.href='${base}/approval/approvalHistory'" type="button" class="btn btn-lg btn-block btn-info">查看我的审批记录</button>
+
+            <c:forEach items="${applicationLeaves}" var="leave">
+                <div class="page-header">
                     <form action="${base}/approval/leave" method="post">
                         <input hidden type="text" name="handleName" value="${nameNav}">
                         <input hidden type="text" name="applicationId" value="${leave.id}">
                         <input hidden type="text" name="approvalType" value="请假审批">
-                        <h1>
-                            请假审批 from ${leave.applyerName}<br/>
+                        <h1>请假审批 from ${leave.applyerName}<br/>
                             <small>请假事由：${leave.reson}</small>
                             <br/>
                             <small>请假时间：<fmt:formatDate value="${leave.startTime}" pattern="yyyy/MM/dd HH:mm"/>
@@ -138,9 +139,10 @@
                             </div>
                         </div>
                         <button type="submit" class="btn btn-default">确定</button>
+                        <br/>
                     </form>
-                </c:forEach>
-            </div>
+                </div>
+            </c:forEach>
         </div>
     </div>
     <div class="row clearfix">
